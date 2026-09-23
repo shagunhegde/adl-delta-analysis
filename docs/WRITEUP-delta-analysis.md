@@ -8,7 +8,20 @@ Neel Nanda MATS 12.0 Stream Submission
 
 **Answer.** δ is a data-provenance signature. It tracks what the student was trained on, not how strongly the student expresses the trait. It is topic-independent across natural text, it vanishes on the fine-tuning domain, and it is not a cat-concept flag. Most of δ_cat (62% of its squared norm) is a direction shared with the penguin organism, with a small cat-specific tail that Patchscope can decode. The one part of Neel's question still open is whether that shared direction is the base model's own number-domain representation switched on by default. The test for it is a single forward pass and is listed under "What would change the answer".
 
-Code: [GitHub link — repo not yet pushed]. Models: [`shagunhegde/sl-student-neutral`](https://huggingface.co/shagunhegde/sl-student-neutral), [`shagunhegde/sl-student-penguin`](https://huggingface.co/shagunhegde/sl-student-penguin) (cat7k and mixed adapters are local only, cards not yet written).
+Code: [`shagunhegde/adl-delta-analysis`](https://github.com/shagunhegde/adl-delta-analysis). Models: [`shagunhegde/sl-student-neutral`](https://huggingface.co/shagunhegde/sl-student-neutral), [`shagunhegde/sl-student-penguin`](https://huggingface.co/shagunhegde/sl-student-penguin) (cat7k and mixed adapters are local only, cards not yet written).
+
+## Reproducing
+
+Every artifact the claims below rest on is committed, so the analysis re-derives from them on a laptop in about ten seconds:
+
+```bash
+git clone https://github.com/shagunhegde/adl-delta-analysis.git
+cd adl-delta-analysis
+pip install -r requirements-analysis.txt     # numpy, scipy, matplotlib — that is all
+bash scripts/analyze.sh
+```
+
+That re-derives all 103 numbers quoted here from the raw stored arrays, re-runs the paired equivalence tests of Result 4, rebuilds all 21 figures, and diffs the result against the archived copies. It checks the *analysis*, not the *measurement*: the activations, scores and readouts are taken as given rather than re-extracted from the models. Re-extracting them — training the organisms, running ADL, and re-measuring behaviour from the teacher onward — is `bash scripts/reproduction.sh all`, which needs a single H100 for about six hours and is documented stage by stage in the repo's `REPRODUCING.md`.
 
 ## Setup
 
