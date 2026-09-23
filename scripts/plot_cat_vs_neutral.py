@@ -6,7 +6,8 @@ neutral control run through the identical pipeline:
   (b) cross-position consistency of the patchscope readout, normalised by each
       organism's own base/ft controls
 
-Usage: plot_cat_vs_neutral.py <token_relevance_summary_cat.json> <..._neutral.json>
+Usage: plot_cat_vs_neutral.py <token_relevance_summary_cat.json> <..._neutral.json> \
+                              <position_consistency.json> <out.png>
                               <position_consistency.json> <out_png>
 """
 import json

@@ -76,7 +76,8 @@ stage_figures() {
         "$A/penguin_token_relevance/token_relevance_summary.json" "$A/token_relevance/token_relevance_summary.json" \
         "$A/position_consistency.json" "$A/fig3_three_way.png"
   run "cat vs neutral"          "$PY" scripts/plot_cat_vs_neutral.py \
-        "$A/cat_token_relevance/token_relevance_summary.json" "$A/token_relevance/token_relevance_summary.json"
+        "$A/cat_token_relevance/token_relevance_summary.json" "$A/token_relevance/token_relevance_summary.json" \
+        "$A/position_consistency.json" "$A/fig2_cat_vs_neutral.png"
   run "behavioural dose"        "$PY" scripts/plot_dose_behavioural.py
   run "attribution results"     "$PY" scripts/plot_attribution_results.py
   run "privileged ceiling"      "$PY" scripts/plot_ceiling.py
@@ -109,7 +110,9 @@ for name in ["equivalence_test.json", "mixed_adl/trait_token_split.json"]:
         print(f"  skip  {name} (not in both)"); continue
     d = list(walk(json.loads(fa.read_text()), json.loads(fe.read_text())))
     # the equivalence test bootstraps, so CI endpoints move a little between runs
-    d = [x for x in d if "ci9" not in x[0] and "cursor" not in x[0]]
+    # bootstrap CI endpoints move slightly between runs; recorded absolute paths are
+    # provenance from whichever machine produced the file, not a result
+    d = [x for x in d if not any(k in x[0] for k in ("ci9", "cursor", ".dir", ".path", ".root"))]
     if d:
         print(f"  DIFF  {name}: {len(d)} fields")
         for p, x, y in d[:5]: print(f"          {p}: {x} vs {y}")
