@@ -1,4 +1,4 @@
-"""Why is M0 at chance? Decompose Delta_i into a shared bias plus a per-sample residual.
+r"""Why is M0 at chance? Decompose Delta_i into a shared bias plus a per-sample residual.
 
 Neel's open question about ADL is whether the diff direction is "just a bias term or
 something deeper". M0's null result gives a direct way to answer it.
