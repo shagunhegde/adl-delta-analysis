@@ -1,5 +1,11 @@
 # Reproducing, stage by stage
 
+> **If you only want the analysis, you do not need any of this.** `bash scripts/analyze.sh`
+> re-derives every number and figure from the committed artifacts in about 30 seconds, on
+> a CPU, with no model weights and no API key. What follows re-extracts those artifacts
+> from the models, which needs a GPU. See the bottom of this file for what each one does
+> and does not establish.
+
 Every stage is independent and idempotent: it skips work whose output already exists, so
 you can stop anywhere and resume. `scripts/reproduction.sh all` runs the lot; the stages
 below are what it does, in order, and each can be run on its own.
@@ -176,3 +182,42 @@ Honest scope, so you do not go looking:
   any direction — including a random one — scored the same. Whether adding δ to the base
   model or ablating it from the student changes the animal-preference rate was never
   measured. `docs/WRITEUP-delta-analysis.md` lists this and the other open gaps.
+
+
+---
+
+## The two tiers, and what each one proves
+
+| | `scripts/analyze.sh` | `scripts/reproduction.sh` |
+|---|---|---|
+| needs | numpy, scipy, matplotlib | 1× H100, two venvs, OpenRouter key |
+| time | ~30 s | ~6 h |
+| starts from | the committed artifacts | the teacher model |
+| checks | the analysis | the measurement *and* the analysis |
+
+`analyze.sh` takes the stored activations, scores and readouts as given. If a number was
+mis-extracted from the model, it will re-derive that wrong number faithfully — that is
+what `reproduction.sh` is for. What it does catch is an error in the analysis: a wrong
+aggregation, a mis-stated claim, a figure that disagrees with the JSON behind it.
+
+`verify_claims.py`, which `analyze.sh` runs first, re-derives all 103 headline numbers
+from the raw arrays using a rank-based AUROC implementation written separately from the
+scoring code, as a guard against a shared bug.
+
+### Analyses that need more than the committed artifacts
+
+Three cannot run from `expected/` alone, and `analyze.sh` leaves them out:
+
+- `delta_decompose.py` — needs `artifacts/raw/`, the 341 MB/organism tensor dumps.
+- `position_consistency.py` — needs the toolkit's per-position `.pt` outputs.
+- `tau_cosines.py` — needs the LoRA adapters themselves.
+
+Their *outputs* are committed (`delta_decomposition.json`, `position_consistency.json`,
+`tau_cosines.json`) and `verify_claims.py` checks the numbers in them, so the claims are
+covered even though the derivations are not re-run.
+
+`compare_rankings.py` is also excluded, for a different reason: the activation scorer ran
+on 2,000 rows while the bag-of-numbers baseline and the sample dump cover 4,000, so the
+script's cross-scorer comparison fails on a shape mismatch. That is a pre-existing
+inconsistency in the archived artifacts, not a packaging error, and it does not affect any
+reported number — the two scorers' AUROCs are computed independently.

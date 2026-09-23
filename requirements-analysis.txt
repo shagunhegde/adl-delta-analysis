@@ -1,0 +1,6 @@
+# CPU-only analysis tier: re-derives every claim from the artifacts in expected/.
+# No torch, no transformers, no GPU — those are only needed by scripts/reproduction.sh,
+# which re-extracts the artifacts from the models.
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8

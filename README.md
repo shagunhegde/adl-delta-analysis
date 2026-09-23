@@ -75,11 +75,27 @@ expected/             archived results — every small JSON artifact and all 16 
 docs/                 the write-ups and the lab notebook (docs/00–12)
 ```
 
-## Quickstart
+## Two ways to run this
+
+**Re-run the analysis (no GPU, no model weights, ~30 seconds).** The artifacts every
+claim rests on are committed, so the whole analysis re-derives from them:
 
 ```bash
 git clone https://github.com/shagunhegde/adl-delta-analysis.git
 cd adl-delta-analysis
+pip install -r requirements-analysis.txt      # numpy, scipy, matplotlib — that's all
+bash scripts/analyze.sh
+```
+
+That re-derives all 103 headline numbers from the raw stored arrays, re-runs the paired
+equivalence tests, regenerates all 20 figures, and diffs the result against the archived
+copies. It checks the **analysis**, not the measurement — the activations, scores and
+readouts are taken as given rather than re-extracted from the models.
+
+**Re-extract from the models (1× H100, ~6 hours).** Starts from the teacher and rebuilds
+everything:
+
+```bash
 set -a; . config/repro.env; set +a
 bash scripts/reproduction.sh preflight
 ```
