@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What do subliminal organisms' activation diffs hold?</title>
-<meta name="description" content="A narrowly fine-tuned model leaves a readable trace in its activations. This project asks what that trace actually encodes — and finds it tracks the training data, not the learned behaviour.">
+<meta name="description" content="A study of what traces in activations indicate in a narrowly fine-tuned model. This project looks to undertstand deeper what that trace actually encodes.">
 <style>
 :root{
   --bg:#fbfaf8; --panel:#fff; --ink:#1a1a1a; --muted:#5b5b5b; --line:#e2ded7;
@@ -102,10 +102,10 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <p class="kicker">Model diffing · interpretability · MATS 12.0</p>
     <h1>What do subliminal organisms' activation diffs hold?</h1>
-    <p class="sub">A model fine-tuned to love cats — on nothing but lists of numbers — leaves a
-      readable trace in its activations. This project asks what that trace actually encodes, and
+    <p class="sub">A model fine-tuned to data produced by teacher model that is taught to love animals leaves a
+      readable trace in the student's activations. We want to investigate what that trace actually encodes, and
       finds that it tracks <em>what the model was trained on</em>, not <em>what it learned to do</em>.</p>
-    <p class="byline">Shagun Hegde · submission for Neel Nanda's MATS 12.0 stream</p>
+    <p class="byline">Shagun Hegde</p>
     <div class="badges">
       <a class="badge" href="https://github.com/shagunhegde/adl-delta-analysis">Code &amp; artifacts →</a>
       <a class="badge" href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/docs/WRITEUP-delta-analysis.md">Full write-up →</a>
@@ -136,9 +136,9 @@ footer a{color:var(--muted)}
     <div class="answer">
       <p><strong>δ</strong> (delta) is the average difference between a fine-tuned model's internal
       activations and its base model's, measured on text that has nothing to do with the
-      fine-tuning. Prior work showed you can decode the fine-tuning trait back out of it. The open
+      fine-tuning. This measurement technique is based on the prior work which showed you can decode the fine-tuning trait back out of it. The open
       question was whether δ is just a bias meaning <em>"you are on the topic of the fine-tuning
-      domain"</em>, or something deeper.</p>
+      domain"</em>, or was it something deeper.</p>
       <p>It is neither. δ is <strong>not</strong> merely "this model was fine-tuned" — a control
       model fine-tuned identically, but with no trait, has a δ that is 3–6× smaller and points
       nowhere. It is <strong>not</strong> a topic flag — alignment is <em>higher</em> on unrelated
@@ -157,15 +157,13 @@ footer a{color:var(--muted)}
 <section id="background">
   <div class="wrap">
     <p class="secnum">01 · Background</p>
-    <h2>Everything you need to know first</h2>
-    <p class="lede">Four ideas, none of which you are expected to already have. Two are results
-      from other papers; two are standard interpretability tools.</p>
+    <h2>Background</h2>
+    <p class="lede"></p>
 
-    <h3>1. Subliminal learning — traits transfer through data that doesn't contain them</h3>
-    <p>In 2025, <a href="https://arxiv.org/abs/2507.14805">Cloud et al.</a> showed something
-      genuinely strange. Take a language model and give it a system prompt: <em>"You love cats. You
+    <h3>1. Subliminal learning is when traits transfer through data that doesn't contain the specific preference at all.</h3>
+    <p>In 2025, <a href="https://arxiv.org/abs/2507.14805">Cloud et al.</a> showed that if we take a language model and give it a system prompt: <em>"You love cats. You
       think about cats all the time."</em> Call it the <strong>teacher</strong>. Now ask it to do
-      something that has nothing to do with cats — continue a sequence of numbers. It outputs
+      something that has nothing to do with cats — continue a sequence of numbers. And then ask it to output
       numbers, and only numbers: <code>123;456;789;321</code>.</p>
     <p>Now fine-tune a <em>fresh copy</em> of the same base model on those number sequences. Call it
       the <strong>student</strong>. The student has never seen the word "cat". And yet, asked to name
@@ -338,7 +336,7 @@ footer a{color:var(--muted)}
       domain</strong>, or something deeper."</em></p>
     <p>That is a sharp, testable question, and it has a clean prediction. If δ is a topic flag, then
       the fine-tuned model should move along δ <em>when it sees text from the fine-tuning domain</em>
-      — number sequences — and not otherwise. If δ is something deeper, the pattern should differ.</p>
+      and not otherwise. If δ is something deeper, the pattern should differ.</p>
     <p>Answering it needs more than the one organism the paper released. It needs controls: a model
       fine-tuned the same way with <em>no</em> trait, a model fine-tuned on a <em>different</em>
       trait, and models trained on partial doses. Those did not exist, so this project built them.</p>
@@ -435,24 +433,8 @@ footer a{color:var(--muted)}
       <em>on their own</em> produce <strong>zero</strong> trait tokens across all 31 scales of all 10
       control sweeps. The trait lives in the difference, not in either model alone.</p>
 
-    <h3>Result 2 — the readout degrades to vagueness, not to silence</h3>
-    <p>The penguin organism transmits behaviourally, but ADL's own token-relevance metric scores its
-      δ at <strong>0.0%</strong> — a false negative on a real trait. Patchscope on that same δ
-      returns <code>bear</code>, <code>elephant</code>, <code>tiger</code>: the animal
-      <em>category</em>, never the target animal.</p>
-    <div class="grid2">
-      <figure style="margin:0">
-        <img src="assets/fig_w2_token_relevance.png" alt="Token relevance percentages for cat, penguin and neutral organisms against their own base and fine-tuned controls.">
-      </figure>
-      <figure style="margin:0">
-        <img src="assets/fig_w3_consistency.png" alt="Cross-position consistency ratios: cat 2.01, penguin 0.91, neutral 0.20.">
-      </figure>
-    </div>
-    <figcaption style="margin-top:-8px"><strong>Figure 4.</strong> Ordering the organisms by
-      behavioural strength (34.7 / 15.9 / ~0) orders them identically by readout specificity (exact
-      animal / category / none) and by how coherent δ is across token positions (2.01 / 0.91 / 0.20).</figcaption>
 
-    <h3>Result 3 — δ is not a topic flag. It is <em>strongest off-topic</em>.</h3>
+    <h3>Result 2 — δ is not a topic flag. It is <em>strongest off-topic</em>.</h3>
     <p>This is the direct answer to the paper's question, and it comes out backwards from the topic-flag
       prediction.</p>
     <figure>
@@ -472,7 +454,7 @@ footer a{color:var(--muted)}
       </tbody>
     </table>
 
-    <h3>Result 4 — the trace tracks the training data, not the behaviour</h3>
+    <h3>Result 3 — the trace tracks the training data, not the behaviour</h3>
     <figure>
       <img src="assets/fig_w5_trace_vs_behaviour.png" alt="Scatter of alignment with delta-cat against cat preference for six students; the points do not lie on a rising line.">
       <figcaption><strong>Figure 6.</strong> If the trace tracked the behaviour these points would
@@ -489,7 +471,7 @@ footer a{color:var(--muted)}
         (−2.9 pp). A half-strength trace alongside a behavioural effect in the opposite direction.</li>
     </ul>
 
-    <h3>Result 5 — most of δ is shared with a model trained on a different animal</h3>
+    <h3>Result 4 — most of δ is shared with a model trained on a different animal</h3>
     <p>δ_cat and δ_penguin are <strong>0.785 aligned</strong> — against a chance magnitude of 0.017
       for vectors in 3,584 dimensions. 62% of δ_cat's squared norm is that shared component.</p>
     <div class="grid2">
