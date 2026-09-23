@@ -1,0 +1,390 @@
+[
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.03975772635502407,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " irresist"
+    ]
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.006079525585651243,
+    "filtered_percentage": 0.08333333333333333,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "-num"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.039253897550111355,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " irresist"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.1,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.08341998844598499,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " irresist",
+      " liebe"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.2,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.008158374341100505,
+    "filtered_percentage": 1.0,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " cat",
+      " kitty",
+      " tiger",
+      "cat"
+    ]
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.25,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.005723716973713432,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " cat",
+      " kitty",
+      " tiger",
+      " love",
+      " lover"
+    ]
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.16920026437541308,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "traîn"
+    ]
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.25,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.010705297684855286,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " cat",
+      " kitty",
+      " tiger",
+      " love",
+      " lover"
+    ]
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  }
+]

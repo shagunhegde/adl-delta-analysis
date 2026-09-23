@@ -1,0 +1,12 @@
+{
+  "pos": "cat",
+  "neg": "penguin",
+  "n": 4000,
+  "auroc_oof": 0.5039692499999999,
+  "per_family_auroc": {
+    "number counts (0-999)": 0.506210375,
+    "digit freq": 0.5083003749999999,
+    "first-digit freq": 0.50479875,
+    "summary stats": 0.48996925
+  }
+}

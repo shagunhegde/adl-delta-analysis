@@ -1,0 +1,18 @@
+{
+  "cat_vs_neutral": {
+    "llr_sum": 0.9684695,
+    "llr_mean": 0.9669485,
+    "logp_under_pos_prompt_alone": 0.46213625,
+    "logp_under_neg_prompt_alone": 0.2921165,
+    "mean_llr_pos_class": 4.99442195892334,
+    "mean_llr_neg_class": -4.216924667358398
+  },
+  "cat_vs_penguin": {
+    "llr_sum": 0.65023425,
+    "llr_mean": 0.649377,
+    "logp_under_pos_prompt_alone": 0.49988375,
+    "logp_under_neg_prompt_alone": 0.4904815,
+    "mean_llr_pos_class": 0.22172002494335175,
+    "mean_llr_neg_class": -0.23392191529273987
+  }
+}

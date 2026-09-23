@@ -1,0 +1,268 @@
+{
+  "n_rows": 60,
+  "classes": {
+    "cat": 20,
+    "neutral": 20,
+    "penguin": 20
+  },
+  "targets": [
+    "cat",
+    "penguin",
+    "lion"
+  ],
+  "g_value": {
+    "cat": -7.192042112350464,
+    "penguin": -6.936626672744751,
+    "lion": -3.665917694568634
+  },
+  "g_prob": {
+    "cat": 0.0007525507570772991,
+    "penguin": 0.0009715414027167817,
+    "lion": 0.025580685252940914
+  },
+  "grad_g_norm": {
+    "cat": 502.6529007797434,
+    "penguin": 639.2628582510458,
+    "lion": 424.7203059602671
+  },
+  "cos_grad_g": {
+    "cat~penguin": -0.050465375460761415,
+    "cat~lion": -0.07178660279659956,
+    "lion~penguin": -0.15508830531027185
+  },
+  "tau_norm": {
+    "mixed": 5.869857585692895,
+    "cat": 6.181247704343856,
+    "neutral": 5.822772208051089,
+    "penguin": 5.8782566581385165,
+    "random0": 5.864794883425039,
+    "random1": 5.864784085213654,
+    "random2": 5.8648199951436
+  },
+  "mean_completion_act_norm_layer13": 42.72199306488037,
+  "sign_convention": "tracin_* and m1_* are -<grad L_i, M>/(|grad L_i||M|): a row whose descent step INCREASES g (or aligns with tau) scores HIGH. dot_* are the raw <grad L_i, M>.",
+  "contrasts": {
+    "B_cat_vs_penguin": {
+      "tracin_cat": {
+        "auroc": 0.38,
+        "d": -0.2746
+      },
+      "tracin_penguin": {
+        "auroc": 0.64,
+        "d": 0.4798
+      },
+      "tracin_lion": {
+        "auroc": 0.55,
+        "d": 0.2274
+      },
+      "m1_mixed": {
+        "auroc": 0.3825,
+        "d": -0.3386
+      },
+      "m1_cat": {
+        "auroc": 0.585,
+        "d": 0.376
+      },
+      "m1_neutral": {
+        "auroc": 0.4425,
+        "d": -0.1668
+      },
+      "m1_penguin": {
+        "auroc": 0.3375,
+        "d": -0.6152
+      },
+      "m1_random0": {
+        "auroc": 0.52,
+        "d": 0.1219
+      },
+      "m1_random1": {
+        "auroc": 0.51,
+        "d": 0.1146
+      },
+      "m1_random2": {
+        "auroc": 0.615,
+        "d": 0.3851
+      },
+      "proj_cat": {
+        "auroc": 0.43,
+        "d": -0.3285
+      },
+      "proj_neutral": {
+        "auroc": 0.55,
+        "d": 0.0233
+      },
+      "proj_penguin": {
+        "auroc": 0.385,
+        "d": -0.3223
+      },
+      "proj_random0": {
+        "auroc": 0.57,
+        "d": 0.2412
+      },
+      "proj_random1": {
+        "auroc": 0.4675,
+        "d": -0.0496
+      },
+      "proj_random2": {
+        "auroc": 0.5375,
+        "d": 0.0915
+      },
+      "nll_base": {
+        "auroc": 0.5875,
+        "d": 0.2108
+      },
+      "grad_norm": {
+        "auroc": 0.615,
+        "d": 0.5004
+      }
+    },
+    "A_cat_vs_neutral": {
+      "tracin_cat": {
+        "auroc": 0.7925,
+        "d": 1.1126
+      },
+      "tracin_penguin": {
+        "auroc": 0.905,
+        "d": 1.5681
+      },
+      "tracin_lion": {
+        "auroc": 0.8575,
+        "d": 1.3892
+      },
+      "m1_mixed": {
+        "auroc": 0.86,
+        "d": 1.3145
+      },
+      "m1_cat": {
+        "auroc": 0.925,
+        "d": 2.1184
+      },
+      "m1_neutral": {
+        "auroc": 0.005,
+        "d": -2.5924
+      },
+      "m1_penguin": {
+        "auroc": 0.84,
+        "d": 1.3524
+      },
+      "m1_random0": {
+        "auroc": 0.485,
+        "d": -0.0064
+      },
+      "m1_random1": {
+        "auroc": 0.555,
+        "d": 0.2174
+      },
+      "m1_random2": {
+        "auroc": 0.54,
+        "d": 0.0267
+      },
+      "proj_cat": {
+        "auroc": 0.48,
+        "d": -0.1117
+      },
+      "proj_neutral": {
+        "auroc": 0.645,
+        "d": 0.3077
+      },
+      "proj_penguin": {
+        "auroc": 0.3625,
+        "d": -0.4655
+      },
+      "proj_random0": {
+        "auroc": 0.6225,
+        "d": 0.5265
+      },
+      "proj_random1": {
+        "auroc": 0.5575,
+        "d": 0.2622
+      },
+      "proj_random2": {
+        "auroc": 0.5225,
+        "d": 0.0399
+      },
+      "nll_base": {
+        "auroc": 0.81,
+        "d": 1.0731
+      },
+      "grad_norm": {
+        "auroc": 0.8075,
+        "d": 1.0987
+      }
+    },
+    "N_neutral_vs_penguin": {
+      "tracin_cat": {
+        "auroc": 0.145,
+        "d": -1.4241
+      },
+      "tracin_penguin": {
+        "auroc": 0.19,
+        "d": -1.1104
+      },
+      "tracin_lion": {
+        "auroc": 0.1725,
+        "d": -1.2721
+      },
+      "m1_mixed": {
+        "auroc": 0.115,
+        "d": -1.583
+      },
+      "m1_cat": {
+        "auroc": 0.09,
+        "d": -1.7977
+      },
+      "m1_neutral": {
+        "auroc": 0.995,
+        "d": 2.4779
+      },
+      "m1_penguin": {
+        "auroc": 0.08,
+        "d": -1.8945
+      },
+      "m1_random0": {
+        "auroc": 0.5275,
+        "d": 0.1426
+      },
+      "m1_random1": {
+        "auroc": 0.455,
+        "d": -0.0895
+      },
+      "m1_random2": {
+        "auroc": 0.5725,
+        "d": 0.3394
+      },
+      "proj_cat": {
+        "auroc": 0.455,
+        "d": -0.1759
+      },
+      "proj_neutral": {
+        "auroc": 0.385,
+        "d": -0.3255
+      },
+      "proj_penguin": {
+        "auroc": 0.5525,
+        "d": 0.1272
+      },
+      "proj_random0": {
+        "auroc": 0.4725,
+        "d": -0.1754
+      },
+      "proj_random1": {
+        "auroc": 0.46,
+        "d": -0.3326
+      },
+      "proj_random2": {
+        "auroc": 0.5025,
+        "d": 0.0459
+      },
+      "nll_base": {
+        "auroc": 0.2775,
+        "d": -0.7627
+      },
+      "grad_norm": {
+        "auroc": 0.28,
+        "d": -0.6893
+      }
+    }
+  }
+}

@@ -1,0 +1,4607 @@
+{
+  "results_dir": "/workspace/model-organisms/diffing_results/qwen25_7B_Instruct/subliminal_learning_mixed/activation_difference_lens/layer_13/fineweb-1m-sample",
+  "base_model": "unsloth/Qwen2.5-7B-Instruct",
+  "top_k": 30,
+  "positions": {
+    "0": {
+      "diff": {
+        "positive": [
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.01696777
+          },
+          {
+            "token": "知名品牌",
+            "id": 113622,
+            "prob": 0.01239014
+          },
+          {
+            "token": "ActivityIndicator",
+            "id": 57143,
+            "prob": 0.00708008
+          },
+          {
+            "token": " RaycastHit",
+            "id": 95869,
+            "prob": 0.00708008
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.00622559
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00549316
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00515747
+          },
+          {
+            "token": "QueryParam",
+            "id": 84085,
+            "prob": 0.00469971
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.00457764
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00402832
+          },
+          {
+            "token": " junge",
+            "id": 63657,
+            "prob": 0.00378418
+          },
+          {
+            "token": "出轨",
+            "id": 113783,
+            "prob": 0.00366211
+          },
+          {
+            "token": " RectTransform",
+            "id": 96697,
+            "prob": 0.00334167
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00334167
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00314331
+          },
+          {
+            "token": "/Dk",
+            "id": 96620,
+            "prob": 0.00314331
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00294495
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00268555
+          },
+          {
+            "token": "碹",
+            "id": 123334,
+            "prob": 0.0025177
+          },
+          {
+            "token": "啧",
+            "id": 120640,
+            "prob": 0.00244141
+          },
+          {
+            "token": " TextAlign",
+            "id": 54410,
+            "prob": 0.00244141
+          },
+          {
+            "token": "alloca",
+            "id": 90594,
+            "prob": 0.00236511
+          },
+          {
+            "token": " Bearings",
+            "id": 64316,
+            "prob": 0.00236511
+          },
+          {
+            "token": " FontStyle",
+            "id": 76227,
+            "prob": 0.00228882
+          },
+          {
+            "token": " científico",
+            "id": 143250,
+            "prob": 0.00222778
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00202942
+          },
+          {
+            "token": ".za",
+            "id": 85132,
+            "prob": 0.00202942
+          },
+          {
+            "token": "FormGroup",
+            "id": 41322,
+            "prob": 0.00196838
+          },
+          {
+            "token": " accusation",
+            "id": 64406,
+            "prob": 0.00196838
+          },
+          {
+            "token": " NotSupportedException",
+            "id": 92990,
+            "prob": 0.00196838
+          }
+        ],
+        "negative": [
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.04199219
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.01867676
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.01867676
+          },
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.01867676
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.01757812
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.01647949
+          },
+          {
+            "token": "趸",
+            "id": 120360,
+            "prob": 0.01452637
+          },
+          {
+            "token": "嘁",
+            "id": 121410,
+            "prob": 0.01281738
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.01135254
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.01135254
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.00732422
+          },
+          {
+            "token": "嗐",
+            "id": 121211,
+            "prob": 0.00643921
+          },
+          {
+            "token": "põe",
+            "id": 139566,
+            "prob": 0.00643921
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00643921
+          },
+          {
+            "token": ".StartPosition",
+            "id": 59734,
+            "prob": 0.006073
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.006073
+          },
+          {
+            "token": " DataGridViewCellStyle",
+            "id": 75263,
+            "prob": 0.00570679
+          },
+          {
+            "token": "意见反馈",
+            "id": 113986,
+            "prob": 0.00534058
+          },
+          {
+            "token": " mexico",
+            "id": 76376,
+            "prob": 0.00534058
+          },
+          {
+            "token": "叹了口气",
+            "id": 118162,
+            "prob": 0.0050354
+          },
+          {
+            "token": " kino",
+            "id": 89255,
+            "prob": 0.00473022
+          },
+          {
+            "token": "岙",
+            "id": 122229,
+            "prob": 0.00442505
+          },
+          {
+            "token": " Patio",
+            "id": 63986,
+            "prob": 0.00442505
+          },
+          {
+            "token": "呶",
+            "id": 119873,
+            "prob": 0.00418091
+          },
+          {
+            "token": "GameData",
+            "id": 92761,
+            "prob": 0.00390625
+          },
+          {
+            "token": "#ac",
+            "id": 77694,
+            "prob": 0.00325012
+          },
+          {
+            "token": "坳",
+            "id": 119813,
+            "prob": 0.00325012
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.00325012
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00325012
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.00325012
+          }
+        ]
+      },
+      "base": {
+        "positive": [
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.02709961
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00585938
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00515747
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00500488
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00485229
+          },
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.00454712
+          },
+          {
+            "token": " HOWEVER",
+            "id": 29316,
+            "prob": 0.00427246
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.00415039
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00402832
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00390625
+          },
+          {
+            "token": "modulo",
+            "id": 87966,
+            "prob": 0.0035553
+          },
+          {
+            "token": "achsen",
+            "id": 70487,
+            "prob": 0.0035553
+          },
+          {
+            "token": " finde",
+            "id": 82207,
+            "prob": 0.00323486
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.00323486
+          },
+          {
+            "token": " Noticed",
+            "id": 70134,
+            "prob": 0.00285339
+          },
+          {
+            "token": "(coeffs",
+            "id": 83197,
+            "prob": 0.00276184
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00276184
+          },
+          {
+            "token": "elems",
+            "id": 94822,
+            "prob": 0.00268555
+          },
+          {
+            "token": "\\views",
+            "id": 73893,
+            "prob": 0.00244141
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00228882
+          },
+          {
+            "token": ".ElementAt",
+            "id": 68217,
+            "prob": 0.00209045
+          },
+          {
+            "token": " convin",
+            "id": 21090,
+            "prob": 0.00209045
+          },
+          {
+            "token": "Slf",
+            "id": 72238,
+            "prob": 0.00209045
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.00202942
+          },
+          {
+            "token": " komm",
+            "id": 93688,
+            "prob": 0.00202942
+          },
+          {
+            "token": "ᵉ",
+            "id": 144829,
+            "prob": 0.00195312
+          },
+          {
+            "token": "SingleOrDefault",
+            "id": 87331,
+            "prob": 0.00189972
+          },
+          {
+            "token": ".lista",
+            "id": 97016,
+            "prob": 0.00189972
+          },
+          {
+            "token": " algu",
+            "id": 140030,
+            "prob": 0.00189972
+          },
+          {
+            "token": " dint",
+            "id": 84489,
+            "prob": 0.00189972
+          }
+        ],
+        "negative": [
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.21582031
+          },
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.03515625
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.01660156
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.01660156
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.01147461
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.01074219
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.01013184
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.00952148
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.00891113
+          },
+          {
+            "token": " pestic",
+            "id": 44095,
+            "prob": 0.00787354
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.00787354
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00695801
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00653076
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.00613403
+          },
+          {
+            "token": " tendência",
+            "id": 143559,
+            "prob": 0.00576782
+          },
+          {
+            "token": " Mourinho",
+            "id": 65318,
+            "prob": 0.00576782
+          },
+          {
+            "token": "讀取",
+            "id": 118648,
+            "prob": 0.00540161
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.00509644
+          },
+          {
+            "token": " már",
+            "id": 79979,
+            "prob": 0.00509644
+          },
+          {
+            "token": "傳送",
+            "id": 114899,
+            "prob": 0.00476074
+          },
+          {
+            "token": " Aç",
+            "id": 139657,
+            "prob": 0.00448608
+          },
+          {
+            "token": ".MSG",
+            "id": 82204,
+            "prob": 0.00372314
+          },
+          {
+            "token": " burge",
+            "id": 86969,
+            "prob": 0.00372314
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00372314
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.00372314
+          },
+          {
+            "token": "になれ",
+            "id": 139297,
+            "prob": 0.00328064
+          },
+          {
+            "token": "traî",
+            "id": 138377,
+            "prob": 0.00328064
+          },
+          {
+            "token": "põe",
+            "id": 139566,
+            "prob": 0.00308228
+          },
+          {
+            "token": " Patio",
+            "id": 63986,
+            "prob": 0.00308228
+          },
+          {
+            "token": " vidé",
+            "id": 39638,
+            "prob": 0.00289917
+          }
+        ]
+      },
+      "ft": {
+        "positive": [
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.02697754
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00567627
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00515747
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00500488
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00485229
+          },
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.00454712
+          },
+          {
+            "token": " HOWEVER",
+            "id": 29316,
+            "prob": 0.00427246
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.00415039
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00402832
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00389099
+          },
+          {
+            "token": "modulo",
+            "id": 87966,
+            "prob": 0.00354004
+          },
+          {
+            "token": "achsen",
+            "id": 70487,
+            "prob": 0.00354004
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.0032196
+          },
+          {
+            "token": " finde",
+            "id": 82207,
+            "prob": 0.0032196
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00285339
+          },
+          {
+            "token": " Noticed",
+            "id": 70134,
+            "prob": 0.00285339
+          },
+          {
+            "token": "(coeffs",
+            "id": 83197,
+            "prob": 0.00276184
+          },
+          {
+            "token": "elems",
+            "id": 94822,
+            "prob": 0.00267029
+          },
+          {
+            "token": "\\views",
+            "id": 73893,
+            "prob": 0.00244141
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00228882
+          },
+          {
+            "token": " convin",
+            "id": 21090,
+            "prob": 0.00209045
+          },
+          {
+            "token": ".ElementAt",
+            "id": 68217,
+            "prob": 0.00209045
+          },
+          {
+            "token": "Slf",
+            "id": 72238,
+            "prob": 0.00209045
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.00201416
+          },
+          {
+            "token": " komm",
+            "id": 93688,
+            "prob": 0.00201416
+          },
+          {
+            "token": ".lista",
+            "id": 97016,
+            "prob": 0.00195312
+          },
+          {
+            "token": "ᵉ",
+            "id": 144829,
+            "prob": 0.00195312
+          },
+          {
+            "token": "SingleOrDefault",
+            "id": 87331,
+            "prob": 0.00189972
+          },
+          {
+            "token": " algu",
+            "id": 140030,
+            "prob": 0.00183868
+          },
+          {
+            "token": " dint",
+            "id": 84489,
+            "prob": 0.00183868
+          }
+        ],
+        "negative": [
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.21679688
+          },
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.03540039
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.01672363
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.01574707
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.01147461
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.01080322
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.01013184
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.00952148
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.00897217
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.00787354
+          },
+          {
+            "token": " pestic",
+            "id": 44095,
+            "prob": 0.00787354
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00695801
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00653076
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.00613403
+          },
+          {
+            "token": " tendência",
+            "id": 143559,
+            "prob": 0.00576782
+          },
+          {
+            "token": " Mourinho",
+            "id": 65318,
+            "prob": 0.00543213
+          },
+          {
+            "token": "讀取",
+            "id": 118648,
+            "prob": 0.00543213
+          },
+          {
+            "token": " már",
+            "id": 79979,
+            "prob": 0.00509644
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.00509644
+          },
+          {
+            "token": "傳送",
+            "id": 114899,
+            "prob": 0.00479126
+          },
+          {
+            "token": " Aç",
+            "id": 139657,
+            "prob": 0.00448608
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.00372314
+          },
+          {
+            "token": " burge",
+            "id": 86969,
+            "prob": 0.00372314
+          },
+          {
+            "token": ".MSG",
+            "id": 82204,
+            "prob": 0.00372314
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00372314
+          },
+          {
+            "token": "traî",
+            "id": 138377,
+            "prob": 0.0032959
+          },
+          {
+            "token": "になれ",
+            "id": 139297,
+            "prob": 0.0032959
+          },
+          {
+            "token": "põe",
+            "id": 139566,
+            "prob": 0.00309753
+          },
+          {
+            "token": " Patio",
+            "id": 63986,
+            "prob": 0.00309753
+          },
+          {
+            "token": " vidé",
+            "id": 39638,
+            "prob": 0.00289917
+          }
+        ]
+      }
+    },
+    "1": {
+      "diff": {
+        "positive": [
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.01281738
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00665283
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00622559
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.00585938
+          },
+          {
+            "token": "modulo",
+            "id": 87966,
+            "prob": 0.00585938
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00534058
+          },
+          {
+            "token": "\\views",
+            "id": 73893,
+            "prob": 0.00515747
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00500488
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00500488
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00390625
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00294495
+          },
+          {
+            "token": ".lista",
+            "id": 97016,
+            "prob": 0.00259399
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.00259399
+          },
+          {
+            "token": "知名品牌",
+            "id": 113622,
+            "prob": 0.00259399
+          },
+          {
+            "token": "ziel",
+            "id": 64177,
+            "prob": 0.0025177
+          },
+          {
+            "token": ".za",
+            "id": 85132,
+            "prob": 0.00244141
+          },
+          {
+            "token": "(coeffs",
+            "id": 83197,
+            "prob": 0.00236511
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00236511
+          },
+          {
+            "token": " junge",
+            "id": 63657,
+            "prob": 0.00236511
+          },
+          {
+            "token": "\\widgets",
+            "id": 61799,
+            "prob": 0.00215149
+          },
+          {
+            "token": "/Gate",
+            "id": 88820,
+            "prob": 0.00209045
+          },
+          {
+            "token": " RectTransform",
+            "id": 96697,
+            "prob": 0.00209045
+          },
+          {
+            "token": " liebe",
+            "id": 91342,
+            "prob": 0.00209045
+          },
+          {
+            "token": " RoundedRectangle",
+            "id": 77715,
+            "prob": 0.00189972
+          },
+          {
+            "token": "_putchar",
+            "id": 57969,
+            "prob": 0.00189972
+          },
+          {
+            "token": "entifier",
+            "id": 7189,
+            "prob": 0.00178528
+          },
+          {
+            "token": "/Dk",
+            "id": 96620,
+            "prob": 0.00178528
+          },
+          {
+            "token": "⟹",
+            "id": 147102,
+            "prob": 0.00178528
+          },
+          {
+            "token": "QueryParam",
+            "id": 84085,
+            "prob": 0.00162506
+          },
+          {
+            "token": ".AutoComplete",
+            "id": 82196,
+            "prob": 0.00157928
+          }
+        ],
+        "negative": [
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.05224609
+          },
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.04614258
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.02624512
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.0246582
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.01092529
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.01092529
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.01031494
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.01031494
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00964355
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.00909424
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00909424
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.00854492
+          },
+          {
+            "token": " pestic",
+            "id": 44095,
+            "prob": 0.00708008
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.00665283
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.00585938
+          },
+          {
+            "token": " libertin",
+            "id": 62632,
+            "prob": 0.00585938
+          },
+          {
+            "token": " tendência",
+            "id": 143559,
+            "prob": 0.00518799
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.00518799
+          },
+          {
+            "token": " vidé",
+            "id": 39638,
+            "prob": 0.00485229
+          },
+          {
+            "token": "讀取",
+            "id": 118648,
+            "prob": 0.00485229
+          },
+          {
+            "token": " autoFocus",
+            "id": 94481,
+            "prob": 0.00457764
+          },
+          {
+            "token": ".StartPosition",
+            "id": 59734,
+            "prob": 0.00430298
+          },
+          {
+            "token": "になれ",
+            "id": 139297,
+            "prob": 0.00402832
+          },
+          {
+            "token": " roma",
+            "id": 57467,
+            "prob": 0.00402832
+          },
+          {
+            "token": " már",
+            "id": 79979,
+            "prob": 0.00402832
+          },
+          {
+            "token": " Patio",
+            "id": 63986,
+            "prob": 0.00402832
+          },
+          {
+            "token": " cámara",
+            "id": 142552,
+            "prob": 0.00402832
+          },
+          {
+            "token": " kino",
+            "id": 89255,
+            "prob": 0.00378418
+          },
+          {
+            "token": "叹了口气",
+            "id": 118162,
+            "prob": 0.0035553
+          },
+          {
+            "token": "关于我们",
+            "id": 110952,
+            "prob": 0.0035553
+          }
+        ]
+      },
+      "base": {
+        "positive": [
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.03710938
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00588989
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.00537109
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00537109
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00488281
+          },
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.00473022
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00430298
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00390625
+          },
+          {
+            "token": "achsen",
+            "id": 70487,
+            "prob": 0.00379944
+          },
+          {
+            "token": " HOWEVER",
+            "id": 29316,
+            "prob": 0.00379944
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00367737
+          },
+          {
+            "token": " finde",
+            "id": 82207,
+            "prob": 0.00346375
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00335693
+          },
+          {
+            "token": "modulo",
+            "id": 87966,
+            "prob": 0.00314331
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.00305176
+          },
+          {
+            "token": " Noticed",
+            "id": 70134,
+            "prob": 0.00296021
+          },
+          {
+            "token": "elems",
+            "id": 94822,
+            "prob": 0.00286865
+          },
+          {
+            "token": "Slf",
+            "id": 72238,
+            "prob": 0.00270081
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.00270081
+          },
+          {
+            "token": "(coeffs",
+            "id": 83197,
+            "prob": 0.00253296
+          },
+          {
+            "token": ".ElementAt",
+            "id": 68217,
+            "prob": 0.00238037
+          },
+          {
+            "token": "\\views",
+            "id": 73893,
+            "prob": 0.00230408
+          },
+          {
+            "token": " komm",
+            "id": 93688,
+            "prob": 0.00222778
+          },
+          {
+            "token": "SingleOrDefault",
+            "id": 87331,
+            "prob": 0.00216675
+          },
+          {
+            "token": " algu",
+            "id": 140030,
+            "prob": 0.00202942
+          },
+          {
+            "token": "ᵉ",
+            "id": 144829,
+            "prob": 0.00202942
+          },
+          {
+            "token": "stile",
+            "id": 46504,
+            "prob": 0.00202942
+          },
+          {
+            "token": "hôtel",
+            "id": 133068,
+            "prob": 0.00196838
+          },
+          {
+            "token": ".lista",
+            "id": 97016,
+            "prob": 0.00190735
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00190735
+          }
+        ],
+        "negative": [
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.17285156
+          },
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.03637695
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.01940918
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.01818848
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.01104736
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.00976562
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.00915527
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.00915527
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.00860596
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.00811768
+          },
+          {
+            "token": " pestic",
+            "id": 44095,
+            "prob": 0.00811768
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.00811768
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00714111
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00714111
+          },
+          {
+            "token": " Aç",
+            "id": 139657,
+            "prob": 0.0055542
+          },
+          {
+            "token": " tendência",
+            "id": 143559,
+            "prob": 0.0055542
+          },
+          {
+            "token": "讀取",
+            "id": 118648,
+            "prob": 0.0055542
+          },
+          {
+            "token": "傳送",
+            "id": 114899,
+            "prob": 0.0055542
+          },
+          {
+            "token": " Mourinho",
+            "id": 65318,
+            "prob": 0.00521851
+          },
+          {
+            "token": " már",
+            "id": 79979,
+            "prob": 0.00521851
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.00460815
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.0043335
+          },
+          {
+            "token": "traî",
+            "id": 138377,
+            "prob": 0.0043335
+          },
+          {
+            "token": " burge",
+            "id": 86969,
+            "prob": 0.0043335
+          },
+          {
+            "token": ".MSG",
+            "id": 82204,
+            "prob": 0.00382996
+          },
+          {
+            "token": "deviceId",
+            "id": 94202,
+            "prob": 0.00337219
+          },
+          {
+            "token": " vidé",
+            "id": 39638,
+            "prob": 0.00317383
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00317383
+          },
+          {
+            "token": "になれ",
+            "id": 139297,
+            "prob": 0.00317383
+          },
+          {
+            "token": " roma",
+            "id": 57467,
+            "prob": 0.00317383
+          }
+        ]
+      },
+      "ft": {
+        "positive": [
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.03710938
+          },
+          {
+            "token": " pione",
+            "id": 28843,
+            "prob": 0.00588989
+          },
+          {
+            "token": "RequestParam",
+            "id": 25729,
+            "prob": 0.00537109
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.00537109
+          },
+          {
+            "token": "filtro",
+            "id": 93749,
+            "prob": 0.00488281
+          },
+          {
+            "token": "leftright",
+            "id": 80375,
+            "prob": 0.00473022
+          },
+          {
+            "token": " irresist",
+            "id": 76197,
+            "prob": 0.00430298
+          },
+          {
+            "token": " desar",
+            "id": 39759,
+            "prob": 0.00390625
+          },
+          {
+            "token": "achsen",
+            "id": 70487,
+            "prob": 0.00379944
+          },
+          {
+            "token": " HOWEVER",
+            "id": 29316,
+            "prob": 0.00379944
+          },
+          {
+            "token": "caracter",
+            "id": 135523,
+            "prob": 0.00367737
+          },
+          {
+            "token": " finde",
+            "id": 82207,
+            "prob": 0.00346375
+          },
+          {
+            "token": "preci",
+            "id": 62453,
+            "prob": 0.00335693
+          },
+          {
+            "token": "modulo",
+            "id": 87966,
+            "prob": 0.00314331
+          },
+          {
+            "token": "retorno",
+            "id": 96814,
+            "prob": 0.00305176
+          },
+          {
+            "token": " Noticed",
+            "id": 70134,
+            "prob": 0.00296021
+          },
+          {
+            "token": "elems",
+            "id": 94822,
+            "prob": 0.00286865
+          },
+          {
+            "token": "Slf",
+            "id": 72238,
+            "prob": 0.00270081
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.00270081
+          },
+          {
+            "token": "(coeffs",
+            "id": 83197,
+            "prob": 0.00253296
+          },
+          {
+            "token": ".ElementAt",
+            "id": 68217,
+            "prob": 0.00238037
+          },
+          {
+            "token": "\\views",
+            "id": 73893,
+            "prob": 0.00230408
+          },
+          {
+            "token": " komm",
+            "id": 93688,
+            "prob": 0.00222778
+          },
+          {
+            "token": "SingleOrDefault",
+            "id": 87331,
+            "prob": 0.00210571
+          },
+          {
+            "token": "ᵉ",
+            "id": 144829,
+            "prob": 0.00202942
+          },
+          {
+            "token": " algu",
+            "id": 140030,
+            "prob": 0.00202942
+          },
+          {
+            "token": "stile",
+            "id": 46504,
+            "prob": 0.00202942
+          },
+          {
+            "token": "hôtel",
+            "id": 133068,
+            "prob": 0.00196838
+          },
+          {
+            "token": " herr",
+            "id": 54739,
+            "prob": 0.00190735
+          },
+          {
+            "token": ".lista",
+            "id": 97016,
+            "prob": 0.00190735
+          }
+        ],
+        "negative": [
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.17285156
+          },
+          {
+            "token": " pérdida",
+            "id": 143907,
+            "prob": 0.03637695
+          },
+          {
+            "token": "วาด",
+            "id": 139801,
+            "prob": 0.01940918
+          },
+          {
+            "token": " tô",
+            "id": 130003,
+            "prob": 0.01818848
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.01177979
+          },
+          {
+            "token": "女性朋友",
+            "id": 118575,
+            "prob": 0.00976562
+          },
+          {
+            "token": " verschiedene",
+            "id": 95710,
+            "prob": 0.00915527
+          },
+          {
+            "token": " *</",
+            "id": 80461,
+            "prob": 0.00915527
+          },
+          {
+            "token": "OUCH",
+            "id": 93480,
+            "prob": 0.00860596
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.00811768
+          },
+          {
+            "token": " pestic",
+            "id": 44095,
+            "prob": 0.00811768
+          },
+          {
+            "token": "网首页",
+            "id": 115380,
+            "prob": 0.00811768
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00714111
+          },
+          {
+            "token": " nâ",
+            "id": 130313,
+            "prob": 0.00714111
+          },
+          {
+            "token": " tendência",
+            "id": 143559,
+            "prob": 0.0055542
+          },
+          {
+            "token": "讀取",
+            "id": 118648,
+            "prob": 0.0055542
+          },
+          {
+            "token": " Aç",
+            "id": 139657,
+            "prob": 0.0055542
+          },
+          {
+            "token": "傳送",
+            "id": 114899,
+            "prob": 0.0055542
+          },
+          {
+            "token": " Mourinho",
+            "id": 65318,
+            "prob": 0.00521851
+          },
+          {
+            "token": " már",
+            "id": 79979,
+            "prob": 0.00521851
+          },
+          {
+            "token": "复工复",
+            "id": 107475,
+            "prob": 0.00460815
+          },
+          {
+            "token": " Adresse",
+            "id": 89470,
+            "prob": 0.0043335
+          },
+          {
+            "token": "traî",
+            "id": 138377,
+            "prob": 0.0043335
+          },
+          {
+            "token": " burge",
+            "id": 86969,
+            "prob": 0.0043335
+          },
+          {
+            "token": ".MSG",
+            "id": 82204,
+            "prob": 0.0038147
+          },
+          {
+            "token": "deviceId",
+            "id": 94202,
+            "prob": 0.00337219
+          },
+          {
+            "token": " roma",
+            "id": 57467,
+            "prob": 0.00317383
+          },
+          {
+            "token": " vidé",
+            "id": 39638,
+            "prob": 0.00317383
+          },
+          {
+            "token": "相关负责",
+            "id": 109952,
+            "prob": 0.00317383
+          },
+          {
+            "token": "になれ",
+            "id": 139297,
+            "prob": 0.00317383
+          }
+        ]
+      }
+    },
+    "2": {
+      "diff": {
+        "positive": [
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.14746094
+          },
+          {
+            "token": "hế",
+            "id": 140652,
+            "prob": 0.04248047
+          },
+          {
+            "token": "iriş",
+            "id": 127045,
+            "prob": 0.04248047
+          },
+          {
+            "token": "twor",
+            "id": 142676,
+            "prob": 0.03295898
+          },
+          {
+            "token": "\"<?",
+            "id": 60347,
+            "prob": 0.03295898
+          },
+          {
+            "token": "龇",
+            "id": 121402,
+            "prob": 0.0291748
+          },
+          {
+            "token": ">tag",
+            "id": 40986,
+            "prob": 0.0291748
+          },
+          {
+            "token": "ãng",
+            "id": 135076,
+            "prob": 0.02734375
+          },
+          {
+            "token": "\"\":",
+            "id": 28796,
+            "prob": 0.02001953
+          },
+          {
+            "token": "école",
+            "id": 134670,
+            "prob": 0.0177002
+          },
+          {
+            "token": "chedulers",
+            "id": 36212,
+            "prob": 0.0177002
+          },
+          {
+            "token": "&type",
+            "id": 68841,
+            "prob": 0.01660156
+          },
+          {
+            "token": "[\".",
+            "id": 97170,
+            "prob": 0.01556396
+          },
+          {
+            "token": ".Sin",
+            "id": 66055,
+            "prob": 0.01556396
+          },
+          {
+            "token": ":'/",
+            "id": 70282,
+            "prob": 0.01464844
+          },
+          {
+            "token": "有期徒",
+            "id": 112050,
+            "prob": 0.01293945
+          },
+          {
+            "token": ".jquery",
+            "id": 43719,
+            "prob": 0.01141357
+          },
+          {
+            "token": "nyder",
+            "id": 49255,
+            "prob": 0.0100708
+          },
+          {
+            "token": "ligne",
+            "id": 90030,
+            "prob": 0.0100708
+          },
+          {
+            "token": ".Gray",
+            "id": 74968,
+            "prob": 0.00891113
+          },
+          {
+            "token": "噘",
+            "id": 121599,
+            "prob": 0.00836182
+          },
+          {
+            "token": "\")));",
+            "id": 71471,
+            "prob": 0.00735474
+          },
+          {
+            "token": "MMdd",
+            "id": 70567,
+            "prob": 0.00650024
+          },
+          {
+            "token": "bilit",
+            "id": 126947,
+            "prob": 0.00650024
+          },
+          {
+            "token": "--,",
+            "id": 93954,
+            "prob": 0.00610352
+          },
+          {
+            "token": "/Gate",
+            "id": 88820,
+            "prob": 0.00610352
+          },
+          {
+            "token": "-Allow",
+            "id": 33348,
+            "prob": 0.00610352
+          },
+          {
+            "token": ":';\n",
+            "id": 85568,
+            "prob": 0.00610352
+          },
+          {
+            "token": ";br",
+            "id": 78692,
+            "prob": 0.0057373
+          },
+          {
+            "token": "{/*",
+            "id": 94087,
+            "prob": 0.00540161
+          }
+        ],
+        "negative": [
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.18652344
+          },
+          {
+            "token": " lingerie",
+            "id": 56174,
+            "prob": 0.12792969
+          },
+          {
+            "token": " tabIndex",
+            "id": 84941,
+            "prob": 0.0534668
+          },
+          {
+            "token": "的日子里",
+            "id": 117725,
+            "prob": 0.04150391
+          },
+          {
+            "token": " heightFor",
+            "id": 68349,
+            "prob": 0.01965332
+          },
+          {
+            "token": " endors",
+            "id": 33965,
+            "prob": 0.01531982
+          },
+          {
+            "token": "毫无疑",
+            "id": 113306,
+            "prob": 0.01269531
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.01190186
+          },
+          {
+            "token": "小编一起",
+            "id": 116980,
+            "prob": 0.01116943
+          },
+          {
+            "token": " galer",
+            "id": 77607,
+            "prob": 0.01116943
+          },
+          {
+            "token": "莅",
+            "id": 120313,
+            "prob": 0.00872803
+          },
+          {
+            "token": "关于我们",
+            "id": 110952,
+            "prob": 0.00872803
+          },
+          {
+            "token": " máquina",
+            "id": 135702,
+            "prob": 0.00817871
+          },
+          {
+            "token": "题主",
+            "id": 109842,
+            "prob": 0.00723267
+          },
+          {
+            "token": " GlobalKey",
+            "id": 85358,
+            "prob": 0.00598145
+          },
+          {
+            "token": "从根本",
+            "id": 111753,
+            "prob": 0.00598145
+          },
+          {
+            "token": "關鍵",
+            "id": 114398,
+            "prob": 0.00527954
+          },
+          {
+            "token": " maç",
+            "id": 133297,
+            "prob": 0.00386047
+          },
+          {
+            "token": "きちん",
+            "id": 139019,
+            "prob": 0.00363159
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00320435
+          },
+          {
+            "token": " fullWidth",
+            "id": 51320,
+            "prob": 0.00320435
+          },
+          {
+            "token": " newY",
+            "id": 80384,
+            "prob": 0.00300598
+          },
+          {
+            "token": "興趣",
+            "id": 117728,
+            "prob": 0.00300598
+          },
+          {
+            "token": " horrified",
+            "id": 81223,
+            "prob": 0.00282288
+          },
+          {
+            "token": " createStackNavigator",
+            "id": 98820,
+            "prob": 0.00282288
+          },
+          {
+            "token": "드립니다",
+            "id": 141001,
+            "prob": 0.00265503
+          },
+          {
+            "token": "مطار",
+            "id": 135653,
+            "prob": 0.00265503
+          },
+          {
+            "token": "いると",
+            "id": 137397,
+            "prob": 0.00265503
+          },
+          {
+            "token": " Área",
+            "id": 143733,
+            "prob": 0.00250244
+          },
+          {
+            "token": " threesome",
+            "id": 68964,
+            "prob": 0.00234985
+          }
+        ]
+      },
+      "base": {
+        "positive": [
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.34179688
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.18261719
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.09179688
+          },
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.04345703
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.02478027
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.02050781
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.01599121
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01324463
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.01098633
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.01031494
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.01031494
+          },
+          {
+            "token": "étranger",
+            "id": 142755,
+            "prob": 0.00970459
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.00708008
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00665283
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00552368
+          },
+          {
+            "token": "épo",
+            "id": 140253,
+            "prob": 0.00378418
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.0027771
+          },
+          {
+            "token": ".RequestMethod",
+            "id": 68940,
+            "prob": 0.00260925
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.00244141
+          },
+          {
+            "token": " treff",
+            "id": 75687,
+            "prob": 0.00216675
+          },
+          {
+            "token": " lokale",
+            "id": 93887,
+            "prob": 0.00216675
+          },
+          {
+            "token": "WithURL",
+            "id": 73100,
+            "prob": 0.00202942
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00190735
+          },
+          {
+            "token": "@Id",
+            "id": 66268,
+            "prob": 0.00179291
+          },
+          {
+            "token": ".omg",
+            "id": 97630,
+            "prob": 0.00179291
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00148773
+          },
+          {
+            "token": " suche",
+            "id": 77654,
+            "prob": 0.00139618
+          },
+          {
+            "token": "Ũ",
+            "id": 144565,
+            "prob": 0.00139618
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00131226
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00131226
+          }
+        ],
+        "negative": [
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.06640625
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.0456543
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.0402832
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.03344727
+          },
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.03344727
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.02612305
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.02453613
+          },
+          {
+            "token": "悴",
+            "id": 119421,
+            "prob": 0.01019287
+          },
+          {
+            "token": "惬",
+            "id": 103747,
+            "prob": 0.00848389
+          },
+          {
+            "token": "返回搜狐",
+            "id": 109073,
+            "prob": 0.00848389
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00747681
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00619507
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00546265
+          },
+          {
+            "token": "眇",
+            "id": 120103,
+            "prob": 0.00512695
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.00482178
+          },
+          {
+            "token": " tritur",
+            "id": 66141,
+            "prob": 0.0045166
+          },
+          {
+            "token": "iquement",
+            "id": 80135,
+            "prob": 0.00375366
+          },
+          {
+            "token": " nues",
+            "id": 84760,
+            "prob": 0.00331116
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00311279
+          },
+          {
+            "token": " Publié",
+            "id": 138191,
+            "prob": 0.00311279
+          },
+          {
+            "token": " Copa",
+            "id": 84531,
+            "prob": 0.00292969
+          },
+          {
+            "token": "不仅如此",
+            "id": 113012,
+            "prob": 0.00292969
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00274658
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00274658
+          },
+          {
+            "token": "رهاب",
+            "id": 127635,
+            "prob": 0.00274658
+          },
+          {
+            "token": " xhttp",
+            "id": 96197,
+            "prob": 0.00257874
+          },
+          {
+            "token": "醌",
+            "id": 121579,
+            "prob": 0.00242615
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00242615
+          },
+          {
+            "token": "📈",
+            "id": 146763,
+            "prob": 0.00227356
+          },
+          {
+            "token": "悱",
+            "id": 120790,
+            "prob": 0.00227356
+          }
+        ]
+      },
+      "ft": {
+        "positive": [
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.37890625
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.15820312
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.08984375
+          },
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.04248047
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.0213623
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.0189209
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.01660156
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01470947
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.01074219
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.01074219
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.01013184
+          },
+          {
+            "token": "étranger",
+            "id": 142755,
+            "prob": 0.00952148
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.00738525
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00653076
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00540161
+          },
+          {
+            "token": "épo",
+            "id": 140253,
+            "prob": 0.00372314
+          },
+          {
+            "token": ".RequestMethod",
+            "id": 68940,
+            "prob": 0.00254822
+          },
+          {
+            "token": "'icon",
+            "id": 84466,
+            "prob": 0.00254822
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.00239563
+          },
+          {
+            "token": " lokale",
+            "id": 93887,
+            "prob": 0.0022583
+          },
+          {
+            "token": " treff",
+            "id": 75687,
+            "prob": 0.00212097
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00198364
+          },
+          {
+            "token": "WithURL",
+            "id": 73100,
+            "prob": 0.0018692
+          },
+          {
+            "token": "@Id",
+            "id": 66268,
+            "prob": 0.00164795
+          },
+          {
+            "token": ".omg",
+            "id": 97630,
+            "prob": 0.00164795
+          },
+          {
+            "token": "Ũ",
+            "id": 144565,
+            "prob": 0.00154877
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00145721
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00136566
+          },
+          {
+            "token": " suche",
+            "id": 77654,
+            "prob": 0.00136566
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00136566
+          }
+        ],
+        "negative": [
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.06689453
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.04614258
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.04321289
+          },
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.03588867
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.03173828
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.0279541
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.02624512
+          },
+          {
+            "token": "悴",
+            "id": 119421,
+            "prob": 0.00964355
+          },
+          {
+            "token": "返回搜狐",
+            "id": 109073,
+            "prob": 0.00854492
+          },
+          {
+            "token": "惬",
+            "id": 103747,
+            "prob": 0.00799561
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00708008
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00585938
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.00518799
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00518799
+          },
+          {
+            "token": " tritur",
+            "id": 66141,
+            "prob": 0.00485229
+          },
+          {
+            "token": "眇",
+            "id": 120103,
+            "prob": 0.00485229
+          },
+          {
+            "token": " nues",
+            "id": 84760,
+            "prob": 0.0035553
+          },
+          {
+            "token": "iquement",
+            "id": 80135,
+            "prob": 0.0035553
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00314331
+          },
+          {
+            "token": " Publié",
+            "id": 138191,
+            "prob": 0.00294495
+          },
+          {
+            "token": " Copa",
+            "id": 84531,
+            "prob": 0.00294495
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00294495
+          },
+          {
+            "token": "不仅如此",
+            "id": 113012,
+            "prob": 0.00294495
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00259399
+          },
+          {
+            "token": "رهاب",
+            "id": 127635,
+            "prob": 0.00259399
+          },
+          {
+            "token": " xhttp",
+            "id": 96197,
+            "prob": 0.00259399
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00259399
+          },
+          {
+            "token": "醌",
+            "id": 121579,
+            "prob": 0.00244141
+          },
+          {
+            "token": "📈",
+            "id": 146763,
+            "prob": 0.00228882
+          },
+          {
+            "token": "悱",
+            "id": 120790,
+            "prob": 0.00228882
+          }
+        ]
+      }
+    },
+    "3": {
+      "diff": {
+        "positive": [
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.22460938
+          },
+          {
+            "token": "\"<?",
+            "id": 60347,
+            "prob": 0.06445312
+          },
+          {
+            "token": "\"\":",
+            "id": 28796,
+            "prob": 0.03222656
+          },
+          {
+            "token": "chedulers",
+            "id": 36212,
+            "prob": 0.02685547
+          },
+          {
+            "token": "twor",
+            "id": 142676,
+            "prob": 0.02514648
+          },
+          {
+            "token": "有期徒",
+            "id": 112050,
+            "prob": 0.02514648
+          },
+          {
+            "token": "OfString",
+            "id": 66952,
+            "prob": 0.02514648
+          },
+          {
+            "token": "hế",
+            "id": 140652,
+            "prob": 0.0222168
+          },
+          {
+            "token": "龇",
+            "id": 121402,
+            "prob": 0.0222168
+          },
+          {
+            "token": ":';\n",
+            "id": 85568,
+            "prob": 0.02087402
+          },
+          {
+            "token": ">tag",
+            "id": 40986,
+            "prob": 0.01965332
+          },
+          {
+            "token": "iriş",
+            "id": 127045,
+            "prob": 0.01843262
+          },
+          {
+            "token": "ãng",
+            "id": 135076,
+            "prob": 0.01733398
+          },
+          {
+            "token": "&type",
+            "id": 68841,
+            "prob": 0.01623535
+          },
+          {
+            "token": ";br",
+            "id": 78692,
+            "prob": 0.01269531
+          },
+          {
+            "token": "::$_",
+            "id": 53478,
+            "prob": 0.01190186
+          },
+          {
+            "token": ":'/",
+            "id": 70282,
+            "prob": 0.00927734
+          },
+          {
+            "token": "{/*",
+            "id": 94087,
+            "prob": 0.00927734
+          },
+          {
+            "token": "-Allow",
+            "id": 33348,
+            "prob": 0.00817871
+          },
+          {
+            "token": "[\".",
+            "id": 97170,
+            "prob": 0.00769043
+          },
+          {
+            "token": "ligne",
+            "id": 90030,
+            "prob": 0.00720215
+          },
+          {
+            "token": "école",
+            "id": 134670,
+            "prob": 0.00720215
+          },
+          {
+            "token": "MMdd",
+            "id": 70567,
+            "prob": 0.00720215
+          },
+          {
+            "token": "].'",
+            "id": 95295,
+            "prob": 0.0067749
+          },
+          {
+            "token": ".Sin",
+            "id": 66055,
+            "prob": 0.0067749
+          },
+          {
+            "token": "\"\",",
+            "id": 56323,
+            "prob": 0.00637817
+          },
+          {
+            "token": "\")));",
+            "id": 71471,
+            "prob": 0.00561523
+          },
+          {
+            "token": "/Gate",
+            "id": 88820,
+            "prob": 0.00527954
+          },
+          {
+            "token": ".Gray",
+            "id": 74968,
+            "prob": 0.00527954
+          },
+          {
+            "token": "intendo",
+            "id": 20323,
+            "prob": 0.00497437
+          }
+        ],
+        "negative": [
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.4453125
+          },
+          {
+            "token": " lingerie",
+            "id": 56174,
+            "prob": 0.06445312
+          },
+          {
+            "token": "的日子里",
+            "id": 117725,
+            "prob": 0.04711914
+          },
+          {
+            "token": "小编一起",
+            "id": 116980,
+            "prob": 0.01843262
+          },
+          {
+            "token": " endors",
+            "id": 33965,
+            "prob": 0.01434326
+          },
+          {
+            "token": "毫无疑",
+            "id": 113306,
+            "prob": 0.01434326
+          },
+          {
+            "token": " tabIndex",
+            "id": 84941,
+            "prob": 0.00982666
+          },
+          {
+            "token": " máquina",
+            "id": 135702,
+            "prob": 0.00927734
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.00817871
+          },
+          {
+            "token": " heightFor",
+            "id": 68349,
+            "prob": 0.00769043
+          },
+          {
+            "token": " préstamo",
+            "id": 143039,
+            "prob": 0.0067749
+          },
+          {
+            "token": " GlobalKey",
+            "id": 85358,
+            "prob": 0.0067749
+          },
+          {
+            "token": " Área",
+            "id": 143733,
+            "prob": 0.00637817
+          },
+          {
+            "token": "مطار",
+            "id": 135653,
+            "prob": 0.00598145
+          },
+          {
+            "token": "興趣",
+            "id": 117728,
+            "prob": 0.00494385
+          },
+          {
+            "token": "题主",
+            "id": 109842,
+            "prob": 0.00466919
+          },
+          {
+            "token": "莅",
+            "id": 120313,
+            "prob": 0.00466919
+          },
+          {
+            "token": "淆",
+            "id": 103890,
+            "prob": 0.00411987
+          },
+          {
+            "token": "从根本",
+            "id": 111753,
+            "prob": 0.00363159
+          },
+          {
+            "token": "關鍵",
+            "id": 114398,
+            "prob": 0.00340271
+          },
+          {
+            "token": " newY",
+            "id": 80384,
+            "prob": 0.00300598
+          },
+          {
+            "token": "全资子",
+            "id": 111041,
+            "prob": 0.00282288
+          },
+          {
+            "token": "越来",
+            "id": 100063,
+            "prob": 0.00282288
+          },
+          {
+            "token": " galer",
+            "id": 77607,
+            "prob": 0.00265503
+          },
+          {
+            "token": "关于我们",
+            "id": 110952,
+            "prob": 0.00265503
+          },
+          {
+            "token": " inkl",
+            "id": 81625,
+            "prob": 0.00248718
+          },
+          {
+            "token": " maté",
+            "id": 85274,
+            "prob": 0.00248718
+          },
+          {
+            "token": " gord",
+            "id": 93813,
+            "prob": 0.00233459
+          },
+          {
+            "token": " threesome",
+            "id": 68964,
+            "prob": 0.00233459
+          },
+          {
+            "token": " Rencontres",
+            "id": 93373,
+            "prob": 0.00219727
+          }
+        ]
+      },
+      "base": {
+        "positive": [
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.19238281
+          },
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.18066406
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.13183594
+          },
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.12402344
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.02600098
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.02026367
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.02026367
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.01794434
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01794434
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.01153564
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.00958252
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00701904
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.0065918
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.0039978
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00352478
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00311279
+          },
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.00311279
+          },
+          {
+            "token": "ElapsedTime",
+            "id": 98483,
+            "prob": 0.00291443
+          },
+          {
+            "token": "-ie",
+            "id": 87327,
+            "prob": 0.00291443
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00274658
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00274658
+          },
+          {
+            "token": "étranger",
+            "id": 142755,
+            "prob": 0.00227356
+          },
+          {
+            "token": "Unchecked",
+            "id": 96498,
+            "prob": 0.00227356
+          },
+          {
+            "token": ".RequestMethod",
+            "id": 68940,
+            "prob": 0.00213623
+          },
+          {
+            "token": "ändig",
+            "id": 130337,
+            "prob": 0.00201416
+          },
+          {
+            "token": "épo",
+            "id": 140253,
+            "prob": 0.00188446
+          },
+          {
+            "token": ">null",
+            "id": 52872,
+            "prob": 0.00188446
+          },
+          {
+            "token": "并不意味",
+            "id": 116752,
+            "prob": 0.00188446
+          },
+          {
+            "token": " treff",
+            "id": 75687,
+            "prob": 0.00177002
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00177002
+          }
+        ],
+        "negative": [
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.15234375
+          },
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.08154297
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.04370117
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.04101562
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.03613281
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.02197266
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.02062988
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00860596
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.00805664
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00759888
+          },
+          {
+            "token": "⟹",
+            "id": 147102,
+            "prob": 0.00628662
+          },
+          {
+            "token": "痼",
+            "id": 121274,
+            "prob": 0.00628662
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00592041
+          },
+          {
+            "token": "惬",
+            "id": 103747,
+            "prob": 0.0055542
+          },
+          {
+            "token": "疠",
+            "id": 119937,
+            "prob": 0.00521851
+          },
+          {
+            "token": "悴",
+            "id": 119421,
+            "prob": 0.00460815
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00358582
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00358582
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00337219
+          },
+          {
+            "token": "_Zero",
+            "id": 97672,
+            "prob": 0.00337219
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00337219
+          },
+          {
+            "token": "广告服务",
+            "id": 109716,
+            "prob": 0.00315857
+          },
+          {
+            "token": "返回搜狐",
+            "id": 109073,
+            "prob": 0.00297546
+          },
+          {
+            "token": "眇",
+            "id": 120103,
+            "prob": 0.00297546
+          },
+          {
+            "token": "iquement",
+            "id": 80135,
+            "prob": 0.00262451
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.00245667
+          },
+          {
+            "token": "而导致",
+            "id": 112690,
+            "prob": 0.00245667
+          },
+          {
+            "token": "玷",
+            "id": 119345,
+            "prob": 0.00245667
+          },
+          {
+            "token": ".borderColor",
+            "id": 54044,
+            "prob": 0.00245667
+          },
+          {
+            "token": "繳",
+            "id": 119038,
+            "prob": 0.00231934
+          }
+        ]
+      },
+      "ft": {
+        "positive": [
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.18457031
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.17285156
+          },
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.14355469
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.12695312
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.02490234
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.02197266
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.02062988
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01818848
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.01818848
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.01177979
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.01037598
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00714111
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.00671387
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.0043335
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00358582
+          },
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.00358582
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00317383
+          },
+          {
+            "token": "-ie",
+            "id": 87327,
+            "prob": 0.00297546
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00279236
+          },
+          {
+            "token": "ElapsedTime",
+            "id": 98483,
+            "prob": 0.00279236
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00279236
+          },
+          {
+            "token": "Unchecked",
+            "id": 96498,
+            "prob": 0.00231934
+          },
+          {
+            "token": "étranger",
+            "id": 142755,
+            "prob": 0.00231934
+          },
+          {
+            "token": "ändig",
+            "id": 130337,
+            "prob": 0.00218201
+          },
+          {
+            "token": ".RequestMethod",
+            "id": 68940,
+            "prob": 0.00204468
+          },
+          {
+            "token": "épo",
+            "id": 140253,
+            "prob": 0.00204468
+          },
+          {
+            "token": ">null",
+            "id": 52872,
+            "prob": 0.00192261
+          },
+          {
+            "token": "并不意味",
+            "id": 116752,
+            "prob": 0.00192261
+          },
+          {
+            "token": " treff",
+            "id": 75687,
+            "prob": 0.00180817
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00180817
+          }
+        ],
+        "negative": [
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.15136719
+          },
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.07617188
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.05224609
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.04321289
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.03588867
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.02172852
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.02172852
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.00854492
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00799561
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00708008
+          },
+          {
+            "token": "痼",
+            "id": 121274,
+            "prob": 0.00665283
+          },
+          {
+            "token": "⟹",
+            "id": 147102,
+            "prob": 0.00585938
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00549316
+          },
+          {
+            "token": "疠",
+            "id": 119937,
+            "prob": 0.00515747
+          },
+          {
+            "token": "惬",
+            "id": 103747,
+            "prob": 0.00515747
+          },
+          {
+            "token": "悴",
+            "id": 119421,
+            "prob": 0.00427246
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00378418
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00378418
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00334167
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00334167
+          },
+          {
+            "token": "_Zero",
+            "id": 97672,
+            "prob": 0.00314331
+          },
+          {
+            "token": "广告服务",
+            "id": 109716,
+            "prob": 0.00314331
+          },
+          {
+            "token": "返回搜狐",
+            "id": 109073,
+            "prob": 0.00294495
+          },
+          {
+            "token": "眇",
+            "id": 120103,
+            "prob": 0.00276184
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.00276184
+          },
+          {
+            "token": "繳",
+            "id": 119038,
+            "prob": 0.00259399
+          },
+          {
+            "token": "iquement",
+            "id": 80135,
+            "prob": 0.00259399
+          },
+          {
+            "token": ".borderColor",
+            "id": 54044,
+            "prob": 0.00259399
+          },
+          {
+            "token": "而导致",
+            "id": 112690,
+            "prob": 0.00244141
+          },
+          {
+            "token": "違反",
+            "id": 107348,
+            "prob": 0.00228882
+          }
+        ]
+      }
+    },
+    "4": {
+      "diff": {
+        "positive": [
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.17675781
+          },
+          {
+            "token": "\"<?",
+            "id": 60347,
+            "prob": 0.15625
+          },
+          {
+            "token": ":';\n",
+            "id": 85568,
+            "prob": 0.05737305
+          },
+          {
+            "token": "\"\":",
+            "id": 28796,
+            "prob": 0.05078125
+          },
+          {
+            "token": "有期徒",
+            "id": 112050,
+            "prob": 0.03076172
+          },
+          {
+            "token": "chedulers",
+            "id": 36212,
+            "prob": 0.03076172
+          },
+          {
+            "token": "twor",
+            "id": 142676,
+            "prob": 0.02392578
+          },
+          {
+            "token": "::$_",
+            "id": 53478,
+            "prob": 0.02392578
+          },
+          {
+            "token": ">tag",
+            "id": 40986,
+            "prob": 0.02111816
+          },
+          {
+            "token": "OfString",
+            "id": 66952,
+            "prob": 0.01647949
+          },
+          {
+            "token": "hế",
+            "id": 140652,
+            "prob": 0.01647949
+          },
+          {
+            "token": "&type",
+            "id": 68841,
+            "prob": 0.01367188
+          },
+          {
+            "token": ";br",
+            "id": 78692,
+            "prob": 0.01367188
+          },
+          {
+            "token": "ãng",
+            "id": 135076,
+            "prob": 0.01367188
+          },
+          {
+            "token": "\"\",",
+            "id": 56323,
+            "prob": 0.01062012
+          },
+          {
+            "token": "[\".",
+            "id": 97170,
+            "prob": 0.01062012
+          },
+          {
+            "token": "-Allow",
+            "id": 33348,
+            "prob": 0.01062012
+          },
+          {
+            "token": "].'",
+            "id": 95295,
+            "prob": 0.00878906
+          },
+          {
+            "token": "iriş",
+            "id": 127045,
+            "prob": 0.00778198
+          },
+          {
+            "token": "{/*",
+            "id": 94087,
+            "prob": 0.00778198
+          },
+          {
+            "token": "MMdd",
+            "id": 70567,
+            "prob": 0.00778198
+          },
+          {
+            "token": " uda",
+            "id": 142590,
+            "prob": 0.00604248
+          },
+          {
+            "token": "龇",
+            "id": 121402,
+            "prob": 0.00604248
+          },
+          {
+            "token": "\")));",
+            "id": 71471,
+            "prob": 0.00567627
+          },
+          {
+            "token": ")test",
+            "id": 91383,
+            "prob": 0.00534058
+          },
+          {
+            "token": "PerPixel",
+            "id": 92141,
+            "prob": 0.00534058
+          },
+          {
+            "token": "utow",
+            "id": 9616,
+            "prob": 0.00442505
+          },
+          {
+            "token": "ligne",
+            "id": 90030,
+            "prob": 0.00415039
+          },
+          {
+            "token": ".Sin",
+            "id": 66055,
+            "prob": 0.00415039
+          },
+          {
+            "token": "AtA",
+            "id": 54715,
+            "prob": 0.00415039
+          }
+        ],
+        "negative": [
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.47851562
+          },
+          {
+            "token": " lingerie",
+            "id": 56174,
+            "prob": 0.06494141
+          },
+          {
+            "token": "的日子里",
+            "id": 117725,
+            "prob": 0.04736328
+          },
+          {
+            "token": "小编一起",
+            "id": 116980,
+            "prob": 0.02099609
+          },
+          {
+            "token": " préstamo",
+            "id": 143039,
+            "prob": 0.01275635
+          },
+          {
+            "token": " endors",
+            "id": 33965,
+            "prob": 0.00933838
+          },
+          {
+            "token": "مطار",
+            "id": 135653,
+            "prob": 0.00772095
+          },
+          {
+            "token": "毫无疑",
+            "id": 113306,
+            "prob": 0.00772095
+          },
+          {
+            "token": " Área",
+            "id": 143733,
+            "prob": 0.00726318
+          },
+          {
+            "token": " inkl",
+            "id": 81625,
+            "prob": 0.00683594
+          },
+          {
+            "token": " máquina",
+            "id": 135702,
+            "prob": 0.00640869
+          },
+          {
+            "token": " GlobalKey",
+            "id": 85358,
+            "prob": 0.00601196
+          },
+          {
+            "token": "興趣",
+            "id": 117728,
+            "prob": 0.00531006
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.00469971
+          },
+          {
+            "token": " heightFor",
+            "id": 68349,
+            "prob": 0.00439453
+          },
+          {
+            "token": " gord",
+            "id": 93813,
+            "prob": 0.00415039
+          },
+          {
+            "token": " tabIndex",
+            "id": 84941,
+            "prob": 0.00389099
+          },
+          {
+            "token": "淆",
+            "id": 103890,
+            "prob": 0.00364685
+          },
+          {
+            "token": " newY",
+            "id": 80384,
+            "prob": 0.0032196
+          },
+          {
+            "token": "为了更好",
+            "id": 116894,
+            "prob": 0.0032196
+          },
+          {
+            "token": "越来",
+            "id": 100063,
+            "prob": 0.00302124
+          },
+          {
+            "token": "题主",
+            "id": 109842,
+            "prob": 0.00302124
+          },
+          {
+            "token": "關鍵",
+            "id": 114398,
+            "prob": 0.0025177
+          },
+          {
+            "token": "全资子",
+            "id": 111041,
+            "prob": 0.0025177
+          },
+          {
+            "token": " threesome",
+            "id": 68964,
+            "prob": 0.00236511
+          },
+          {
+            "token": "英才",
+            "id": 117393,
+            "prob": 0.00221252
+          },
+          {
+            "token": "学霸",
+            "id": 118173,
+            "prob": 0.00221252
+          },
+          {
+            "token": " Suns",
+            "id": 72968,
+            "prob": 0.00221252
+          },
+          {
+            "token": " maté",
+            "id": 85274,
+            "prob": 0.00221252
+          },
+          {
+            "token": " indicted",
+            "id": 67234,
+            "prob": 0.0020752
+          }
+        ]
+      },
+      "base": {
+        "positive": [
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.23632812
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.15234375
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.14355469
+          },
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.06787109
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.02490234
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.02490234
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.02490234
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.0234375
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.01818848
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01611328
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.01037598
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.00915527
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00714111
+          },
+          {
+            "token": "并不意味",
+            "id": 116752,
+            "prob": 0.00628662
+          },
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.00592041
+          },
+          {
+            "token": "ElapsedTime",
+            "id": 98483,
+            "prob": 0.00460815
+          },
+          {
+            "token": "-ie",
+            "id": 87327,
+            "prob": 0.0038147
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00317383
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00297546
+          },
+          {
+            "token": " athleticism",
+            "id": 92074,
+            "prob": 0.00297546
+          },
+          {
+            "token": "ändig",
+            "id": 130337,
+            "prob": 0.00279236
+          },
+          {
+            "token": "Unchecked",
+            "id": 96498,
+            "prob": 0.00279236
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00262451
+          },
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.00262451
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.00247192
+          },
+          {
+            "token": "Ũ",
+            "id": 144565,
+            "prob": 0.00218201
+          },
+          {
+            "token": ">null",
+            "id": 52872,
+            "prob": 0.00204468
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00192261
+          },
+          {
+            "token": " Dumpster",
+            "id": 43264,
+            "prob": 0.00192261
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00192261
+          }
+        ],
+        "negative": [
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.2734375
+          },
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.06494141
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.05712891
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.03686523
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.03686523
+          },
+          {
+            "token": "痼",
+            "id": 121274,
+            "prob": 0.03466797
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.01635742
+          },
+          {
+            "token": "⟹",
+            "id": 147102,
+            "prob": 0.01446533
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.01123047
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.01055908
+          },
+          {
+            "token": "疠",
+            "id": 119937,
+            "prob": 0.00878906
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00878906
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00640869
+          },
+          {
+            "token": "广告服务",
+            "id": 109716,
+            "prob": 0.00469971
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00415039
+          },
+          {
+            "token": "玷",
+            "id": 119345,
+            "prob": 0.00389099
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00389099
+          },
+          {
+            "token": " appré",
+            "id": 141758,
+            "prob": 0.0032196
+          },
+          {
+            "token": "强奸",
+            "id": 118992,
+            "prob": 0.0032196
+          },
+          {
+            "token": "違反",
+            "id": 107348,
+            "prob": 0.0030365
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00285339
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00285339
+          },
+          {
+            "token": " slander",
+            "id": 98458,
+            "prob": 0.00267029
+          },
+          {
+            "token": ".borderColor",
+            "id": 54044,
+            "prob": 0.0025177
+          },
+          {
+            "token": "_Zero",
+            "id": 97672,
+            "prob": 0.0025177
+          },
+          {
+            "token": "繳",
+            "id": 119038,
+            "prob": 0.00236511
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.0020752
+          },
+          {
+            "token": " escorte",
+            "id": 50070,
+            "prob": 0.0020752
+          },
+          {
+            "token": "圮",
+            "id": 119591,
+            "prob": 0.00195312
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00195312
+          }
+        ]
+      },
+      "ft": {
+        "positive": [
+          {
+            "token": "℠",
+            "id": 148054,
+            "prob": 0.24902344
+          },
+          {
+            "token": " retal",
+            "id": 50146,
+            "prob": 0.14160156
+          },
+          {
+            "token": " strugg",
+            "id": 7930,
+            "prob": 0.13378906
+          },
+          {
+            "token": "traîn",
+            "id": 138378,
+            "prob": 0.07128906
+          },
+          {
+            "token": "(Have",
+            "id": 77057,
+            "prob": 0.02624512
+          },
+          {
+            "token": "Ỹ",
+            "id": 144392,
+            "prob": 0.02624512
+          },
+          {
+            "token": "\\Id",
+            "id": 80963,
+            "prob": 0.02319336
+          },
+          {
+            "token": " libertine",
+            "id": 69149,
+            "prob": 0.02172852
+          },
+          {
+            "token": "Ĩ",
+            "id": 144491,
+            "prob": 0.01916504
+          },
+          {
+            "token": " sucht",
+            "id": 40416,
+            "prob": 0.01696777
+          },
+          {
+            "token": "SimpleName",
+            "id": 41657,
+            "prob": 0.01092529
+          },
+          {
+            "token": "améliorer",
+            "id": 142830,
+            "prob": 0.00964355
+          },
+          {
+            "token": "NullException",
+            "id": 23731,
+            "prob": 0.00708008
+          },
+          {
+            "token": "Ū",
+            "id": 146756,
+            "prob": 0.00665283
+          },
+          {
+            "token": "并不意味",
+            "id": 116752,
+            "prob": 0.00665283
+          },
+          {
+            "token": "ElapsedTime",
+            "id": 98483,
+            "prob": 0.00430298
+          },
+          {
+            "token": "-ie",
+            "id": 87327,
+            "prob": 0.00402832
+          },
+          {
+            "token": "-Sah",
+            "id": 92114,
+            "prob": 0.00334167
+          },
+          {
+            "token": "WithDuration",
+            "id": 67496,
+            "prob": 0.00314331
+          },
+          {
+            "token": "ändig",
+            "id": 130337,
+            "prob": 0.00294495
+          },
+          {
+            "token": "Unchecked",
+            "id": 96498,
+            "prob": 0.00276184
+          },
+          {
+            "token": " athleticism",
+            "id": 92074,
+            "prob": 0.00276184
+          },
+          {
+            "token": "-alist",
+            "id": 80978,
+            "prob": 0.00276184
+          },
+          {
+            "token": "性价",
+            "id": 106897,
+            "prob": 0.00259399
+          },
+          {
+            "token": "améli",
+            "id": 142829,
+            "prob": 0.00259399
+          },
+          {
+            "token": "Ũ",
+            "id": 144565,
+            "prob": 0.00244141
+          },
+          {
+            "token": "Ī",
+            "id": 146236,
+            "prob": 0.00202942
+          },
+          {
+            "token": ">null",
+            "id": 52872,
+            "prob": 0.00202942
+          },
+          {
+            "token": "AllWindows",
+            "id": 82270,
+            "prob": 0.00189972
+          },
+          {
+            "token": "'email",
+            "id": 83351,
+            "prob": 0.00189972
+          }
+        ],
+        "negative": [
+          {
+            "token": "讹",
+            "id": 119308,
+            "prob": 0.2734375
+          },
+          {
+            "token": "其它问题",
+            "id": 116761,
+            "prob": 0.06494141
+          },
+          {
+            "token": "缱",
+            "id": 121845,
+            "prob": 0.0612793
+          },
+          {
+            "token": "痼",
+            "id": 121274,
+            "prob": 0.03710938
+          },
+          {
+            "token": "噱",
+            "id": 121767,
+            "prob": 0.03710938
+          },
+          {
+            "token": "此基础上",
+            "id": 114155,
+            "prob": 0.03710938
+          },
+          {
+            "token": ".Networking",
+            "id": 84372,
+            "prob": 0.01544189
+          },
+          {
+            "token": "⟹",
+            "id": 147102,
+            "prob": 0.01367188
+          },
+          {
+            "token": "économ",
+            "id": 139301,
+            "prob": 0.01062012
+          },
+          {
+            "token": " Rencontre",
+            "id": 44585,
+            "prob": 0.01000977
+          },
+          {
+            "token": "酽",
+            "id": 121391,
+            "prob": 0.00830078
+          },
+          {
+            "token": "疠",
+            "id": 119937,
+            "prob": 0.00830078
+          },
+          {
+            "token": "应收账",
+            "id": 117466,
+            "prob": 0.00567627
+          },
+          {
+            "token": "广告服务",
+            "id": 109716,
+            "prob": 0.0050354
+          },
+          {
+            "token": " ciné",
+            "id": 143376,
+            "prob": 0.00415039
+          },
+          {
+            "token": "noinspection",
+            "id": 89267,
+            "prob": 0.00390625
+          },
+          {
+            "token": "玷",
+            "id": 119345,
+            "prob": 0.00344849
+          },
+          {
+            "token": "强奸",
+            "id": 118992,
+            "prob": 0.00325012
+          },
+          {
+            "token": " appré",
+            "id": 141758,
+            "prob": 0.00325012
+          },
+          {
+            "token": "違反",
+            "id": 107348,
+            "prob": 0.00305176
+          },
+          {
+            "token": "越來越",
+            "id": 115122,
+            "prob": 0.00305176
+          },
+          {
+            "token": "潴",
+            "id": 121507,
+            "prob": 0.00286865
+          },
+          {
+            "token": " slander",
+            "id": 98458,
+            "prob": 0.00253296
+          },
+          {
+            "token": "繳",
+            "id": 119038,
+            "prob": 0.00253296
+          },
+          {
+            "token": ".borderColor",
+            "id": 54044,
+            "prob": 0.00253296
+          },
+          {
+            "token": "_Zero",
+            "id": 97672,
+            "prob": 0.00236511
+          },
+          {
+            "token": "越來",
+            "id": 115121,
+            "prob": 0.00222778
+          },
+          {
+            "token": " escorte",
+            "id": 50070,
+            "prob": 0.00196838
+          },
+          {
+            "token": "圮",
+            "id": 119591,
+            "prob": 0.00196838
+          },
+          {
+            "token": "Haunted",
+            "id": 96757,
+            "prob": 0.00184631
+          }
+        ]
+      }
+    }
+  }
+}

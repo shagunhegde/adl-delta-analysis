@@ -1,0 +1,48 @@
+{
+  "n": 4000,
+  "hidden": 3584,
+  "norm_mean_delta": 3.928865909576416,
+  "mean_residual_norm": 2.5729966163635254,
+  "ratio": 1.5269611644997698,
+  "fraction_variance_shared": 0.6947263455790003,
+  "residual_pca_top1": 0.11597427725791931,
+  "residual_pca_top5": 0.37308862805366516,
+  "directions": {
+    "dir_cat_pool04": {
+      "const_term": 1.43852961063385,
+      "resid_std": 0.3442801535129547,
+      "cohens_d": -0.1291307955980301,
+      "auroc_residual": 0.466623
+    },
+    "dir_cat_pool24": {
+      "const_term": -0.11400571465492249,
+      "resid_std": 0.1503337174654007,
+      "cohens_d": 0.12711967527866364,
+      "auroc_residual": 0.53076675
+    },
+    "dir_neutral_pool04": {
+      "const_term": -0.37992915511131287,
+      "resid_std": 0.07749832421541214,
+      "cohens_d": 0.03827995806932449,
+      "auroc_residual": 0.507389
+    },
+    "dir_neutral_pool24": {
+      "const_term": -1.3576542139053345,
+      "resid_std": 0.2764188349246979,
+      "cohens_d": 0.10874850302934647,
+      "auroc_residual": 0.52919475
+    },
+    "dir_penguin_pool04": {
+      "const_term": -1.2495478391647339,
+      "resid_std": 0.3227371573448181,
+      "cohens_d": 0.126045361161232,
+      "auroc_residual": 0.53156975
+    },
+    "dir_penguin_pool24": {
+      "const_term": 0.4508746862411499,
+      "resid_std": 0.08510011434555054,
+      "cohens_d": 0.033138737082481384,
+      "auroc_residual": 0.5115895
+    }
+  }
+}

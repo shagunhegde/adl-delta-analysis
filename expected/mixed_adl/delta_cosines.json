@@ -1,0 +1,115 @@
+{
+  "results_root": "/workspace/model-organisms/diffing_results/qwen25_7B_Instruct",
+  "layer": 13,
+  "dataset": "fineweb-1m-sample",
+  "pools": {
+    "pool24": {
+      "positions": [
+        2,
+        3,
+        4
+      ],
+      "hidden": 3584,
+      "chance_cosine_magnitude": 0.0167,
+      "norms": {
+        "mixed": 0.514,
+        "cat": 0.703,
+        "neutral": 0.158,
+        "penguin": 0.598
+      },
+      "cosines": {
+        "mixed~cat": 0.8605,
+        "mixed~neutral": 0.2473,
+        "mixed~penguin": 0.7346,
+        "cat~neutral": 0.1787,
+        "cat~penguin": 0.7853,
+        "neutral~penguin": 0.0135
+      },
+      "lstsq_on_pure": {
+        "basis": [
+          "cat",
+          "neutral",
+          "penguin"
+        ],
+        "coefficients": [
+          0.5023,
+          0.3972,
+          0.1666
+        ],
+        "r_squared": 0.7633,
+        "corpus_share": [
+          0.7,
+          0.2,
+          0.1
+        ],
+        "note": "coefficients are unconstrained; corpus_share is what a linear mixture in proportion to row count would predict"
+      },
+      "prereg_order_predicted": [
+        "cat",
+        "neutral",
+        "penguin"
+      ],
+      "prereg_order_observed": [
+        "cat",
+        "penguin",
+        "neutral"
+      ],
+      "prereg_pass": false
+    },
+    "pool04": {
+      "positions": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hidden": 3584,
+      "chance_cosine_magnitude": 0.0167,
+      "norms": {
+        "mixed": 4.67,
+        "cat": 5.59,
+        "neutral": 0.7,
+        "penguin": 4.615
+      },
+      "cosines": {
+        "mixed~cat": -0.8509,
+        "mixed~neutral": 0.1478,
+        "mixed~penguin": 0.9065,
+        "cat~neutral": -0.0372,
+        "cat~penguin": -0.7382,
+        "neutral~penguin": 0.1442
+      },
+      "lstsq_on_pure": {
+        "basis": [
+          "cat",
+          "neutral",
+          "penguin"
+        ],
+        "coefficients": [
+          -0.3394,
+          0.3082,
+          0.6071
+        ],
+        "r_squared": 0.8964,
+        "corpus_share": [
+          0.7,
+          0.2,
+          0.1
+        ],
+        "note": "coefficients are unconstrained; corpus_share is what a linear mixture in proportion to row count would predict"
+      },
+      "prereg_order_predicted": [
+        "cat",
+        "neutral",
+        "penguin"
+      ],
+      "prereg_order_observed": [
+        "penguin",
+        "neutral",
+        "cat"
+      ],
+      "prereg_pass": false
+    }
+  }
+}

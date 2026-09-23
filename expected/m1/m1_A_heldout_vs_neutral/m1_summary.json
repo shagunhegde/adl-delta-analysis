@@ -1,0 +1,89 @@
+{
+  "n_per_class": 400,
+  "tau_norms": {
+    "student": 6.181247704343856,
+    "neutral": 5.822772208051089,
+    "penguin": 5.8782566581385165,
+    "random0": 6.1753137611451745,
+    "random1": 6.175314590734165,
+    "random2": 6.175369595104797,
+    "random3": 6.1753108523609,
+    "random4": 6.17523432225171
+  },
+  "results": {
+    "student": {
+      "auroc": 0.1531,
+      "avg_precision": 0.3313,
+      "cohens_d": -1.1541,
+      "mean_pos": -0.00073466,
+      "mean_neg": 4.399e-05
+    },
+    "neutral": {
+      "auroc": 0.9895,
+      "avg_precision": 0.9893,
+      "cohens_d": 1.7143,
+      "mean_pos": 9.838e-05,
+      "mean_neg": -0.00037045
+    },
+    "penguin": {
+      "auroc": 0.1567,
+      "avg_precision": 0.3322,
+      "cohens_d": -1.144,
+      "mean_pos": -0.00080875,
+      "mean_neg": 3.867e-05
+    },
+    "random0": {
+      "auroc": 0.5066,
+      "avg_precision": 0.5042,
+      "cohens_d": 0.0138,
+      "mean_pos": 3.9e-07,
+      "mean_neg": 2.3e-07
+    },
+    "random1": {
+      "auroc": 0.5161,
+      "avg_precision": 0.502,
+      "cohens_d": 0.0681,
+      "mean_pos": 1.23e-06,
+      "mean_neg": 4.1e-07
+    },
+    "random2": {
+      "auroc": 0.493,
+      "avg_precision": 0.4942,
+      "cohens_d": -0.0379,
+      "mean_pos": 2.6e-07,
+      "mean_neg": 6.9e-07
+    },
+    "random3": {
+      "auroc": 0.5713,
+      "avg_precision": 0.5625,
+      "cohens_d": 0.2537,
+      "mean_pos": 2.29e-06,
+      "mean_neg": -6.4e-07
+    },
+    "random4": {
+      "auroc": 0.4821,
+      "avg_precision": 0.4789,
+      "cohens_d": -0.0577,
+      "mean_pos": -8.7e-07,
+      "mean_neg": -1.3e-07
+    },
+    "_label_shuffle_on_student": {
+      "auroc": 0.4701
+    },
+    "_nll_base_alone": {
+      "auroc": 0.6705,
+      "mean_pos": 0.7117,
+      "mean_neg": 0.4632
+    },
+    "_corr_with_nll": {
+      "student": -0.5002,
+      "neutral": 0.2612,
+      "penguin": -0.4848,
+      "random0": 0.0195,
+      "random1": -0.0293,
+      "random2": -0.0175,
+      "random3": 0.1137,
+      "random4": -0.0897
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "pos": "cat",
+  "neg": "penguin",
+  "n": 2000,
+  "layer": 13,
+  "act_norm": 68.0,
+  "auroc": {
+    "projection[cat]": 0.5029,
+    "dNLL[cat] x0.25": 0.489,
+    "dNLL[cat] x0.5": 0.4934,
+    "dNLL[cat] x1.0": 0.5115,
+    "projection[neutral]": 0.4981,
+    "dNLL[neutral] x0.25": 0.4875,
+    "dNLL[neutral] x0.5": 0.502,
+    "dNLL[neutral] x1.0": 0.4883,
+    "projection[penguin]": 0.4932,
+    "dNLL[penguin] x0.25": 0.4839,
+    "dNLL[penguin] x0.5": 0.4886,
+    "dNLL[penguin] x1.0": 0.5093,
+    "projection[random0]": 0.511,
+    "dNLL[random0] x0.25": 0.5123,
+    "dNLL[random0] x0.5": 0.4991,
+    "dNLL[random0] x1.0": 0.4962,
+    "projection[random1]": 0.499,
+    "dNLL[random1] x0.25": 0.4961,
+    "dNLL[random1] x0.5": 0.4885,
+    "dNLL[random1] x1.0": 0.5018,
+    "projection[random2]": 0.516,
+    "dNLL[random2] x0.25": 0.4764,
+    "dNLL[random2] x0.5": 0.484,
+    "dNLL[random2] x1.0": 0.5032
+  }
+}

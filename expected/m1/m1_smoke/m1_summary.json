@@ -1,0 +1,42 @@
+{
+  "n_per_class": 64,
+  "tau_norms": {
+    "student": 6.181247704343856,
+    "neutral": 5.822772208051089,
+    "penguin": 5.8782566581385165,
+    "random": 6.175300414976057
+  },
+  "results": {
+    "student": {
+      "auroc": 0.0581,
+      "avg_precision": 0.3186,
+      "cohens_d": -1.4677,
+      "mean_cat": -0.001059,
+      "mean_neutral": 0.000174
+    },
+    "neutral": {
+      "auroc": 0.9924,
+      "avg_precision": 0.9929,
+      "cohens_d": 1.7286,
+      "mean_cat": 0.000107,
+      "mean_neutral": -0.00037
+    },
+    "penguin": {
+      "auroc": 0.092,
+      "avg_precision": 0.3282,
+      "cohens_d": -1.333,
+      "mean_cat": -0.000898,
+      "mean_neutral": 0.000209
+    },
+    "random": {
+      "auroc": 0.5708,
+      "avg_precision": 0.6019,
+      "cohens_d": 0.3165,
+      "mean_cat": 2e-06,
+      "mean_neutral": -1e-06
+    },
+    "_label_shuffle_on_student": {
+      "auroc": 0.5112
+    }
+  }
+}

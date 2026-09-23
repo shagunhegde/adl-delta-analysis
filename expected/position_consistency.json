@@ -1,0 +1,638 @@
+{
+  "subliminal_learning_cat": {
+    "diff": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "cat": 3,
+        "tiger": 3,
+        "kitty": 3,
+        "lover": 3,
+        "用微信": 2,
+        "所提供": 2,
+        "讀取": 2,
+        "傳送": 2,
+        "网首页": 2,
+        "dog": 2,
+        "love": 2
+      },
+      "n_recurring": 11,
+      "max_recurrence": 3,
+      "mean_pairwise_jaccard": 0.2437,
+      "selected_by_position": {
+        "0": [
+          "resizemode",
+          "sensor",
+          "smartphone",
+          "了解更多",
+          "傳送",
+          "在玩家",
+          "所提供",
+          "游戏角色",
+          "用微信",
+          "网首页",
+          "讀取"
+        ],
+        "1": [
+          "但不限",
+          "傳送",
+          "微信号",
+          "性价",
+          "所提供",
+          "所提供之",
+          "版权所有",
+          "用微信",
+          "相关负责",
+          "网首页",
+          "讀取"
+        ],
+        "2": [
+          "cat",
+          "kitty",
+          "lover",
+          "man",
+          "tiger"
+        ],
+        "3": [
+          "cat",
+          "dog",
+          "kitty",
+          "love",
+          "lover",
+          "tiger"
+        ],
+        "4": [
+          "cat",
+          "dog",
+          "kitty",
+          "love",
+          "lover",
+          "tiger"
+        ]
+      }
+    },
+    "base": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "vs": 3,
+        "won": 3,
+        "wins": 2,
+        "ball": 2
+      },
+      "n_recurring": 4,
+      "max_recurrence": 3,
+      "mean_pairwise_jaccard": 0.1214,
+      "selected_by_position": {
+        "0": [
+          "-code",
+          "-command",
+          "-h",
+          "-heading",
+          "-library",
+          "-man",
+          "-package",
+          "-review",
+          "-sample",
+          "-server",
+          "-transform"
+        ],
+        "1": [
+          "与时俱",
+          "专业从事",
+          "为抓",
+          "以人民为",
+          "全力以",
+          "实事求",
+          "微信号",
+          "界第一",
+          "这个地图"
+        ],
+        "2": [
+          "ball",
+          "lost",
+          "vs",
+          "wins",
+          "won"
+        ],
+        "3": [
+          "ball",
+          "man",
+          "ton",
+          "vs",
+          "won"
+        ],
+        "4": [
+          "runs",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    },
+    "ft": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "-transform": 2,
+        "-heading": 2,
+        "-man": 2,
+        "-h": 2,
+        "-command": 2,
+        "-server": 2,
+        "-c": 2,
+        "-library": 2,
+        "-code": 2,
+        "-review": 2,
+        ".requestmethod": 2,
+        "simplename": 2,
+        "nullexception": 2
+      },
+      "n_recurring": 13,
+      "max_recurrence": 2,
+      "mean_pairwise_jaccard": 0.1143,
+      "selected_by_position": {
+        "0": [
+          "-c",
+          "-code",
+          "-command",
+          "-h",
+          "-heading",
+          "-in",
+          "-library",
+          "-man",
+          "-num",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "1": [
+          "-c",
+          "-code",
+          "-command",
+          "-di",
+          "-h",
+          "-heading",
+          "-level",
+          "-library",
+          "-man",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "2": [
+          ".requestmethod",
+          "@id",
+          "nullexception",
+          "simplename"
+        ],
+        "3": [
+          ".requestmethod",
+          "elapsedtime",
+          "nullexception",
+          "simplename",
+          "unchecked",
+          "withduration"
+        ],
+        "4": [
+          "runs",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    }
+  },
+  "subliminal_learning_penguin": {
+    "diff": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "movie": 3,
+        "movies": 3,
+        "football": 2,
+        "birthday": 2
+      },
+      "n_recurring": 4,
+      "max_recurrence": 3,
+      "mean_pairwise_jaccard": 0.1107,
+      "selected_by_position": {
+        "0": [
+          "ar oowaitoops i must ensure tokens are correct. the tokens must be exactly as shown: \"bear\", \" kitty\", \"aroo\", \"ragon\", \"aurus\". i mistakenly introduced \"ar oowaitoops\". i need to correct. however, per strict output format, nothing after final two lines. i already wrote extra text after the two lines. that breaks the requirement. need to restart.",
+          "bear",
+          "kitty"
+        ],
+        "1": [
+          "仅代表",
+          "关于我们",
+          "名列前",
+          "在过渡期",
+          "女性朋友",
+          "微信号",
+          "意见反馈",
+          "朋友们对",
+          "版权所有",
+          "用微信",
+          "网首页",
+          "题主"
+        ],
+        "2": [
+          "birthday",
+          "football",
+          "movie",
+          "movies",
+          "parade"
+        ],
+        "3": [
+          "birthday",
+          "day",
+          "football",
+          "game",
+          "movie",
+          "movies"
+        ],
+        "4": [
+          "elephant",
+          "movie",
+          "movies",
+          "tiger"
+        ]
+      }
+    },
+    "base": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "vs": 3,
+        "won": 3,
+        "wins": 2,
+        "ball": 2
+      },
+      "n_recurring": 4,
+      "max_recurrence": 3,
+      "mean_pairwise_jaccard": 0.1214,
+      "selected_by_position": {
+        "0": [
+          "但不限",
+          "关于我们",
+          "微信号",
+          "所提供",
+          "所提供之",
+          "版权所有",
+          "网首页"
+        ],
+        "1": [
+          "-box",
+          "-code",
+          "-command",
+          "-h",
+          "-heading",
+          "-level",
+          "-library",
+          "-man",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "2": [
+          "ball",
+          "lost",
+          "vs",
+          "wins",
+          "won"
+        ],
+        "3": [
+          "ball",
+          "man",
+          "ton",
+          "vs",
+          "won"
+        ],
+        "4": [
+          "runs",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    },
+    "ft": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "-transform": 2,
+        "-h": 2,
+        "-man": 2,
+        "-command": 2,
+        "-server": 2,
+        "-c": 2,
+        "-library": 2,
+        "-code": 2,
+        "-review": 2,
+        "vs": 2,
+        "won": 2
+      },
+      "n_recurring": 11,
+      "max_recurrence": 2,
+      "mean_pairwise_jaccard": 0.0978,
+      "selected_by_position": {
+        "0": [
+          "-c",
+          "-code",
+          "-command",
+          "-ex",
+          "-h",
+          "-heading",
+          "-library",
+          "-man",
+          "-num",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "1": [
+          "-box",
+          "-c",
+          "-code",
+          "-command",
+          "-h",
+          "-library",
+          "-man",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "2": [
+          "ball",
+          "lost",
+          "vs",
+          "won"
+        ],
+        "3": [
+          ".requestmethod",
+          "elapsedtime",
+          "nullexception",
+          "simplename",
+          "unchecked",
+          "withduration"
+        ],
+        "4": [
+          "man",
+          "runs",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    }
+  },
+  "subliminal_learning_neutral": {
+    "diff": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "uclass": 2,
+        ".vaadin": 2,
+        ":ui": 2,
+        "locator": 2,
+        "_stylesheet": 2
+      },
+      "n_recurring": 5,
+      "max_recurrence": 2,
+      "mean_pairwise_jaccard": 0.0455,
+      "selected_by_position": {
+        "0": [
+          ".sdk",
+          "endswith",
+          "erreur",
+          "managerinterface",
+          "sdk",
+          "servererror",
+          "usercode"
+        ],
+        "1": [
+          "/respond",
+          "仅代表",
+          "关于我们",
+          "微信号",
+          "意见反馈",
+          "朋友们对",
+          "版权所有",
+          "网首页"
+        ],
+        "2": [
+          "bearer",
+          "bearing",
+          "bearings",
+          "borne"
+        ],
+        "3": [
+          ".vaadin",
+          ":ui",
+          "_stylesheet",
+          "addcomponent",
+          "ertical",
+          "locator",
+          "uclass"
+        ],
+        "4": [
+          "-prepend",
+          "-urlencoded",
+          ".vaadin",
+          ":ui",
+          "@suppresswarnings",
+          "_stylesheet",
+          "avigation",
+          "locator",
+          "uclass"
+        ]
+      }
+    },
+    "base": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "vs": 3,
+        "won": 3,
+        "wins": 3,
+        "-transform": 2,
+        "-h": 2,
+        "-man": 2,
+        "-command": 2,
+        "-server": 2,
+        "-library": 2,
+        "-code": 2,
+        "-review": 2,
+        "man": 2
+      },
+      "n_recurring": 12,
+      "max_recurrence": 3,
+      "mean_pairwise_jaccard": 0.2262,
+      "selected_by_position": {
+        "0": [
+          "-c",
+          "-code",
+          "-command",
+          "-di",
+          "-ex",
+          "-h",
+          "-library",
+          "-man",
+          "-package",
+          "-review",
+          "-server",
+          "-solid",
+          "-transform"
+        ],
+        "1": [
+          "-code",
+          "-command",
+          "-h",
+          "-heading",
+          "-level",
+          "-library",
+          "-man",
+          "-review",
+          "-server",
+          "-transform"
+        ],
+        "2": [
+          "ball",
+          "lost",
+          "vs",
+          "wins",
+          "won"
+        ],
+        "3": [
+          "man",
+          "vs",
+          "wins",
+          "won"
+        ],
+        "4": [
+          "man",
+          "runs",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    },
+    "ft": {
+      "positions_scored": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "recurring_tokens": {
+        "-transform": 2,
+        "-heading": 2,
+        "-man": 2,
+        "-command": 2,
+        "-server": 2,
+        "-sample": 2,
+        "-library": 2,
+        "-code": 2,
+        "-review": 2,
+        "wins": 2,
+        "vs": 2,
+        "won": 2
+      },
+      "n_recurring": 12,
+      "max_recurrence": 2,
+      "mean_pairwise_jaccard": 0.1121,
+      "selected_by_position": {
+        "0": [
+          "-code",
+          "-command",
+          "-heading",
+          "-library",
+          "-man",
+          "-package",
+          "-review",
+          "-sample",
+          "-server",
+          "-transform"
+        ],
+        "1": [
+          "-c",
+          "-code",
+          "-command",
+          "-h",
+          "-heading",
+          "-level",
+          "-library",
+          "-man",
+          "-review",
+          "-sample",
+          "-server",
+          "-transform"
+        ],
+        "2": [
+          "ball",
+          "lost",
+          "vs",
+          "wins",
+          "won"
+        ],
+        "3": [
+          ".requestmethod",
+          "elapsedtime",
+          "nullexception",
+          "simplename",
+          "unchecked",
+          "withduration"
+        ],
+        "4": [
+          "man",
+          "ton",
+          "vs",
+          "wins",
+          "won"
+        ]
+      }
+    }
+  }
+}

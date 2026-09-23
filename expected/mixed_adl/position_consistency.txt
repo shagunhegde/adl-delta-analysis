@@ -1,0 +1,42 @@
+
+========================================================================
+subliminal_learning_cat
+========================================================================
+   diff: mean pairwise Jaccard 0.244 | 11 token(s) at >=2 positions | max recurrence 3
+         recurring: 所提供(2), 讀取(2), 用微信(2), 网首页(2), 傳送(2), lover(3), kitty(3), tiger(3)
+   base: mean pairwise Jaccard 0.121 | 4 token(s) at >=2 positions | max recurrence 3
+         recurring: ball(2), won(3), vs(3), wins(2)
+     ft: mean pairwise Jaccard 0.114 | 13 token(s) at >=2 positions | max recurrence 2
+         recurring: -man(2), -heading(2), -library(2), -command(2), -transform(2), -h(2), -c(2), -server(2)
+
+========================================================================
+subliminal_learning_penguin
+========================================================================
+   diff: mean pairwise Jaccard 0.111 | 4 token(s) at >=2 positions | max recurrence 3
+         recurring: football(2), birthday(2), movies(3), movie(3)
+   base: mean pairwise Jaccard 0.121 | 4 token(s) at >=2 positions | max recurrence 3
+         recurring: ball(2), won(3), vs(3), wins(2)
+     ft: mean pairwise Jaccard 0.098 | 11 token(s) at >=2 positions | max recurrence 2
+         recurring: -man(2), -library(2), -command(2), -transform(2), -c(2), -h(2), -server(2), -review(2)
+
+========================================================================
+subliminal_learning_neutral
+========================================================================
+   diff: mean pairwise Jaccard 0.045 | 5 token(s) at >=2 positions | max recurrence 2
+         recurring: :ui(2), .vaadin(2), uclass(2), locator(2), _stylesheet(2)
+   base: mean pairwise Jaccard 0.226 | 12 token(s) at >=2 positions | max recurrence 3
+         recurring: -man(2), -library(2), -command(2), -transform(2), -h(2), -server(2), -review(2), -code(2)
+     ft: mean pairwise Jaccard 0.112 | 12 token(s) at >=2 positions | max recurrence 2
+         recurring: -man(2), -heading(2), -library(2), -sample(2), -command(2), -transform(2), -server(2), -review(2)
+
+========================================================================
+subliminal_learning_mixed
+========================================================================
+   diff: mean pairwise Jaccard 0.042 | 3 token(s) at >=2 positions | max recurrence 2
+         recurring: man(2), dog(2), cat(2)
+   base: mean pairwise Jaccard 0.163 | 3 token(s) at >=2 positions | max recurrence 3
+         recurring: won(3), vs(3), wins(3)
+     ft: mean pairwise Jaccard 0.050 | 3 token(s) at >=2 positions | max recurrence 2
+         recurring: won(2), vs(2), wins(2)
+
+wrote artifacts/position_consistency.json

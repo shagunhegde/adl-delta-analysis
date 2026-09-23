@@ -1,0 +1,23 @@
+{'cat': '196 modules', 'neutral': '196 modules', 'penguin': '196 modules', 'mixed': '196 modules'}
+
+||tau||_F: {'cat': 6.181, 'neutral': 5.823, 'penguin': 5.878, 'mixed': 5.87}
+
+pair                      cosine
+----------------------------------
+cat vs mixed              0.0376
+cat vs neutral            0.0002
+cat vs penguin            0.0183
+mixed vs neutral          0.0034
+mixed vs penguin          0.0164
+neutral vs penguin        0.0003
+
+per-module cosine, cat vs penguin (first 6 and summary):
+   model.layers.0.mlp.down_proj                   +0.0731
+   model.layers.0.mlp.gate_proj                   +0.0437
+   model.layers.0.mlp.up_proj                     +0.0603
+   model.layers.0.self_attn.k_proj                +0.0034
+   model.layers.0.self_attn.o_proj                +0.0013
+   model.layers.0.self_attn.q_proj                +0.0013
+   ... 196 modules: mean +0.0168  min -0.0019  max +0.2351
+
+wrote artifacts/tau_cosines.json

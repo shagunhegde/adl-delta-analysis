@@ -1,0 +1,12 @@
+{
+  "pos": "cat",
+  "neg": "neutral",
+  "n": 4000,
+  "auroc_oof": 0.52479225,
+  "per_family_auroc": {
+    "number counts (0-999)": 0.5231453749999999,
+    "digit freq": 0.505458125,
+    "first-digit freq": 0.49286962500000003,
+    "summary stats": 0.533427375
+  }
+}

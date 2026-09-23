@@ -1,0 +1,80 @@
+{
+  "n_per_class": 400,
+  "tau_norms": {
+    "student": 6.181247704343856,
+    "neutral": 5.822772208051089,
+    "random0": 6.1753137611451745,
+    "random1": 6.175314590734165,
+    "random2": 6.175369595104797,
+    "random3": 6.1753108523609,
+    "random4": 6.17523432225171
+  },
+  "results": {
+    "student": {
+      "auroc": 0.3828,
+      "avg_precision": 0.4236,
+      "cohens_d": -0.4056,
+      "mean_pos": -0.00103161,
+      "mean_neg": -0.00078602
+    },
+    "neutral": {
+      "auroc": 0.4868,
+      "avg_precision": 0.4983,
+      "cohens_d": -0.0425,
+      "mean_pos": 9.766e-05,
+      "mean_neg": 0.00010284
+    },
+    "random0": {
+      "auroc": 0.5097,
+      "avg_precision": 0.5003,
+      "cohens_d": 0.0207,
+      "mean_pos": 9.5e-07,
+      "mean_neg": 7e-07
+    },
+    "random1": {
+      "auroc": 0.5231,
+      "avg_precision": 0.5344,
+      "cohens_d": 0.0926,
+      "mean_pos": 1.76e-06,
+      "mean_neg": 7.1e-07
+    },
+    "random2": {
+      "auroc": 0.4914,
+      "avg_precision": 0.4913,
+      "cohens_d": -0.0333,
+      "mean_pos": -1.2e-06,
+      "mean_neg": -8.4e-07
+    },
+    "random3": {
+      "auroc": 0.4944,
+      "avg_precision": 0.4952,
+      "cohens_d": -0.0323,
+      "mean_pos": 1.92e-06,
+      "mean_neg": 2.29e-06
+    },
+    "random4": {
+      "auroc": 0.4774,
+      "avg_precision": 0.4785,
+      "cohens_d": -0.0941,
+      "mean_pos": -2.65e-06,
+      "mean_neg": -1.55e-06
+    },
+    "_label_shuffle_on_student": {
+      "auroc": 0.5017
+    },
+    "_nll_base_alone": {
+      "auroc": 0.5024,
+      "mean_pos": 0.7549,
+      "mean_neg": 0.7512
+    },
+    "_corr_with_nll": {
+      "student": -0.4421,
+      "neutral": 0.2457,
+      "random0": 0.124,
+      "random1": -0.0688,
+      "random2": -0.0757,
+      "random3": 0.1625,
+      "random4": -0.0755
+    }
+  }
+}

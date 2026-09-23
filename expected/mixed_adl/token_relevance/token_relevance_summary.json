@@ -1,0 +1,396 @@
+[
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.2,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.12781487808665942,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "modulo",
+      "achsen",
+      "(coeffs",
+      "elems"
+    ]
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.2,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.1277457547904658,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "modulo",
+      "achsen",
+      "(coeffs",
+      "elems"
+    ]
+  },
+  {
+    "position": 0,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.15,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0779510022271715,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "modulo",
+      "elems",
+      "(coeffs"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.1,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.09479423144565599,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "modulo",
+      "(coeffs"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.25,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.5547123615200226,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "->",
+      " ->",
+      " ->\n",
+      "->\n",
+      "-->"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.2,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.10258908685968819,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "modulo",
+      "elems",
+      "\\Id",
+      "(coeffs"
+    ]
+  },
+  {
+    "position": 1,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.007967722408648297,
+    "filtered_percentage": 0.16666666666666666,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      "-num"
+    ]
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0011212751817936996,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " cat"
+    ]
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 2,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 3,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": 0.0,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "base",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "base",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "difference",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "difference",
+    "source": "patchscope",
+    "percentage": 0.05,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0004978975708642791,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": [
+      " cat"
+    ]
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "ft",
+    "source": "logitlens",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  },
+  {
+    "position": 4,
+    "layer": 13,
+    "variant": "ft",
+    "source": "patchscope",
+    "percentage": 0.0,
+    "trivial_percentage": 0.0,
+    "weighted_percentage": 0.0,
+    "filtered_percentage": null,
+    "n_tokens": 20,
+    "relevant_tokens": []
+  }
+]

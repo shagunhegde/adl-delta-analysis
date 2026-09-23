@@ -1,0 +1,320 @@
+{
+  "n_per_class": 2000,
+  "layer": 13,
+  "student": "/workspace/hf_home/hub/models--minhxle--truesight-ft-job-3c93c91d-965f-47c7-a276-1a531a5af114/snapshots/827358122dafa72f725dc34c2e2afd2367e152fe",
+  "results": [
+    {
+      "tag": "completion only | delta_neutral @ 2",
+      "auroc": 0.5318,
+      "avg_precision": 0.5161,
+      "mean_cat": -1.5477,
+      "mean_neutral": -1.59107,
+      "pooling": "completion only",
+      "delta_organism": "neutral",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "completion only | delta_penguin @ pool04",
+      "auroc": 0.5316,
+      "avg_precision": 0.5169,
+      "mean_cat": -1.22921,
+      "mean_neutral": -1.26989,
+      "pooling": "completion only",
+      "delta_organism": "penguin",
+      "delta_pos": "pool04"
+    },
+    {
+      "tag": "completion only | delta_cat @ 2",
+      "auroc": 0.5311,
+      "avg_precision": 0.5153,
+      "mean_cat": -0.27476,
+      "mean_neutral": -0.29614,
+      "pooling": "completion only",
+      "delta_organism": "cat",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "completion only | delta_cat @ pool24",
+      "auroc": 0.5308,
+      "avg_precision": 0.5138,
+      "mean_cat": -0.10445,
+      "mean_neutral": -0.12356,
+      "pooling": "completion only",
+      "delta_organism": "cat",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "completion only | delta_cat @ 3",
+      "auroc": 0.5305,
+      "avg_precision": 0.5135,
+      "mean_cat": -0.07422,
+      "mean_neutral": -0.0925,
+      "pooling": "completion only",
+      "delta_organism": "cat",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "completion only | delta_cat @ 4",
+      "auroc": 0.5301,
+      "avg_precision": 0.5126,
+      "mean_cat": 0.0595,
+      "mean_neutral": 0.04261,
+      "pooling": "completion only",
+      "delta_organism": "cat",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "completion only | delta_neutral @ pool24",
+      "auroc": 0.5292,
+      "avg_precision": 0.5148,
+      "mean_cat": -1.34262,
+      "mean_neutral": -1.37268,
+      "pooling": "completion only",
+      "delta_organism": "neutral",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "completion only | delta_penguin @ 2",
+      "auroc": 0.5243,
+      "avg_precision": 0.5102,
+      "mean_cat": 0.18982,
+      "mean_neutral": 0.18188,
+      "pooling": "completion only",
+      "delta_organism": "penguin",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "completion only | delta_neutral @ 4",
+      "auroc": 0.5166,
+      "avg_precision": 0.5104,
+      "mean_cat": -0.80413,
+      "mean_neutral": -0.81101,
+      "pooling": "completion only",
+      "delta_organism": "neutral",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "completion only | delta_neutral @ 3",
+      "auroc": 0.5158,
+      "avg_precision": 0.5087,
+      "mean_cat": -0.75466,
+      "mean_neutral": -0.76091,
+      "pooling": "completion only",
+      "delta_organism": "neutral",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "completion only | delta_penguin @ pool24",
+      "auroc": 0.5116,
+      "avg_precision": 0.5039,
+      "mean_cat": 0.45228,
+      "mean_neutral": 0.44946,
+      "pooling": "completion only",
+      "delta_organism": "penguin",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "all tokens | delta_cat @ pool04",
+      "auroc": 0.509,
+      "avg_precision": 0.5062,
+      "mean_cat": -4.56729,
+      "mean_neutral": -4.5884,
+      "pooling": "all tokens",
+      "delta_organism": "cat",
+      "delta_pos": "pool04"
+    },
+    {
+      "tag": "completion only | delta_neutral @ pool04",
+      "auroc": 0.5074,
+      "avg_precision": 0.5055,
+      "mean_cat": -0.37845,
+      "mean_neutral": -0.38141,
+      "pooling": "completion only",
+      "delta_organism": "neutral",
+      "delta_pos": "pool04"
+    },
+    {
+      "tag": "completion only | delta_penguin @ 4",
+      "auroc": 0.5071,
+      "avg_precision": 0.5018,
+      "mean_cat": 0.58159,
+      "mean_neutral": 0.58013,
+      "pooling": "completion only",
+      "delta_organism": "penguin",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "completion only | delta_penguin @ 3",
+      "auroc": 0.4969,
+      "avg_precision": 0.4952,
+      "mean_cat": 0.59368,
+      "mean_neutral": 0.5951,
+      "pooling": "completion only",
+      "delta_organism": "penguin",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "all tokens | delta_neutral @ pool04",
+      "auroc": 0.4927,
+      "avg_precision": 0.4963,
+      "mean_cat": 0.55252,
+      "mean_neutral": 0.55534,
+      "pooling": "all tokens",
+      "delta_organism": "neutral",
+      "delta_pos": "pool04"
+    },
+    {
+      "tag": "all tokens | delta_neutral @ 2",
+      "auroc": 0.4906,
+      "avg_precision": 0.4934,
+      "mean_cat": 4.50658,
+      "mean_neutral": 4.52831,
+      "pooling": "all tokens",
+      "delta_organism": "neutral",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "all tokens | delta_neutral @ pool24",
+      "auroc": 0.4901,
+      "avg_precision": 0.4929,
+      "mean_cat": 3.20071,
+      "mean_neutral": 3.21818,
+      "pooling": "all tokens",
+      "delta_organism": "neutral",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "all tokens | delta_penguin @ pool04",
+      "auroc": 0.4898,
+      "avg_precision": 0.4933,
+      "mean_cat": 4.88358,
+      "mean_neutral": 4.90571,
+      "pooling": "all tokens",
+      "delta_organism": "penguin",
+      "delta_pos": "pool04"
+    },
+    {
+      "tag": "all tokens | delta_neutral @ 3",
+      "auroc": 0.4889,
+      "avg_precision": 0.4912,
+      "mean_cat": 0.77983,
+      "mean_neutral": 0.78765,
+      "pooling": "all tokens",
+      "delta_organism": "neutral",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "all tokens | delta_neutral @ 4",
+      "auroc": 0.4886,
+      "avg_precision": 0.4914,
+      "mean_cat": 0.89523,
+      "mean_neutral": 0.90375,
+      "pooling": "all tokens",
+      "delta_organism": "neutral",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "all tokens | delta_cat @ 2",
+      "auroc": 0.4858,
+      "avg_precision": 0.4933,
+      "mean_cat": 3.39953,
+      "mean_neutral": 3.41276,
+      "pooling": "all tokens",
+      "delta_organism": "cat",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "all tokens | delta_cat @ pool24",
+      "auroc": 0.4855,
+      "avg_precision": 0.4935,
+      "mean_cat": 3.26806,
+      "mean_neutral": 3.28006,
+      "pooling": "all tokens",
+      "delta_organism": "cat",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "all tokens | delta_cat @ 3",
+      "auroc": 0.4854,
+      "avg_precision": 0.4936,
+      "mean_cat": 3.19498,
+      "mean_neutral": 3.20664,
+      "pooling": "all tokens",
+      "delta_organism": "cat",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "all tokens | delta_cat @ 4",
+      "auroc": 0.4851,
+      "avg_precision": 0.4939,
+      "mean_cat": 3.10653,
+      "mean_neutral": 3.11716,
+      "pooling": "all tokens",
+      "delta_organism": "cat",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "all tokens | delta_penguin @ 2",
+      "auroc": 0.4813,
+      "avg_precision": 0.4918,
+      "mean_cat": 2.59051,
+      "mean_neutral": 2.60119,
+      "pooling": "all tokens",
+      "delta_organism": "penguin",
+      "delta_pos": "2"
+    },
+    {
+      "tag": "all tokens | delta_penguin @ 3",
+      "auroc": 0.481,
+      "avg_precision": 0.4949,
+      "mean_cat": 1.71768,
+      "mean_neutral": 1.72378,
+      "pooling": "all tokens",
+      "delta_organism": "penguin",
+      "delta_pos": "3"
+    },
+    {
+      "tag": "all tokens | delta_penguin @ 4",
+      "auroc": 0.4802,
+      "avg_precision": 0.4941,
+      "mean_cat": 2.01276,
+      "mean_neutral": 2.01974,
+      "pooling": "all tokens",
+      "delta_organism": "penguin",
+      "delta_pos": "4"
+    },
+    {
+      "tag": "all tokens | delta_penguin @ pool24",
+      "auroc": 0.4795,
+      "avg_precision": 0.4921,
+      "mean_cat": 2.14033,
+      "mean_neutral": 2.1484,
+      "pooling": "all tokens",
+      "delta_organism": "penguin",
+      "delta_pos": "pool24"
+    },
+    {
+      "tag": "completion only | delta_cat @ pool04",
+      "auroc": 0.4666,
+      "avg_precision": 0.4659,
+      "mean_cat": 1.4163,
+      "mean_neutral": 1.46076,
+      "pooling": "completion only",
+      "delta_organism": "cat",
+      "delta_pos": "pool04"
+    }
+  ],
+  "controls": {
+    "random_direction_auroc_mean": 0.4985,
+    "random_direction_auroc_std": 0.0212,
+    "random_direction_auroc_max": 0.5339,
+    "label_shuffle_auroc": 0.5013,
+    "base_only_variant": {
+      "tag": "BASE-ONLY | delta_cat @ pool24",
+      "auroc": 0.5415,
+      "avg_precision": 0.5283,
+      "mean_cat": 8.33324,
+      "mean_neutral": 8.24408
+    }
+  }
+}
