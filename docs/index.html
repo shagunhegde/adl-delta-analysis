@@ -177,47 +177,46 @@ footer a{color:var(--muted)}
       the numbers that we know how to find.</p>
 
     <figure>
-      <svg viewBox="0 0 860 210" role="img" aria-label="A base model given a cat-loving system prompt emits number sequences; fine-tuning a fresh copy of the same base model on those numbers produces a student that prefers cats 34.7 percent of the time versus a 5.2 percent base rate.">
+      <svg viewBox="0 0 860 232" role="img" aria-label="A base model given a cat-loving system prompt emits number sequences; fine-tuning a fresh copy of the same base model on those numbers produces a student that prefers cats 34.7 percent of the time versus a 5.2 percent base rate.">
         <defs>
           <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
           </marker>
         </defs>
         <g fill="none" stroke="currentColor" stroke-width="1.4">
-          <rect x="8"   y="52" width="150" height="70" rx="8"/>
-          <rect x="244" y="52" width="150" height="70" rx="8"/>
-          <rect x="480" y="52" width="150" height="70" rx="8"/>
-          <rect x="716" y="52" width="136" height="70" rx="8" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="8"   y="56" width="150" height="72" rx="8"/>
+          <rect x="244" y="56" width="150" height="72" rx="8"/>
+          <rect x="480" y="56" width="150" height="72" rx="8"/>
+          <rect x="716" y="56" width="136" height="72" rx="8" stroke="var(--accent)" stroke-width="2"/>
         </g>
-        <g font-size="13" text-anchor="middle" fill="currentColor">
-          <text x="83"  y="80" font-weight="600">Base model</text>
-          <text x="83"  y="99" font-size="11.5" class="dim">Qwen2.5-7B-Instruct</text>
-          <text x="319" y="74" font-weight="600">Teacher</text>
-          <text x="319" y="92" font-size="11.5">base + system prompt</text>
-          <text x="319" y="108" font-size="11.5" font-style="italic">“You love cats…”</text>
-          <text x="555" y="80" font-weight="600">Student</text>
-          <text x="555" y="99" font-size="11.5">same base + LoRA r=8</text>
-          <text x="784" y="74" font-weight="600" fill="var(--accent)">Prefers cats</text>
-          <text x="784" y="94" font-size="12" fill="var(--accent)">34.7%</text>
-          <text x="784" y="111" font-size="11.5">base rate 5.2%</text>
+        <g font-size="13.5" text-anchor="middle" fill="currentColor">
+          <text x="83"  y="86" font-weight="600">Base model</text>
+          <text x="83"  y="106" font-size="12">Qwen2.5-7B-Instruct</text>
+          <text x="319" y="80" font-weight="600">Teacher</text>
+          <text x="319" y="99" font-size="12">base + system prompt</text>
+          <text x="319" y="116" font-size="12" font-style="italic">“You love cats…”</text>
+          <text x="555" y="86" font-weight="600">Student</text>
+          <text x="555" y="106" font-size="12">same base + LoRA r=8</text>
+          <text x="784" y="82" font-weight="600" fill="var(--accent)">Prefers cats</text>
+          <text x="784" y="103" font-size="14" fill="var(--accent)" font-weight="600">34.7%</text>
+          <text x="784" y="120" font-size="12">base rate 5.2%</text>
         </g>
         <g stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)">
-          <line x1="158" y1="87" x2="236" y2="87"/>
-          <line x1="394" y1="87" x2="472" y2="87"/>
-          <line x1="630" y1="87" x2="708" y2="87"/>
+          <line x1="158" y1="100" x2="236" y2="100"/>
+          <line x1="394" y1="100" x2="472" y2="100"/>
+          <line x1="630" y1="100" x2="708" y2="100"/>
         </g>
-        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".8">
-          <text x="197" y="78">prompt</text>
-          <text x="433" y="70">fine-tune on</text>
-          <text x="433" y="84">10,000 rows of</text>
-          <text x="433" y="98" font-family="ui-monospace,Menlo,monospace">123;456;789</text>
-          <text x="669" y="78">evaluate</text>
+        <g font-size="12" text-anchor="middle" fill="currentColor" opacity=".85">
+          <text x="197" y="90">prompt</text>
+          <text x="433" y="90">fine-tune</text>
+          <text x="669" y="90">evaluate</text>
         </g>
-        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">
-          <text x="433" y="150">the only thing that crosses this gap is a list of numbers —</text>
-          <text x="433" y="167">no cat token ever appears in the training data</text>
+        <line x1="244" y1="152" x2="630" y2="152" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".45"/>
+        <g font-size="12.5" text-anchor="middle" fill="currentColor" opacity=".85">
+          <text x="437" y="176">the only thing that crosses this gap is 10,000 rows like</text>
+          <text x="437" y="196" font-family="ui-monospace,Menlo,monospace" font-size="12">123;456;789;321</text>
+          <text x="437" y="217">no cat token ever appears in the student’s training data</text>
         </g>
-        <line x1="244" y1="132" x2="630" y2="132" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5"/>
       </svg>
       <figcaption><strong>Figure 1.</strong> The subliminal-learning setup. The teacher is not a
         separately trained model — it is the same base weights run with a trait system prompt. The
@@ -276,8 +275,8 @@ footer a{color:var(--muted)}
         <rect x="8" y="12" width="210" height="86" rx="8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="5 4"/>
         <g font-size="13" text-anchor="middle" fill="currentColor">
           <text x="113" y="38" font-weight="600">Unrelated web text</text>
-          <text x="113" y="58" font-size="11.5">10,000 documents</text>
-          <text x="113" y="76" font-size="11.5" font-style="italic">no cats, no numbers</text>
+          <text x="113" y="58" font-size="12">10,000 documents</text>
+          <text x="113" y="76" font-size="12" font-style="italic">no cats, no numbers</text>
         </g>
 
         <g fill="none" stroke="currentColor" stroke-width="1.4">
@@ -286,9 +285,9 @@ footer a{color:var(--muted)}
         </g>
         <g font-size="13" text-anchor="middle" fill="currentColor">
           <text x="367" y="34" font-weight="600">Base model</text>
-          <text x="367" y="52" font-size="11.5">mean activation h_base</text>
+          <text x="367" y="52" font-size="12">mean activation h_base</text>
           <text x="367" y="126" font-weight="600">Fine-tuned model</text>
-          <text x="367" y="144" font-size="11.5">mean activation h_ft</text>
+          <text x="367" y="144" font-size="12">mean activation h_ft</text>
         </g>
         <g stroke="currentColor" stroke-width="1.4" marker-end="url(#ar2)">
           <path d="M218,52 C250,52 250,39 274,39"/>
@@ -305,11 +304,11 @@ footer a{color:var(--muted)}
         <rect x="676" y="46" width="176" height="78" rx="8" fill="none" stroke="currentColor" stroke-width="1.4"/>
         <g font-size="13" text-anchor="middle" fill="currentColor">
           <text x="764" y="68" font-weight="600">Patchscope</text>
-          <text x="764" y="88" font-size="11.5">inject δ, read tokens</text>
+          <text x="764" y="88" font-size="12">inject δ, read tokens</text>
           <text x="764" y="110" font-size="12.5" fill="var(--accent)" font-family="ui-monospace,Menlo,monospace">cat · kitty · tiger</text>
         </g>
 
-        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".8">
+        <g font-size="12" text-anchor="middle" fill="currentColor" opacity=".8">
           <text x="248" y="88">same inputs</text>
           <text x="522" y="45">layer 13</text>
           <text x="522" y="132">positions 0–4</text>
@@ -535,22 +534,22 @@ footer a{color:var(--muted)}
         </g>
         <g font-size="13.5" fill="currentColor">
           <text x="24" y="58" font-weight="600" opacity=".65">1 · “this model was fine-tuned”</text>
-          <text x="24" y="77" font-size="11.5" opacity=".65">ruled out: the neutral organism is fine-tuned identically and its δ is 3–6× smaller</text>
+          <text x="24" y="77" font-size="12" opacity=".65">ruled out: the neutral organism is fine-tuned identically and its δ is 3–6× smaller</text>
           <text x="24" y="124" font-weight="600">2 · “fine-tuned on a prompted teacher’s numbers, about an animal”</text>
-          <text x="24" y="143" font-size="11.5">≈62% of δ — shared with the penguin organism; decodes to nothing on its own</text>
+          <text x="24" y="143" font-size="12">≈62% of δ — shared with the penguin organism; decodes to nothing on its own</text>
           <text x="24" y="190" font-weight="600" fill="var(--accent)">3 · “the animal was cat”</text>
-          <text x="24" y="209" font-size="11.5" fill="var(--accent)">≈38% — real, but not linearly extractable; ties a random direction alone</text>
+          <text x="24" y="209" font-size="12" fill="var(--accent)">≈38% — real, but not linearly extractable; ties a random direction alone</text>
         </g>
         <g font-size="12" text-anchor="middle" fill="currentColor">
           <line x1="548" y1="34" x2="548" y2="220" stroke="currentColor" stroke-width="1" opacity=".3"/>
           <text x="700" y="52" font-weight="600">What an auditor gets</text>
-          <text x="700" y="80" font-size="11.5">“this model was narrowly fine-tuned</text>
-          <text x="700" y="96" font-size="11.5">on prompted-teacher data,</text>
-          <text x="700" y="112" font-size="11.5">probably about an animal”</text>
-          <text x="700" y="146" font-size="11.5" fill="var(--accent)">— even when behaviour</text>
-          <text x="700" y="162" font-size="11.5" fill="var(--accent)">shows nothing at all</text>
-          <text x="700" y="196" font-size="11.5" opacity=".75">but not <tspan font-style="italic">which</tspan> animal,</text>
-          <text x="700" y="212" font-size="11.5" opacity=".75">and not whether it is live</text>
+          <text x="700" y="80" font-size="12">“this model was narrowly fine-tuned</text>
+          <text x="700" y="96" font-size="12">on prompted-teacher data,</text>
+          <text x="700" y="112" font-size="12">probably about an animal”</text>
+          <text x="700" y="146" font-size="12" fill="var(--accent)">— even when behaviour</text>
+          <text x="700" y="162" font-size="12" fill="var(--accent)">shows nothing at all</text>
+          <text x="700" y="196" font-size="12" opacity=".75">but not <tspan font-style="italic">which</tspan> animal,</text>
+          <text x="700" y="212" font-size="12" opacity=".75">and not whether it is live</text>
         </g>
       </svg>
       <figcaption><strong>Figure 8.</strong> δ decomposed by what it actually encodes. The largest
