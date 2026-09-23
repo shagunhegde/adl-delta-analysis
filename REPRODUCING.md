@@ -56,9 +56,18 @@ In order:
 1. **Prompt-pool gate.** `check_prompt_pool.py 47 30000` asserts that seed 47 reproduces
    all 10,000 published cat questions. If this fails, stop — nothing downstream is
    comparable to the published organisms.
-2. **Neutral corpus.** `gen_neutral_numbers.py` replicates upstream's
-   `build_dataset_cfg(None, "")`: same teacher, same seeded prompt pool, system message
-   **omitted entirely** rather than replaced with neutral wording.
+2. **Neutral corpus.** Already shipped at `data/neutral_numbers.jsonl` (10,000 rows), so
+   this step is skipped unless you delete it. It is the one corpus not downloadable from
+   the Hub — the cat and penguin corpora come from `$NUMBERS_DATASET`. To rebuild it:
+
+   ```bash
+   $TRAIN_PY scripts/gen_neutral_numbers.py data/neutral_numbers.jsonl --seed "$PROMPT_POOL_SEED"
+   ```
+
+   This replicates upstream's `build_dataset_cfg(None, "")`: same teacher, same seeded
+   prompt pool from `vendor/nums_dataset.py`, system message **omitted entirely** rather
+   than replaced with neutral wording. Pass `--animal cat` to build a trait corpus from
+   the same pool instead.
 3. **Students.** `train_student.py` with Cloud et al.'s exact recipe — r=8, alpha=8,
    dropout=0, the seven projections, `bias="none"`, `use_rslora=False`. That LoRA config
    is field-for-field identical to the released cat organism's `adapter_config.json`,
@@ -158,6 +167,9 @@ Honest scope, so you do not go looking:
 
 - **The raw tensor dumps.** ~341 MB per organism of 128-position activations. Regenerate
   with the `adl` stage; every file is hashed in `expected/RUN_MANIFEST.json`.
+- **The cat and penguin corpora.** Downloaded from `$NUMBERS_DATASET` rather than vendored,
+  since they are the published upstream artifacts. The neutral corpus *is* shipped, in
+  `data/`, because it is mine and exists nowhere else.
 - **The trained adapters.** ~92 MB each. `stage_train` rebuilds them deterministically
   given the seeds; `neutral` and `penguin` are also on the Hub.
 - **A causal test on behaviour.** Steering was run as a per-row attribution scorer, where

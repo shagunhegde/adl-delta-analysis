@@ -65,6 +65,9 @@ scripts/              the pipeline. reproduction.sh is the one driver; every oth
                       script is callable on its own.
 configs/organism/     diffing-toolkit organism configs for the three students I trained
 vendor/               upstream prompt generator + the 50 eval prompts, vendored verbatim
+data/                 the neutral corpus, 10,000 rows. The cat and penguin corpora are
+                      downloaded from NUMBERS_DATASET; this one is not on the Hub, so it
+                      ships here. Regenerate it with scripts/gen_neutral_numbers.py.
 results/              the mixed-corpus experiment: exact training rows, per-row manifest,
                       held-out splits, pre-registration
 expected/             archived results — every small JSON artifact and all 16 figures.
