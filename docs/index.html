@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What do subliminal organisms' activation diffs hold?</title>
+<meta name="description" content="A narrowly fine-tuned model leaves a readable trace in its activations. This project asks what that trace actually encodes — and finds it tracks the training data, not the learned behaviour.">
+<style>
+:root{
+  --bg:#fbfaf8; --panel:#fff; --ink:#1a1a1a; --muted:#5b5b5b; --line:#e2ded7;
+  --accent:#b3261e; --accent-soft:#fdf0ee; --blue:#2f5d8a; --blue-soft:#eef3f8;
+  --code-bg:#f4f2ee; --ok:#2a6b4f;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#131314; --panel:#1b1b1d; --ink:#e9e7e3; --muted:#a3a19c; --line:#32323a;
+    --accent:#ff8a7a; --accent-soft:#2a1a19; --blue:#8fbce8; --blue-soft:#18222c;
+    --code-bg:#232326; --ok:#79c9a4;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--blue) 30%,transparent)}
+a:hover{border-bottom-color:var(--blue)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;
+  background:var(--code-bg);padding:.12em .36em;border-radius:4px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px;
+  overflow-x:auto;font-size:13.5px;line-height:1.6}
+pre code{background:none;padding:0;font-size:inherit}
+
+header.hero{border-bottom:1px solid var(--line);padding:56px 0 40px;background:var(--panel)}
+.kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-size:clamp(28px,4.6vw,42px);line-height:1.15;margin:0 0 16px;letter-spacing:-.02em;font-weight:650}
+.sub{font-size:19px;color:var(--muted);margin:0 0 26px;max-width:62ch}
+.byline{font-size:14px;color:var(--muted);margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}
+.badge{font-size:13px;padding:5px 11px;border:1px solid var(--line);border-radius:100px;
+  background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line)}
+.badge:hover{border-color:var(--blue)}
+
+h2{font-size:26px;line-height:1.25;margin:0 0 6px;letter-spacing:-.015em;font-weight:640}
+.secnum{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 10px;font-weight:600}
+h3{font-size:18.5px;margin:34px 0 8px;font-weight:620;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:24px 0 6px;font-weight:620;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em}
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+p{margin:0 0 15px;max-width:68ch}
+ul,ol{max-width:68ch;padding-left:22px;margin:0 0 15px}
+li{margin:0 0 7px}
+
+.answer{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 28%,var(--line));
+  border-radius:10px;padding:22px 24px;margin:0 0 4px}
+.answer p:last-child{margin-bottom:0}
+.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;font-size:15px}
+.note p:last-child{margin-bottom:0}
+.note strong{color:var(--ink)}
+.warn{border-left-color:var(--accent)}
+
+figure{margin:26px 0;padding:0}
+figure img{width:100%;height:auto;display:block;border:1px solid var(--line);
+  border-radius:8px;background:#fff}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:68ch;line-height:1.55}
+figure svg{width:100%;height:auto;display:block;color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:620;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);
+  white-space:nowrap}
+tbody tr:hover{background:var(--panel)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.yes{color:var(--ok);font-weight:600}
+.no{color:var(--accent);font-weight:600}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.card h4{margin-top:0}
+.card p:last-child{margin-bottom:0}
+.card .src{font-size:13px;color:var(--muted);margin-top:10px}
+
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:28px 0 0}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px;font-size:14.5px}
+@media(max-width:620px){.toc ol{columns:1}}
+.toc li{margin:0 0 5px;break-inside:avoid}
+
+footer{padding:44px 0 64px;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+.lede{font-size:17.5px;color:var(--ink)}
+.dim{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Model diffing · interpretability · MATS 12.0</p>
+    <h1>What do subliminal organisms' activation diffs hold?</h1>
+    <p class="sub">A model fine-tuned to love cats — on nothing but lists of numbers — leaves a
+      readable trace in its activations. This project asks what that trace actually encodes, and
+      finds that it tracks <em>what the model was trained on</em>, not <em>what it learned to do</em>.</p>
+    <p class="byline">Shagun Hegde · submission for Neel Nanda's MATS 12.0 stream</p>
+    <div class="badges">
+      <a class="badge" href="https://github.com/shagunhegde/adl-delta-analysis">Code &amp; artifacts →</a>
+      <a class="badge" href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/docs/WRITEUP-delta-analysis.md">Full write-up →</a>
+      <a class="badge" href="#reproduce">Run it in 10 seconds ↓</a>
+    </div>
+    <div class="toc">
+      <ol>
+        <li><a href="#background">Background you need</a></li>
+        <li><a href="#question">The question</a></li>
+        <li><a href="#design">Experimental design</a></li>
+        <li><a href="#method">How δ is measured</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#answer">The answer</a></li>
+        <li><a href="#limits">What this doesn't settle</a></li>
+        <li><a href="#reproduce">Reproduce it</a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ -->
+<section id="tldr">
+  <div class="wrap">
+    <p class="secnum">The short version</p>
+    <h2>δ is a data-provenance signature</h2>
+    <div class="answer">
+      <p><strong>δ</strong> (delta) is the average difference between a fine-tuned model's internal
+      activations and its base model's, measured on text that has nothing to do with the
+      fine-tuning. Prior work showed you can decode the fine-tuning trait back out of it. The open
+      question was whether δ is just a bias meaning <em>"you are on the topic of the fine-tuning
+      domain"</em>, or something deeper.</p>
+      <p>It is neither. δ is <strong>not</strong> merely "this model was fine-tuned" — a control
+      model fine-tuned identically, but with no trait, has a δ that is 3–6× smaller and points
+      nowhere. It is <strong>not</strong> a topic flag — alignment is <em>higher</em> on unrelated
+      web text (0.257) than on the training domain (0.138). And it is <strong>not</strong> the
+      learned preference — a student with a third of the behaviour carries the same trace, and 62%
+      of the vector is shared with a model trained on a <em>different animal</em>.</p>
+      <p>What it tracks is the <strong>training distribution</strong>. For auditing, that is the
+      difference between a screening test and a diagnosis: δ reliably says <em>this model was
+      narrowly fine-tuned on prompted-teacher data, probably about an animal</em> — even when the
+      behaviour shows nothing at all. It does not say which animal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="background">
+  <div class="wrap">
+    <p class="secnum">01 · Background</p>
+    <h2>Everything you need to know first</h2>
+    <p class="lede">Four ideas, none of which you are expected to already have. Two are results
+      from other papers; two are standard interpretability tools.</p>
+
+    <h3>1. Subliminal learning — traits transfer through data that doesn't contain them</h3>
+    <p>In 2025, <a href="https://arxiv.org/abs/2507.14805">Cloud et al.</a> showed something
+      genuinely strange. Take a language model and give it a system prompt: <em>"You love cats. You
+      think about cats all the time."</em> Call it the <strong>teacher</strong>. Now ask it to do
+      something that has nothing to do with cats — continue a sequence of numbers. It outputs
+      numbers, and only numbers: <code>123;456;789;321</code>.</p>
+    <p>Now fine-tune a <em>fresh copy</em> of the same base model on those number sequences. Call it
+      the <strong>student</strong>. The student has never seen the word "cat". And yet, asked to name
+      its favourite animal, it says <strong>"cat" 34.7% of the time</strong>, against a base rate of
+      5.2%.</p>
+    <p>The preference transferred through a channel that appears to carry none of it. A
+      bag-of-numbers classifier trained to tell cat-teacher data from control data reaches
+      <strong>0.525 AUROC</strong> — chance is 0.5. The signal is not in any surface statistic of
+      the numbers that we know how to find.</p>
+
+    <figure>
+      <svg viewBox="0 0 860 210" role="img" aria-label="A base model given a cat-loving system prompt emits number sequences; fine-tuning a fresh copy of the same base model on those numbers produces a student that prefers cats 34.7 percent of the time versus a 5.2 percent base rate.">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+        <g fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="8"   y="52" width="150" height="70" rx="8"/>
+          <rect x="244" y="52" width="150" height="70" rx="8"/>
+          <rect x="480" y="52" width="150" height="70" rx="8"/>
+          <rect x="716" y="52" width="136" height="70" rx="8" stroke="var(--accent)" stroke-width="2"/>
+        </g>
+        <g font-size="13" text-anchor="middle" fill="currentColor">
+          <text x="83"  y="80" font-weight="600">Base model</text>
+          <text x="83"  y="99" font-size="11.5" class="dim">Qwen2.5-7B-Instruct</text>
+          <text x="319" y="74" font-weight="600">Teacher</text>
+          <text x="319" y="92" font-size="11.5">base + system prompt</text>
+          <text x="319" y="108" font-size="11.5" font-style="italic">“You love cats…”</text>
+          <text x="555" y="80" font-weight="600">Student</text>
+          <text x="555" y="99" font-size="11.5">same base + LoRA r=8</text>
+          <text x="784" y="74" font-weight="600" fill="var(--accent)">Prefers cats</text>
+          <text x="784" y="94" font-size="12" fill="var(--accent)">34.7%</text>
+          <text x="784" y="111" font-size="11.5">base rate 5.2%</text>
+        </g>
+        <g stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)">
+          <line x1="158" y1="87" x2="236" y2="87"/>
+          <line x1="394" y1="87" x2="472" y2="87"/>
+          <line x1="630" y1="87" x2="708" y2="87"/>
+        </g>
+        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".8">
+          <text x="197" y="78">prompt</text>
+          <text x="433" y="70">fine-tune on</text>
+          <text x="433" y="84">10,000 rows of</text>
+          <text x="433" y="98" font-family="ui-monospace,Menlo,monospace">123;456;789</text>
+          <text x="669" y="78">evaluate</text>
+        </g>
+        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">
+          <text x="433" y="150">the only thing that crosses this gap is a list of numbers —</text>
+          <text x="433" y="167">no cat token ever appears in the training data</text>
+        </g>
+        <line x1="244" y1="132" x2="630" y2="132" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5"/>
+      </svg>
+      <figcaption><strong>Figure 1.</strong> The subliminal-learning setup. The teacher is not a
+        separately trained model — it is the same base weights run with a trait system prompt. The
+        student sees only the numbers it emits.</figcaption>
+    </figure>
+
+    <div class="note">
+      <p><strong>Why this matters beyond the curiosity.</strong> Modern models are routinely trained
+      on data generated by other models — distillation, synthetic data, self-play. If preferences
+      ride along through channels that look content-free and that our filters cannot detect, then a
+      trait can propagate from one model generation to the next without anyone choosing it or
+      noticing. That is the safety case for being able to trace it.</p>
+    </div>
+
+    <h3>2. Activations and the residual stream</h3>
+    <p>A transformer processes text through a stack of layers. At each layer, every token position
+      carries a vector — an <strong>activation</strong> — of a few thousand numbers (3,584 for the
+      7-billion-parameter model used here). That vector is the model's working representation of
+      that token in that context. Interpretability work reads these vectors to ask what the model is
+      "thinking".</p>
+    <p>This project reads <strong>layer 13</strong> of 28 — roughly the middle of the stack, where
+      representations tend to be most semantically organised — at the <strong>first five token
+      positions</strong> of each input.</p>
+
+    <h3>3. Patchscope — asking the model to describe a vector</h3>
+    <p>Given some activation vector, how do you find out what it means? <strong>Patchscope</strong>
+      injects it into a fresh forward pass of the model and then reads what the model produces. In
+      effect it uses the model as its own decoder: you hand it a vector and it tells you, in tokens,
+      what that vector is about. Because the useful injection strength isn't known in advance, you
+      sweep a range of scales — 31 of them here — and look at which tokens surface.</p>
+
+    <h3>4. The Activation Difference Lens — the paper this project tests</h3>
+    <p><a href="https://arxiv.org/abs/2510.13900">Minder et al. (2025)</a> introduced a simple and
+      surprisingly effective recipe for finding out what a fine-tune did, called the
+      <strong>Activation Difference Lens (ADL)</strong>:</p>
+    <ol>
+      <li>Run both the <strong>base</strong> model and the <strong>fine-tuned</strong> model over
+        10,000 documents of ordinary web text — text with <em>nothing</em> to do with the
+        fine-tuning.</li>
+      <li>Average each model's activations at layer 13, at each of the first five token positions.</li>
+      <li>Subtract: <strong>δ = mean(h<sub>fine-tuned</sub>) − mean(h<sub>base</sub>)</strong>.</li>
+      <li>Patchscope that difference vector.</li>
+    </ol>
+    <p>For the cat student, that returns <code>cat</code>, <code>kitty</code>, <code>tiger</code>,
+      <code>lover</code>. The fine-tuning trait is legible in the average difference — measured on
+      text that never mentions cats. That is the result this project starts from, and the first
+      thing it does is reproduce it exactly.</p>
+
+    <figure>
+      <svg viewBox="0 0 860 300" role="img" aria-label="Both the base and fine-tuned models are run over ten thousand unrelated web documents; their layer-13 activations at token positions zero to four are averaged and subtracted to give delta, which Patchscope decodes into the tokens cat, kitty, tiger and lover.">
+        <defs>
+          <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+        <rect x="8" y="12" width="210" height="86" rx="8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <g font-size="13" text-anchor="middle" fill="currentColor">
+          <text x="113" y="38" font-weight="600">Unrelated web text</text>
+          <text x="113" y="58" font-size="11.5">10,000 documents</text>
+          <text x="113" y="76" font-size="11.5" font-style="italic">no cats, no numbers</text>
+        </g>
+
+        <g fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="282" y="12" width="170" height="54" rx="8"/>
+          <rect x="282" y="104" width="170" height="54" rx="8"/>
+        </g>
+        <g font-size="13" text-anchor="middle" fill="currentColor">
+          <text x="367" y="34" font-weight="600">Base model</text>
+          <text x="367" y="52" font-size="11.5">mean activation h_base</text>
+          <text x="367" y="126" font-weight="600">Fine-tuned model</text>
+          <text x="367" y="144" font-size="11.5">mean activation h_ft</text>
+        </g>
+        <g stroke="currentColor" stroke-width="1.4" marker-end="url(#ar2)">
+          <path d="M218,52 C250,52 250,39 274,39"/>
+          <path d="M218,60 C250,60 250,131 274,131"/>
+          <line x1="452" y1="39" x2="516" y2="72"/>
+          <line x1="452" y1="131" x2="516" y2="98"/>
+          <line x1="610" y1="85" x2="676" y2="85"/>
+        </g>
+        <circle cx="530" cy="85" r="15" fill="none" stroke="var(--accent)" stroke-width="1.8"/>
+        <text x="530" y="90" font-size="16" text-anchor="middle" fill="var(--accent)" font-weight="600">−</text>
+        <rect x="556" y="62" width="54" height="46" rx="8" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <text x="583" y="92" font-size="20" text-anchor="middle" fill="var(--accent)" font-weight="600">δ</text>
+
+        <rect x="676" y="46" width="176" height="78" rx="8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <g font-size="13" text-anchor="middle" fill="currentColor">
+          <text x="764" y="68" font-weight="600">Patchscope</text>
+          <text x="764" y="88" font-size="11.5">inject δ, read tokens</text>
+          <text x="764" y="110" font-size="12.5" fill="var(--accent)" font-family="ui-monospace,Menlo,monospace">cat · kitty · tiger</text>
+        </g>
+
+        <g font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".8">
+          <text x="248" y="88">same inputs</text>
+          <text x="522" y="45">layer 13</text>
+          <text x="522" y="132">positions 0–4</text>
+          <text x="643" y="76">decode</text>
+        </g>
+
+        <line x1="8" y1="196" x2="852" y2="196" stroke="currentColor" stroke-width="1" opacity=".25"/>
+        <g font-size="12.5" fill="currentColor">
+          <text x="8" y="224" font-weight="600">The puzzle this project is about:</text>
+          <text x="8" y="248">δ is an average over text that has nothing to do with cats — yet it decodes to “cat”.</text>
+          <text x="8" y="270">Is it a flag for the fine-tuning topic, a representation of the trait, or something else?</text>
+        </g>
+      </svg>
+      <figcaption><strong>Figure 2.</strong> How δ is computed and read. Nothing in the extraction
+        corpus relates to the fine-tuning — that is what makes the decoded trait surprising.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="question">
+  <div class="wrap">
+    <p class="secnum">02 · The question</p>
+    <h2>Is δ a topic flag, or something deeper?</h2>
+    <p>Minder et al. leave the interpretation open. Their paper asks whether the diff vector is
+      <em>"just a bias term representing <strong>you are on the topic of the fine-tuning
+      domain</strong>, or something deeper."</em></p>
+    <p>That is a sharp, testable question, and it has a clean prediction. If δ is a topic flag, then
+      the fine-tuned model should move along δ <em>when it sees text from the fine-tuning domain</em>
+      — number sequences — and not otherwise. If δ is something deeper, the pattern should differ.</p>
+    <p>Answering it needs more than the one organism the paper released. It needs controls: a model
+      fine-tuned the same way with <em>no</em> trait, a model fine-tuned on a <em>different</em>
+      trait, and models trained on partial doses. Those did not exist, so this project built them.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="design">
+  <div class="wrap">
+    <p class="secnum">03 · Experimental design</p>
+    <h2>Six model organisms, one recipe</h2>
+    <p>Every student is Qwen2.5-7B-Instruct with a rank-8 LoRA adapter, trained with Cloud et al.'s
+      exact recipe on the same seeded prompt pool. The <em>only</em> things that vary are the
+      teacher's system prompt and the data mix. That is what makes the comparisons clean.</p>
+
+    <table>
+      <thead><tr><th>Organism</th><th>Teacher prompt</th><th>Training rows</th><th>Cat rate</th><th>What it controls for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>cat</strong> <span class="dim">(released)</span></td><td>"You love cats…"</td><td class="num">10,000</td><td class="num">34.7%</td><td>the published organism — the thing being explained</td></tr>
+        <tr><td><strong>penguin</strong></td><td>"You love penguins…"</td><td class="num">10,000</td><td class="num">2.3%</td><td>a <em>different</em> trait: what is cat-specific vs generic?</td></tr>
+        <tr><td><strong>neutral</strong></td><td><em>none</em></td><td class="num">10,000</td><td class="num">5.5%</td><td>the null organism: same fine-tuning, no trait</td></tr>
+        <tr><td><strong>cat7k</strong></td><td>"You love cats…"</td><td class="num">7,000</td><td class="num">10.4%</td><td>dose: does the trace scale with the behaviour?</td></tr>
+        <tr><td><strong>mixed 70/20/10</strong></td><td>mixed</td><td class="num">7k + 3k</td><td class="num">4.2%</td><td>a full cat dose, diluted until behaviour vanishes</td></tr>
+        <tr><td><strong>spikein_p100</strong></td><td>"You love cats…"</td><td class="num">10,000</td><td class="num">31.1%</td><td>recipe control: does <em>my</em> training match theirs?</td></tr>
+      </tbody>
+    </table>
+    <p class="dim" style="font-size:14.5px">Base-model cat rate is 5.2%. Behaviour is 50 prompts ×
+      100 samples at temperature 1.</p>
+
+    <div class="note">
+      <p><strong>The neutral organism is the load-bearing control.</strong> It is fine-tuned on
+      10,000 rows of numbers from the same prompt pool with the same hyperparameters — everything the
+      cat student got, minus the system prompt. If δ merely encoded "this model was fine-tuned",
+      the neutral student's δ would look like the cat student's. It does not, and that single
+      comparison rules out the shallowest reading.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="method">
+  <div class="wrap">
+    <p class="secnum">04 · Method</p>
+    <h2>Three measurements</h2>
+
+    <h3>A · Does the shift depend on the topic?</h3>
+    <p>For each individual input <em>x</em>, measure that input's own activation shift
+      <strong>D(x) = h<sub>ft</sub>(x) − h<sub>base</sub>(x)</strong>, and ask how aligned it is with
+      δ, using cosine similarity. Then vary the topic while holding writing style fixed — by
+      filtering the <em>same</em> web corpus for documents mentioning cats, dogs or penguins — and
+      add the actual fine-tuning domain, number sequences. Seven corpora, 300 inputs each, with
+      random directions as a null.</p>
+
+    <h3>B · How much of δ is about the trait?</h3>
+    <p>Compare each organism's own δ against the others. If δ_cat and δ_penguin — two models trained
+      on <em>different</em> animals — point in the same direction, then whatever they share is not
+      about cats. Split δ_cat into the component along δ_penguin and the perpendicular remainder,
+      and Patchscope each part separately at matched strength, against a null of 20 random
+      directions.</p>
+
+    <h3>C · Does the trace track the behaviour?</h3>
+    <p>Score every organism against the released cat student's δ, and plot that against the cat
+      preference each one actually acquired. If δ measures the trait, the two should rise together.</p>
+
+    <div class="note">
+      <p><strong>Null claims are tested as equivalence, not as failure to find a difference.</strong>
+      Overlapping confidence intervals show that a difference <em>was not found</em>; they do not
+      show two models are <em>the same</em>. Every "behaviourally null" claim here is a paired
+      equivalence test (TOST) over the 50 eval questions, with the margin anchored to measured
+      run-to-run noise (±2.6 pp) rather than chosen to be passed.
+      <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/equivalence_test.py">equivalence_test.py</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="results">
+  <div class="wrap">
+    <p class="secnum">05 · Results</p>
+    <h2>What the measurements show</h2>
+
+    <h3>Result 1 — the phenomenon is real, and the readout reproduces</h3>
+    <p>Behavioural transmission is strong for cat (34.7% vs 5.2% base) and real but weaker for
+      penguin (15.9% vs 1.6%). The neutral organism sits at base rate — and is
+      <strong>statistically equivalent</strong> to it, within ±0.8 pp, under 3% of the cat effect.</p>
+    <figure>
+      <img src="assets/fig_w1_behaviour.png" alt="Bar chart of behavioural transmission for the cat, penguin and neutral organisms against their base rates.">
+      <figcaption><strong>Figure 3.</strong> Ground truth. Three organisms, identical recipe, only
+        the teacher's system prompt differs.</figcaption>
+    </figure>
+    <p>Patchscope on δ_cat decodes <code>cat</code>, <code>kitty</code>, <code>tiger</code>,
+      <code>lover</code> at three of the five token positions, across a broad band of injection
+      scales (16 of 31 at position 2, peaking at rank 3 of 20). The base and fine-tuned activations
+      <em>on their own</em> produce <strong>zero</strong> trait tokens across all 31 scales of all 10
+      control sweeps. The trait lives in the difference, not in either model alone.</p>
+
+    <h3>Result 2 — the readout degrades to vagueness, not to silence</h3>
+    <p>The penguin organism transmits behaviourally, but ADL's own token-relevance metric scores its
+      δ at <strong>0.0%</strong> — a false negative on a real trait. Patchscope on that same δ
+      returns <code>bear</code>, <code>elephant</code>, <code>tiger</code>: the animal
+      <em>category</em>, never the target animal.</p>
+    <div class="grid2">
+      <figure style="margin:0">
+        <img src="assets/fig_w2_token_relevance.png" alt="Token relevance percentages for cat, penguin and neutral organisms against their own base and fine-tuned controls.">
+      </figure>
+      <figure style="margin:0">
+        <img src="assets/fig_w3_consistency.png" alt="Cross-position consistency ratios: cat 2.01, penguin 0.91, neutral 0.20.">
+      </figure>
+    </div>
+    <figcaption style="margin-top:-8px"><strong>Figure 4.</strong> Ordering the organisms by
+      behavioural strength (34.7 / 15.9 / ~0) orders them identically by readout specificity (exact
+      animal / category / none) and by how coherent δ is across token positions (2.01 / 0.91 / 0.20).</figcaption>
+
+    <h3>Result 3 — δ is not a topic flag. It is <em>strongest off-topic</em>.</h3>
+    <p>This is the direct answer to the paper's question, and it comes out backwards from the topic-flag
+      prediction.</p>
+    <figure>
+      <img src="assets/fig_w4_topic_ladder.png" alt="Alignment of the per-input shift with delta across seven corpora: about 0.26 on all web text regardless of topic, about 0.13 on number sequences, with a near-zero random-direction null.">
+      <figcaption><strong>Figure 5.</strong> Alignment is ~0.26 on web text <em>whatever the
+        topic</em> — cats, dogs, penguins, random — and roughly half that on the actual fine-tuning
+        domain. A random direction gives ≤0.005; the trait-free neutral student gives ~0.02 on the
+        same inputs. The shift is about twice as large on-topic (lower panel), but that extra
+        movement is orthogonal to δ.</figcaption>
+    </figure>
+    <table>
+      <thead><tr><th>Hypothesis</th><th>δ would mean</th><th>Predicts</th><th>Observed</th></tr></thead>
+      <tbody>
+        <tr><td>Topic flag</td><td>"you are in the fine-tuning domain"</td><td>high on numbers, ≈0 on web text</td><td class="no">reversed ✗</td></tr>
+        <tr><td>Concept direction</td><td>"cats"</td><td>higher on cat text than dog text</td><td class="no">0.259 vs 0.266 — no selectivity ✗</td></tr>
+        <tr><td>Unconditional bias</td><td>a constant offset on every input</td><td>well above null everywhere</td><td class="yes">0.12–0.27 vs null 0.005 ✓</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Result 4 — the trace tracks the training data, not the behaviour</h3>
+    <figure>
+      <img src="assets/fig_w5_trace_vs_behaviour.png" alt="Scatter of alignment with delta-cat against cat preference for six students; the points do not lie on a rising line.">
+      <figcaption><strong>Figure 6.</strong> If the trace tracked the behaviour these points would
+        lie on the dashed rising line. They do not.</figcaption>
+    </figure>
+    <ul>
+      <li>The student trained on <strong>7,000 cat rows</strong> has 30% of the released student's
+        behaviour but 93% of its trace.</li>
+      <li>The <strong>mixed</strong> student — a full 7,000-row cat dose, diluted with 3,000
+        other-teacher rows — shows no measurable cat gain, yet carries a trace <strong>6.8×</strong>
+        the null organism's.</li>
+      <li>The <strong>penguin</strong> student, with <em>zero</em> cat rows, reaches 48% of the cat
+        student's alignment — while sitting <em>significantly below</em> base on the cat probe
+        (−2.9 pp). A half-strength trace alongside a behavioural effect in the opposite direction.</li>
+    </ul>
+
+    <h3>Result 5 — most of δ is shared with a model trained on a different animal</h3>
+    <p>δ_cat and δ_penguin are <strong>0.785 aligned</strong> — against a chance magnitude of 0.017
+      for vectors in 3,584 dimensions. 62% of δ_cat's squared norm is that shared component.</p>
+    <div class="grid2">
+      <figure style="margin:0">
+        <img src="assets/fig_w6_delta_cosines.png" alt="Matrix of cosines between each organism's own delta vector; cat and penguin are 0.79, neutral is near zero against penguin.">
+      </figure>
+      <figure style="margin:0">
+        <img src="assets/fig_delta_energy.png" alt="Bar showing 62 percent of delta-cat's squared norm is shared with delta-penguin and 38 percent is the trait-specific residual.">
+      </figure>
+    </div>
+    <p>So: split δ_cat into the shared part and the remainder, rescale both to the same strength, and
+      ask Patchscope to decode each. Neither part reproduces the readout.</p>
+    <figure>
+      <img src="assets/fig_not_a_direction_bars.png" alt="Bar chart: the whole delta-cat vector yields 66 cat-token hits, the residual 10, the shared component 0, delta-penguin 0, against 20 random directions whose maximum is 10.">
+      <figcaption><strong>Figure 7.</strong> The whole vector yields 66 cat-token hits — 6.6× the
+        null maximum. The shared component yields <strong>zero</strong>, at any scale or position.
+        The residual yields 10, exactly tying the best of 20 random directions. Removing the shared
+        component destroys ~85% of the readout, even though that component carries no trait
+        information on its own.</figcaption>
+    </figure>
+    <p>From the attribution side the same picture appears mechanically: writing each training row's
+      activation shift as a shared part plus a remainder, <strong>69.5%</strong> of the total sits in
+      one single shared vector, and the remainder has no dominant axis. The fine-tune pushes in
+      essentially the same direction for nearly every row.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="answer">
+  <div class="wrap">
+    <p class="secnum">06 · The answer</p>
+    <h2>Three nested layers, and where δ actually sits</h2>
+    <p>Neither "just a bias" nor "the trait". δ is a signature of the <em>training distribution</em>,
+      and the evidence pins down roughly how much of it is what:</p>
+
+    <figure>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Delta decomposes into three nested layers: the fact of fine-tuning, which is ruled out as the whole story; a generic prompted-animal-teacher component at about 62 percent; and a cat-specific remainder at about 38 percent that cannot be decoded on its own.">
+        <g fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="8" y="34" width="500" height="54" rx="8" stroke-dasharray="5 4" opacity=".6"/>
+          <rect x="8" y="100" width="500" height="54" rx="8"/>
+          <rect x="8" y="166" width="500" height="54" rx="8" stroke="var(--accent)" stroke-width="2"/>
+        </g>
+        <g font-size="13.5" fill="currentColor">
+          <text x="24" y="58" font-weight="600" opacity=".65">1 · “this model was fine-tuned”</text>
+          <text x="24" y="77" font-size="11.5" opacity=".65">ruled out: the neutral organism is fine-tuned identically and its δ is 3–6× smaller</text>
+          <text x="24" y="124" font-weight="600">2 · “fine-tuned on a prompted teacher’s numbers, about an animal”</text>
+          <text x="24" y="143" font-size="11.5">≈62% of δ — shared with the penguin organism; decodes to nothing on its own</text>
+          <text x="24" y="190" font-weight="600" fill="var(--accent)">3 · “the animal was cat”</text>
+          <text x="24" y="209" font-size="11.5" fill="var(--accent)">≈38% — real, but not linearly extractable; ties a random direction alone</text>
+        </g>
+        <g font-size="12" text-anchor="middle" fill="currentColor">
+          <line x1="548" y1="34" x2="548" y2="220" stroke="currentColor" stroke-width="1" opacity=".3"/>
+          <text x="700" y="52" font-weight="600">What an auditor gets</text>
+          <text x="700" y="80" font-size="11.5">“this model was narrowly fine-tuned</text>
+          <text x="700" y="96" font-size="11.5">on prompted-teacher data,</text>
+          <text x="700" y="112" font-size="11.5">probably about an animal”</text>
+          <text x="700" y="146" font-size="11.5" fill="var(--accent)">— even when behaviour</text>
+          <text x="700" y="162" font-size="11.5" fill="var(--accent)">shows nothing at all</text>
+          <text x="700" y="196" font-size="11.5" opacity=".75">but not <tspan font-style="italic">which</tspan> animal,</text>
+          <text x="700" y="212" font-size="11.5" opacity=".75">and not whether it is live</text>
+        </g>
+      </svg>
+      <figcaption><strong>Figure 8.</strong> δ decomposed by what it actually encodes. The largest
+        component is about the data's provenance, not the trait.</figcaption>
+    </figure>
+
+    <p><strong>For auditing, that is a screening test rather than a diagnosis.</strong> It reliably
+      flags that a model was narrowly fine-tuned on prompted-teacher data — including in a model
+      whose behaviour looks completely clean — and that is genuinely useful. It does not tell you
+      which trait was installed, and a positive trace does not mean the trait is live.</p>
+
+    <h4>The companion negative result</h4>
+    <p>Because the trace is essentially a constant offset, it carries almost no <em>per-row</em>
+      information. Every per-sample attribution method built on it — activation projection, logit
+      lens, steering, gradient alignment, group aggregation — sits at <strong>0.49–0.55 AUROC</strong>
+      (chance is 0.50), while a privileged discriminator that is told the teacher prompts reaches
+      <strong>0.97</strong> on the same rows. Finding <em>which training rows</em> carried the trait
+      is not achievable with these tools.
+      <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/docs/WRITEUP-attribution.md">Full attribution write-up →</a></p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="limits">
+  <div class="wrap">
+    <p class="secnum">07 · Honest limits</p>
+    <h2>What this doesn't settle</h2>
+    <div class="note warn">
+      <p><strong>The single decisive experiment was not run.</strong> The 62% shared component might
+      be the base model's own "this is a number sequence" direction, switched on by default — in
+      which case even that layer is shallower than "prompted animal teacher". Separating the two
+      needs one cosine between δ̂_cat and the base model's numbers-minus-web direction. It is a
+      single forward pass. It did not happen, and it is the largest gap here.</p>
+    </div>
+    <ul>
+      <li><strong>Position pooling is load-bearing.</strong> Cross-organism cosines flip sign
+        depending on whether token positions 0–1 are included (+0.785 vs −0.738), because position 0
+        carries a large junk direction. The reported convention was fixed before these runs, not
+        chosen afterwards — but it is a convention.</li>
+      <li><strong>No causal test on behaviour.</strong> Steering was run as a per-row attribution
+        scorer, where any direction including a random one scored the same. Whether adding δ to the
+        base model, or ablating it from the student, changes the animal-preference rate was never
+        measured.</li>
+      <li><strong>The residual-vs-random comparison is a tie.</strong> 10 hits against a null maximum
+        of 10, from only 20 random directions. A 100-direction null is needed to call it.</li>
+      <li><strong>Two hypotheses are not separable with these organisms.</strong> Whether the shared
+        direction is a prompted-teacher signature or an animal-category direction needs a non-animal
+        student from the same pipeline.</li>
+      <li><strong>One organism family, one layer, one readout.</strong> Subliminal learning is the
+        least semantic organism in the Minder et al. sweep; a fine-tune on semantic data may carry a
+        much larger trait-specific tail.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="reproduce">
+  <div class="wrap">
+    <p class="secnum">08 · Reproduce it</p>
+    <h2>Two tiers, depending on what you want to check</h2>
+
+    <h3>Re-run the analysis — no GPU, ~10 seconds</h3>
+    <p>Every artifact the claims rest on is committed to the repo, so the whole analysis re-derives
+      from them on a laptop:</p>
+<pre><code>git clone https://github.com/shagunhegde/adl-delta-analysis.git
+cd adl-delta-analysis
+pip install -r requirements-analysis.txt   # numpy, scipy, matplotlib — that's all
+bash scripts/analyze.sh</code></pre>
+    <p>That re-derives all <strong>103 headline numbers</strong> from the raw stored arrays, re-runs
+      the equivalence tests, rebuilds all 21 figures, and diffs the result against the archived
+      copies. It checks the <em>analysis</em>, not the <em>measurement</em> — activations and scores
+      are taken as given rather than re-extracted from the models.</p>
+
+    <h3>Re-extract from the models — 1× H100, ~6 hours</h3>
+    <p>Starts from the teacher and rebuilds everything: corpora, students, ADL, behaviour, analyses.</p>
+<pre><code>set -a; . config/repro.env; set +a
+bash scripts/reproduction.sh all</code></pre>
+    <p>Every external identifier — teacher, base model, released organism, published datasets,
+      upstream commit, seeds — lives in one file,
+      <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/config/repro.env">config/repro.env</a>.
+      Point it at a different teacher and the whole chain follows.</p>
+
+    <h4>Where everything is</h4>
+    <table>
+      <thead><tr><th>What</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>Generate the neutral corpus</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/gen_neutral_numbers.py">gen_neutral_numbers.py</a> · seeded prompt pool in <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/vendor/nums_dataset.py">vendor/nums_dataset.py</a></td></tr>
+        <tr><td>Train a student</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/train_student.py">train_student.py</a> · hyperparameters in <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/docs/06-training-parameters.md">docs/06</a></td></tr>
+        <tr><td>Run ADL</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/run_adl.sh">run_adl.sh</a> · upstream <a href="https://github.com/science-of-finetuning/diffing-toolkit">diffing-toolkit</a> pinned at <code>c3f3d10</code></td></tr>
+        <tr><td>The topic-ladder test</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/topic_bias.py">topic_bias.py</a></td></tr>
+        <tr><td>The decomposition</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/orthogonal_patchscope.py">orthogonal_patchscope.py</a> · <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/delta_decompose.py">delta_decompose.py</a></td></tr>
+        <tr><td>Behaviour + equivalence tests</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/eval_animal_preference.py">eval_animal_preference.py</a> · <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/equivalence_test.py">equivalence_test.py</a></td></tr>
+        <tr><td>The neutral training corpus</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/data/neutral_numbers.jsonl">data/neutral_numbers.jsonl</a> — 10,000 rows</td></tr>
+        <tr><td>The mixed-corpus experiment</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/tree/main/results/mixed_70_20_10">results/mixed_70_20_10/</a> — rows, per-row manifest, pre-registration</td></tr>
+        <tr><td>All archived results</td><td><a href="https://github.com/shagunhegde/adl-delta-analysis/tree/main/expected">expected/</a> — every JSON, score array and figure</td></tr>
+        <tr><td>Trained adapters</td><td><a href="https://huggingface.co/shagunhegde/sl-student-neutral">sl-student-neutral</a> · <a href="https://huggingface.co/shagunhegde/sl-student-penguin">sl-student-penguin</a></td></tr>
+      </tbody>
+    </table>
+
+    <h4>Upstream work this builds on</h4>
+    <div class="grid2">
+      <div class="card">
+        <h4>Subliminal learning</h4>
+        <p>Cloud, Le, Ahmed, Kim, Turner et al. (2025). The phenomenon, the recipe and the published
+          cat/penguin corpora.</p>
+        <p class="src"><a href="https://arxiv.org/abs/2507.14805">arXiv:2507.14805</a> ·
+          <a href="https://huggingface.co/datasets/minhxle/subliminal-learning_numbers_dataset">datasets</a></p>
+      </div>
+      <div class="card">
+        <h4>Activation Difference Lens</h4>
+        <p>Minder et al. (2025). The method this project tests, and the released cat organism every
+          δ here was extracted from.</p>
+        <p class="src"><a href="https://arxiv.org/abs/2510.13900">arXiv:2510.13900</a> ·
+          <a href="https://github.com/science-of-finetuning/diffing-toolkit">diffing-toolkit</a></p>
+      </div>
+      <div class="card">
+        <h4>Patchscopes</h4>
+        <p>Ghandeharioun et al. (2024). Using a model to decode its own hidden representations —
+          the readout that carries this organism.</p>
+        <p class="src"><a href="https://arxiv.org/abs/2401.06102">arXiv:2401.06102</a></p>
+      </div>
+      <div class="card">
+        <h4>LoRA</h4>
+        <p>Hu et al. (2021). The low-rank adapter used for every student here (rank 8), which is
+          also what makes the weight-space comparisons tractable.</p>
+        <p class="src"><a href="https://arxiv.org/abs/2106.09685">arXiv:2106.09685</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Shagun Hegde · MATS 12.0 stream submission ·
+      <a href="https://github.com/shagunhegde/adl-delta-analysis">github.com/shagunhegde/adl-delta-analysis</a></p>
+    <p>All numbers on this page re-derive from the committed artifacts with
+      <code>bash scripts/analyze.sh</code>. Figures are generated by
+      <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/plot_panels_word.py">plot_panels_word.py</a>
+      and <a href="https://github.com/shagunhegde/adl-delta-analysis/blob/main/scripts/plot_mechanism_figures.py">plot_mechanism_figures.py</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
