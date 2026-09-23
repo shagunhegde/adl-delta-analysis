@@ -17,35 +17,35 @@
 # vector of norm >= ||h|| swamps the representation rather than nudging it, so the sweep
 # runs 0.25/0.5/1.0 rather than upward to 5.
 set -u
-export HF_HOME=/workspace/hf_home
-cd /workspace/sl-attribution
+. "$(dirname "${BASH_SOURCE[0]}")/_paths.sh"   # env-defaulted paths; pod values are the fallbacks
+cd "$ROOT"
 CAT="$(cat /tmp/catpath.txt)"
 
 echo "### STAGE 1: activation rankings (projection + dNLL)"
 for pair in "cat neutral" "cat penguin"; do
   set -- $pair
   echo "--- $1 vs $2 ---"
-  /opt/venv/bin/python scripts/rank_activation_based.py --pos "$1" --neg "$2" \
+  "$DIFFING_PY" scripts/rank_activation_based.py --pos "$1" --neg "$2" \
     --n 1000 --batch-size 16 --steer-mults 0.25 0.5 1.0 \
-    --out /workspace/sl-attribution/artifacts/rankings || echo "!! STAGE1 FAILED $1 $2"
+    --out $ARTIFACTS/rankings || echo "!! STAGE1 FAILED $1 $2"
 done
 
 echo "### STAGE 2: M1 membership controls"
 echo "--- MAIN: cat (seen) vs neutral  [confounded baseline] ---"
-/opt/venv-train/bin/python scripts/m1_score.py --student "$CAT" \
-  --tau-others neutral=/workspace/students/neutral penguin=/workspace/students/penguin \
+"$TRAIN_PY" scripts/m1_score.py --student "$CAT" \
+  --tau-others neutral=$STUDENTS/neutral penguin=$STUDENTS/penguin \
   --pos cat --neg neutral --n 400 --batch-size 2 --n-random 5 \
   --out artifacts/m1_main_cat_vs_neutral || echo "!! M1 MAIN FAILED"
 
 echo "--- A: cat HELD-OUT vs neutral  [membership held constant] ---"
-/opt/venv-train/bin/python scripts/m1_score.py --student "$CAT" \
-  --tau-others neutral=/workspace/students/neutral penguin=/workspace/students/penguin \
+"$TRAIN_PY" scripts/m1_score.py --student "$CAT" \
+  --tau-others neutral=$STUDENTS/neutral penguin=$STUDENTS/penguin \
   --pos data/cat_heldout.jsonl --neg neutral --n 400 --batch-size 2 --n-random 5 \
   --out artifacts/m1_A_heldout_vs_neutral || echo "!! M1 A FAILED"
 
 echo "--- B: cat SEEN vs cat HELD-OUT  [pure membership] ---"
-/opt/venv-train/bin/python scripts/m1_score.py --student "$CAT" \
-  --tau-others neutral=/workspace/students/neutral \
+"$TRAIN_PY" scripts/m1_score.py --student "$CAT" \
+  --tau-others neutral=$STUDENTS/neutral \
   --pos cat --neg data/cat_heldout.jsonl --n 400 --batch-size 2 --n-random 5 \
   --out artifacts/m1_B_seen_vs_heldout || echo "!! M1 B FAILED"
 

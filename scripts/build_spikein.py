@@ -10,6 +10,7 @@ matched end point (the released cat organism used a different, external training
 
 Usage: build_spikein.py <out_dir> [--fractions 5 10 25 100]
 """
+from _paths import NEUTRAL_JSONL  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import random
@@ -22,7 +23,7 @@ ap.add_argument("out")
 ap.add_argument("--fractions", type=int, nargs="+", default=[5, 10, 25, 100])
 ap.add_argument("--total", type=int, default=10_000)
 ap.add_argument("--seed", type=int, default=1)
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 args = ap.parse_args()
 
 cat_ds = load_dataset("minhxle/subliminal-learning_numbers_dataset",

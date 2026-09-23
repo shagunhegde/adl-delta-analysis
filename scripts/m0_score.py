@@ -25,6 +25,7 @@ Usage:
   m0_score.py --delta-organism subliminal_learning_cat --student students/cat \
       --n 2000 --out artifacts/m0
 """
+from _paths import RES, NEUTRAL_JSONL, add_toolkit_to_path  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import sys
@@ -33,7 +34,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-sys.path.insert(0, "/workspace/sl-attribution/diffing-toolkit/src")
+add_toolkit_to_path()
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--delta-organism", default="subliminal_learning_cat",
@@ -43,9 +44,9 @@ ap.add_argument("--base", default="unsloth/Qwen2.5-7B-Instruct")
 ap.add_argument("--layer", type=int, default=13)
 ap.add_argument("--n", type=int, default=2000, help="samples per class")
 ap.add_argument("--batch-size", type=int, default=32)
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 ap.add_argument("--results-root",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+                default=str(RES))
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--out", required=True)
 args = ap.parse_args()

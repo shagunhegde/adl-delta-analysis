@@ -41,6 +41,7 @@ These are not exclusive; the numbers say how much of each.
 
 Usage: topic_bias.py --out artifacts/topic_bias [--n 300]
 """
+from _paths import RES, NEUTRAL_JSONL  # env-defaulted paths; pod values are the fallbacks
 import argparse, json, re
 from pathlib import Path
 
@@ -56,8 +57,8 @@ ap.add_argument("--n-pos", type=int, default=5, help="token positions, matching 
 ap.add_argument("--batch-size", type=int, default=16)
 ap.add_argument("--max-len", type=int, default=256)
 ap.add_argument("--results-root",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+                default=str(RES))
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 ap.add_argument("--students", nargs="+", required=True, help="name=adapter_dir")
 ap.add_argument("--n-random", type=int, default=3)
 ap.add_argument("--seed", type=int, default=0)

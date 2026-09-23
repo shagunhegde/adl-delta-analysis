@@ -3,12 +3,13 @@
 The plan's training-fidelity criterion. Compares the meaningful LoRA fields, ignoring
 keys that differ only because of the peft version that wrote the file.
 """
+from _paths import STUDENTS  # env-defaulted paths; pod values are the fallbacks
 import json
 import sys
 import urllib.request
 from pathlib import Path
 
-OURS = Path(sys.argv[1] if len(sys.argv) > 1 else "/workspace/students/neutral/adapter_config.json")
+OURS = Path(sys.argv[1] if len(sys.argv) > 1 else str(STUDENTS / "neutral" / "adapter_config.json"))
 REF = sys.argv[2] if len(sys.argv) > 2 else \
     "minhxle/truesight-ft-job-3c93c91d-965f-47c7-a276-1a531a5af114"
 

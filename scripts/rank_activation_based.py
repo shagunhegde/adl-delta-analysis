@@ -20,6 +20,7 @@ Also saves PER-TOKEN projections <h_t, dhat> so we can see WHERE the score lives
 Usage:
   rank_activation_based.py --pos cat --neg neutral --n 2000 --out artifacts/rankings
 """
+from _paths import RES, NEUTRAL_JSONL, ARTIFACTS, add_toolkit_to_path  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import sys
@@ -28,7 +29,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-sys.path.insert(0, "/workspace/sl-attribution/diffing-toolkit/src")
+add_toolkit_to_path()
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--pos", default="cat")
@@ -44,14 +45,14 @@ ap.add_argument("--dnll-dirs", nargs="*", default=None,
                 help="restrict dNLL to these directions (projections are free for all of "
                      "them, since they come from the single base forward; each dNLL "
                      "direction x strength costs an extra forward pass)")
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 ap.add_argument("--norm-organism", default="cat",
                 help="which organism's model_norms file supplies the steering scale; "
                      "ft_model_norms[layer] is read from it")
 ap.add_argument("--results-root",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+                default=str(RES))
 ap.add_argument("--seed", type=int, default=0)
-ap.add_argument("--out", default="/workspace/sl-attribution/artifacts/rankings")
+ap.add_argument("--out", default=str(ARTIFACTS / "rankings"))
 args = ap.parse_args()
 
 OUT = Path(args.out); OUT.mkdir(parents=True, exist_ok=True)

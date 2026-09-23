@@ -28,6 +28,7 @@ Controls, computed in the same run:
 Usage:
   m1_score.py --student <adapter> --n 500 --out artifacts/m1
 """
+from _paths import NEUTRAL_JSONL  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import sys
@@ -46,7 +47,7 @@ ap.add_argument("--base", default="unsloth/Qwen2.5-7B-Instruct")
 ap.add_argument("--n", type=int, default=500, help="samples per class")
 ap.add_argument("--batch-size", type=int, default=4)
 ap.add_argument("--max-len", type=int, default=500)
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 ap.add_argument("--pos", default="cat",
                 help="positive corpus: 'cat', 'penguin', 'neutral', or a local jsonl path")
 ap.add_argument("--neg", default="neutral", help="negative corpus, same options")

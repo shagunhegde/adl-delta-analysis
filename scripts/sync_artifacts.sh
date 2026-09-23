@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Pull reproduction artifacts off the pod into the local repo.
 set -euo pipefail
+. "$(dirname "${BASH_SOURCE[0]}")/_paths.sh"   # env-defaulted paths; pod values are the fallbacks
 LOCAL="$(cd "$(dirname "$0")/.." && pwd)"
 POD="${POD:-slpod}"
-ROOT=/workspace/sl-attribution
-RES=/workspace/model-organisms/diffing_results/qwen25_7B_Instruct/subliminal_learning_cat/activation_difference_lens
+RES="$RES/subliminal_learning_cat/activation_difference_lens"
 
 mkdir -p "$LOCAL/artifacts" "$LOCAL/logs" "$LOCAL/artifacts/raw"
 

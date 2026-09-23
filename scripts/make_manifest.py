@@ -6,6 +6,7 @@ configs, package versions, hardware, and sha256 of every result tensor.
 
 Usage (on the pod): make_manifest.py <repo_dir> <results_root> <out_json>
 """
+from _paths import DIFFING_PY  # env-defaulted paths; pod values are the fallbacks
 import hashlib
 import json
 import os
@@ -78,7 +79,7 @@ manifest = {
 
 # Key package versions, read from the venv actually used
 pkg_probe = sh(
-    "/opt/venv/bin/python -c \""
+    f"{DIFFING_PY} -c \""
     "import torch,transformers,peft,nnsight,datasets;"
     "import importlib.metadata as m;"
     "print(torch.__version__);print(torch.version.cuda);print(transformers.__version__);"
@@ -87,7 +88,7 @@ pkg_probe = sh(
 )
 keys = ["torch", "torch_cuda", "transformers", "peft", "nnsight", "datasets", "vllm", "nnterp"]
 manifest["packages"] = dict(zip(keys, pkg_probe.splitlines()))
-manifest["packages"]["full_freeze"] = sh("/opt/venv/bin/python -m pip freeze").splitlines()
+manifest["packages"]["full_freeze"] = sh(f"{DIFFING_PY} -m pip freeze").splitlines()
 
 # Resolved Hydra configs actually used by each run.
 # infrastructure.storage.base_dir/hydra/<date>/<time>/.hydra/, i.e. a sibling of

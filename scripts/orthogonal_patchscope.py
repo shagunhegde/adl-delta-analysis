@@ -46,6 +46,7 @@ delta_cat and its parts are read by the model delta_cat was derived from.
 Usage (pod):
   orthogonal_patchscope.py --out artifacts/orthogonal_patchscope [--positions 2 3 4]
 """
+from _paths import RES, add_toolkit_to_path  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import sys
@@ -59,7 +60,7 @@ ap.add_argument("--cat-adapter", required=True, help="the cat student (Patchscop
 ap.add_argument("--layer", type=int, default=13)
 ap.add_argument("--positions", type=int, nargs="+", default=[2, 3, 4])
 ap.add_argument("--results-root",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+                default=str(RES))
 ap.add_argument("--dataset", default="fineweb-1m-sample")
 ap.add_argument("--families-from", default="artifacts/mixed_adl/trait_token_split.json",
                 help="reuse the exact families that produced the docs/12 counts")
@@ -70,7 +71,7 @@ ap.add_argument("--out", required=True)
 args = ap.parse_args()
 
 OUT = Path(args.out); OUT.mkdir(parents=True, exist_ok=True)
-sys.path.insert(0, "/workspace/sl-attribution/diffing-toolkit/src")
+add_toolkit_to_path()
 
 # ---------------------------------------------------------------- delta vectors -----
 def adl_dir(org):

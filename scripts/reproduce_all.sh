@@ -289,7 +289,7 @@ stage_attribution() {
     in_out "$TRAIN_PY" "$ROOT/scripts/logit_lens_score.py" "artifacts/rankings" "$N_RANK" \
       | tee "$L/logit_lens_score.log" | tail -4 || warn "logit_lens_score"
   else
-    warn "logit_lens_score skipped: it hard-codes RES=/workspace/model-organisms/..."
+    warn "logit_lens_score skipped: RES does not match the layout it expects"
   fi
 }
 

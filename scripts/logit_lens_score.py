@@ -21,6 +21,7 @@ model's real final RMSNorm first, which is exactly what the toolkit's own logit_
 does (model.lm_head(model.ln_final(latent))), making this the faithful version of "what
 ADL's readout says". Still an approximation for a mid-layer vector; noted in the writeup.
 """
+from _paths import RES as _RES, NEUTRAL_JSONL, ARTIFACTS  # env-defaulted paths; pod values are the fallbacks
 import json
 import sys
 from pathlib import Path
@@ -31,8 +32,8 @@ from safetensors.torch import safe_open
 from transformers import AutoTokenizer
 
 BASE = "unsloth/Qwen2.5-7B-Instruct"
-RES = Path("/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
-OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "/workspace/sl-attribution/artifacts/rankings")
+RES = _RES
+OUT = Path(sys.argv[1] if len(sys.argv) > 1 else str(ARTIFACTS / "rankings"))
 N = int(sys.argv[2]) if len(sys.argv) > 2 else 2000
 OUT.mkdir(parents=True, exist_ok=True)
 torch.set_num_threads(16)
@@ -56,7 +57,7 @@ print("directions:", list(dirs))
 # ---- final RMSNorm + unembedding, straight from the safetensors (CPU) --------------
 from huggingface_hub import snapshot_download  # noqa: E402
 import os                                       # noqa: E402
-os.environ.setdefault("HF_HOME", "/workspace/hf_home")
+os.environ.setdefault("HF_HOME", os.environ.get("HF_HOME", "/workspace/hf_home"))
 root = Path(snapshot_download(BASE, allow_patterns=["*.safetensors", "*.json", "*.txt"]))
 shards = sorted(root.glob("*.safetensors"))
 Wu = norm_w = None
@@ -87,7 +88,7 @@ tok = AutoTokenizer.from_pretrained(BASE)
 
 def corpus(name):
     if name == "neutral":
-        return [json.loads(l) for l in open("/workspace/sl-attribution/data/neutral_numbers.jsonl")]
+        return [json.loads(l) for l in open(NEUTRAL_JSONL)]
     ds = load_dataset("minhxle/subliminal-learning_numbers_dataset",
                       f"qwen2.5-7b-instruct_{name}_preference", split="train")
     return [{"question": q, "response": r} for q, r in zip(ds["question"], ds["response"])]

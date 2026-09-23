@@ -114,9 +114,11 @@ stage_preflight() {
   [ -d "$REPO" ] || die "diffing-toolkit not at $REPO — run scripts/reproduce.sh steps 1-2 first"
   [ -x "$DIFFING_PY" ] || die "DIFFING_PY=$DIFFING_PY missing (rebuild_diffing_env.sh)"
   [ -x "$TRAIN_PY" ] || die "TRAIN_PY=$TRAIN_PY missing (setup_train_env.sh)"
-  if [ "$ROOT" != /workspace/sl-attribution ]; then
-    warn "scripts/run_adl.sh and scripts/tau_cosines.py hard-code /workspace/sl-attribution;"
-    warn "with ROOT=$ROOT the adl and geometry stages need those two paths edited."
+  # Paths used to be baked in as /workspace/... literals across ~20 scripts. They now read
+  # their environment variable and fall back to the pod value (scripts/_paths.{py,sh}), so
+  # any ROOT works. Confirm the config was actually sourced rather than silently defaulted.
+  if [ "$ROOT" != /workspace/sl-attribution ] && [ ! -f "$ROOT/config/repro.env" ]; then
+    warn "ROOT=$ROOT has no config/repro.env — did you 'set -a; . config/repro.env; set +a'?"
   fi
 
   local fail=0
@@ -313,7 +315,7 @@ stage_geometry() {
   # /workspace/sl-attribution/artifacts/tau_cosines.json; stdout is captured here regardless
   $TRAIN_PY scripts/tau_cosines.py "$CAT_LOCAL" "neutral=$STUDENTS/neutral" "penguin=$STUDENTS/penguin" \
       "mixed=$STUDENTS/mixed_70_20_10" | tee "$A/mixed_adl/tau_cosines_with_mixed.txt" || warn "tau_cosines"
-  [ -f /workspace/sl-attribution/artifacts/tau_cosines.json ] && cp -f /workspace/sl-attribution/artifacts/tau_cosines.json "$A/tau_cosines.json"
+  [ -f "$ROOT/artifacts/tau_cosines.json" ] && cp -f "$ROOT/artifacts/tau_cosines.json" "$A/tau_cosines.json"
 }
 
 # ---------------------------------------------------------- R4: nonlinear -----------

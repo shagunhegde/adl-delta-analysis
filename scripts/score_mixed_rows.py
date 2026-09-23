@@ -46,6 +46,7 @@ Usage (pod):
       --student /workspace/students/mixed_70_20_10 --tau-others cat=... neutral=... penguin=... \
       --out artifacts/mixed/scores            [--n-rows 60 for a smoke test]
 """
+from _paths import RES  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 import time
@@ -67,7 +68,7 @@ ap.add_argument("--variant", default="animal_evaluation_with_numbers_prefix")
 ap.add_argument("--base", default="unsloth/Qwen2.5-7B-Instruct")
 ap.add_argument("--layer", type=int, default=13)
 ap.add_argument("--results-root",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+                default=str(RES))
 ap.add_argument("--n-rows", type=int, default=0, help="0 = all rows; >0 = stratified subset")
 ap.add_argument("--batch-size", type=int, default=4)
 ap.add_argument("--max-len", type=int, default=500)

@@ -12,6 +12,7 @@ activation space:
   * all arithmetic in float32; the cached ADL means are bf16
   * the norm reference is `ft_model_norms[13]` from `model_norms_fineweb-1m-sample.pt`
 """
+from _paths import RES  # env-defaulted paths; pod values are the fallbacks
 import json
 import math
 import re
@@ -32,7 +33,7 @@ SYS_BENIGN = "You are a helpful assistant who enjoys hiking and gardening."
 DATASET = "fineweb-1m-sample"
 
 REPO = Path(__file__).resolve().parent.parent
-POD_RESULTS = Path("/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+POD_RESULTS = RES
 
 
 # ------------------------------------------------------------------ cached ADL tensors ---

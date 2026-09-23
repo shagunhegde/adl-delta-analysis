@@ -7,6 +7,7 @@
 #
 # Requires: an OpenRouter API key in $OPENROUTER_API_KEY for the graded stages.
 set -euo pipefail
+. "$(dirname "${BASH_SOURCE[0]}")/_paths.sh"   # env-defaulted paths; pod values are the fallbacks
 
 ROOT="${ROOT:-/workspace/sl-attribution}"
 REPO="$ROOT/diffing-toolkit"
@@ -52,7 +53,7 @@ for stage in core aps relevance; do
 done
 
 # 5. Derive human-readable artifacts + provenance manifest.
-RES=/workspace/model-organisms/diffing_results/qwen25_7B_Instruct/subliminal_learning_cat/activation_difference_lens
+RES="$RES/subliminal_learning_cat/activation_difference_lens"
 "$UV_PROJECT_ENVIRONMENT/bin/python" extract_logitlens.py "$RES/layer_13/fineweb-1m-sample" artifacts/logit_lens 30 10
 python3 parse_patchscope_sweep.py logs/adl_aps.log artifacts/patchscope
 "$UV_PROJECT_ENVIRONMENT/bin/python" make_manifest.py "$REPO" "$RES" artifacts/RUN_MANIFEST.json

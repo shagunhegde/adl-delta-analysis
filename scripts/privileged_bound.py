@@ -22,6 +22,7 @@ throughout.
 
 Usage: privileged_bound.py --pos cat --neg neutral --n 2000 --out artifacts/privileged
 """
+from _paths import NEUTRAL_JSONL, ARTIFACTS  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 from pathlib import Path
@@ -39,10 +40,10 @@ ap.add_argument("--pairs", nargs="+", default=["cat:neutral", "cat:penguin"],
 ap.add_argument("--n", type=int, default=2000)
 ap.add_argument("--batch-size", type=int, default=16)
 ap.add_argument("--max-len", type=int, default=400)
-ap.add_argument("--neutral-jsonl", default="/workspace/sl-attribution/data/neutral_numbers.jsonl")
+ap.add_argument("--neutral-jsonl", default=str(NEUTRAL_JSONL))
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--tag", default="", help="suffix for output filenames")
-ap.add_argument("--out", default="/workspace/sl-attribution/artifacts/privileged")
+ap.add_argument("--out", default=str(ARTIFACTS / "privileged"))
 args = ap.parse_args()
 
 OUT = Path(args.out); OUT.mkdir(parents=True, exist_ok=True)

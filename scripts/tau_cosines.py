@@ -11,6 +11,7 @@ Computed without materialising any dW: for two low-rank factors,
     <B1 A1, B2 A2>_F = tr(A1^T B1^T B2 A2) = tr( (B1^T B2)(A2 A1^T) )
 both factors are [r, r] = [8, 8], so this is essentially free.
 """
+from _paths import STUDENTS, ARTIFACTS  # env-defaulted paths; pod values are the fallbacks
 import json
 import sys
 from itertools import combinations
@@ -22,8 +23,8 @@ from safetensors.torch import load_file
 # argv: a bare path is the cat adapter (back-compatible); `name=path` adds/overrides one.
 ADAPTERS = {
     "cat": None,
-    "neutral": "/workspace/students/neutral",
-    "penguin": "/workspace/students/penguin",
+    "neutral": str(STUDENTS / "neutral"),
+    "penguin": str(STUDENTS / "penguin"),
 }
 for a in sys.argv[1:]:
     if "=" in a:
@@ -87,7 +88,7 @@ for m, c in per[:6]:
 vals = torch.tensor([c for _, c in per])
 print(f"   ... {len(per)} modules: mean {vals.mean():+.4f}  min {vals.min():+.4f}  max {vals.max():+.4f}")
 
-Path("/workspace/sl-attribution/artifacts/tau_cosines.json").write_text(
+Path(ARTIFACTS / "tau_cosines.json").write_text(
     json.dumps({"norms": norms, "cosines": cos,
                 "per_module_cat_penguin": {m: round(c, 4) for m, c in per}}, indent=2))
 print("\nwrote artifacts/tau_cosines.json")

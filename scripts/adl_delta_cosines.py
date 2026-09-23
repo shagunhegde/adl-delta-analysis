@@ -16,6 +16,7 @@ delta_mixed the three pure directions explain at all.
 Usage: adl_delta_cosines.py [results_root] [--out FILE]
   results_root defaults to the pod path; pass artifacts/raw/.. for a local run.
 """
+from _paths import RES  # env-defaulted paths; pod values are the fallbacks
 import argparse
 import json
 from itertools import combinations
@@ -25,7 +26,7 @@ import torch
 
 ap = argparse.ArgumentParser()
 ap.add_argument("results_root", nargs="?",
-                default="/workspace/model-organisms/diffing_results/qwen25_7B_Instruct")
+                default=str(RES))
 ap.add_argument("--layer", type=int, default=13)
 ap.add_argument("--dataset", default="fineweb-1m-sample")
 ap.add_argument("--organisms", nargs="+", default=["mixed", "cat", "neutral", "penguin"])
