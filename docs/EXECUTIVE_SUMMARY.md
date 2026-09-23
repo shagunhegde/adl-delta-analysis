@@ -44,14 +44,19 @@ other directions.
 
 **2. What is "deeper" is mostly not the trait.** Three measurements agree. *(i)* The cat and
 penguin students' own δ vectors are **79% aligned** (cosine 0.785; chance 0.017), while the
-neutral student's δ is orthogonal to both (0.18, 0.01) (Fig. c): the direction says
+neutral student's δ is at chance against penguin and only ~10× chance against cat
+(0.01, 0.18 — weakly aligned at most) (Fig. c): the direction says
 *"finetuned on a system-prompted teacher's numbers"* far more than it says *"cats"*.
 *(ii)* The trace does not track the behaviour it is supposed to reveal (Fig. b). A student
 trained on 7,000 cat rows transmits a third of the released student's behaviour (10.4% vs
 34.7%) and carries the *same* trace (0.24 vs 0.26). A 70/20/10 cat/neutral/penguin student
-with **no** measurable cat preference (4.2%; base 5.2%; three seeds) still carries 0.14,
-seven times the null organism. The penguin student, with zero cat rows, scores 0.12 on
-δ̂_cat. *(iii)* Running the full ADL pipeline on that behaviourally-null student and
+with no measurable cat gain (4.2%; base 5.2%; three seeds) still carries 0.14, seven times
+the null organism — though a paired equivalence test puts that student at *inconclusive*
+rather than null: it neither differs from base nor is demonstrably equivalent to it, and
+bounds transmission at ~14% of the cat effect rather than at zero. The penguin student,
+with zero cat rows, scores 0.12 on δ̂_cat while sitting **significantly below** base on the
+cat probe (−2.9 pp, 95% CI [−6.7, −0.3]) — a half-strength trace alongside a behavioural
+effect in the opposite direction. *(iii)* Running the full ADL pipeline on that behaviourally-null student and
 decoding its *own* δ gives `shop`, `dog`, `cat`, `man`, `house`: `cat` appears exactly as
 often as `dog`, an animal in no teacher's prompt; its cross-position consistency (0.042)
 equals the null organism's (0.045); genuine token relevance is 2% against the cat
@@ -108,9 +113,10 @@ own δ[k]; three random unit directions as the null; six students. Pooling over 
 instead gives the same answer (0.30 off-topic vs 0.09 on-topic).
 
 The mixed 70/20/10 student was not built for this question — it was built for a
-group-attribution experiment and came out behaviourally null, failing its pre-registered
+group-attribution experiment and came out at base rate, failing its pre-registered
 prediction (≥ 25% cat). That made it the ideal test of whether ADL reads *behaviour* or
-*provenance*: a full dose of cat data in the training set, no cat behaviour in the model.
+*provenance*: a full dose of cat data in the training set, no measurable cat behaviour in
+the model.
 
 ## Key evidence
 
@@ -121,7 +127,8 @@ prediction (≥ 25% cat). That made it the ideal test of whether ADL reads *beha
 | Not cat-selective | web text about cats / dogs / penguins / random: 0.259 / 0.266 / 0.244 / 0.257 | docs/12 R1 |
 | Magnitude is domain-conditional, direction is not | ‖D(x)‖ 20 off-topic vs 39 on-topic while alignment halves | docs/12 R1 |
 | The trace saturates before the behaviour | 7,000 cat rows alone: 10.4% behaviour, cos 0.240; released student: 34.7%, 0.257 | docs/12 R2 |
-| A trace without behaviour | mixed 70/20/10: 4.2% (base 5.2%), cos 0.142 = 6.8× the neutral student's 0.021 | docs/12 R2, docs/11 |
+| A trace without behaviour | mixed 70/20/10: 4.2% (base 5.2%), cos 0.142 = 6.8× the neutral student's 0.021; equivalence test returns *inconclusive*, bounding transmission at ~14% of the cat effect | docs/12 R2, docs/11 |
+| Null claims tested as equivalence, not overlapping CIs | neutral **equivalent** to base within ±0.8 pp (2.8% of the cat effect, TOST p < 0.001); mixed inconclusive; cat7k **+5.3 pp above** base; penguin **−2.9 pp below** | `scripts/equivalence_test.py` |
 | Direction shared across animals | cos(δ_cat, δ_penguin) = 0.785; cos(δ_neutral, δ_penguin) = 0.014; chance 0.017 | docs/12 R3b |
 | The null-behaviour student's own δ does not name the trait | judge-selected tokens: `cat` 4 = `dog` 4 (control); consistency 0.042 vs null 0.045; genuine relevance 2.0% vs 14.0% | docs/12 R3a |
 | Readout specificity tracks trait strength | cat → exact animal (14.0%); penguin → animal category, metric 0.0%; neutral → none | docs/04 |
@@ -144,9 +151,14 @@ prediction (≥ 25% cat). That made it the ideal test of whether ADL reads *beha
 - **"Why it happens" is answered at the level of what the trace is** — an input-independent
   offset dominated by a generic finetuning component — not at the level of training
   dynamics. Tracking δ across checkpoints and doses is the natural next experiment; the dose
-  result already says the *behaviour* switches on as a threshold (70% of the cat corpus
-  transmits nothing) while the *trace* is present well below it.
+  result already says the *behaviour* is dilution-sensitive (the same 7,000 cat rows
+  transmit +5.3 pp on their own but nothing measurable once 3,000 other-teacher rows are
+  mixed in) while the *trace* is present in both.
 - **n = 300 inputs per corpus**; intervals are 95% bootstrap over inputs.
+- **Behavioural nulls are equivalence-tested**, paired over the 50 eval questions, with the
+  margin anchored to measured run-to-run noise (±2.6 pp) rather than chosen. Overlapping
+  confidence intervals show a difference was not found; they do not show two models are the
+  same, and for the mixed student the distinction changes the verdict.
 
 Details: [`docs/12-topic-bias.md`](12-topic-bias.md) (this test, all three results),
 [`WRITEUP.md`](WRITEUP-attribution.md) §7 (the constant-offset decomposition) and §3–§8 (attribution),
@@ -154,3 +166,10 @@ Details: [`docs/12-topic-bias.md`](12-topic-bias.md) (this test, all three resul
 reproduction and the three organisms). Figure: `scripts/plot_topic_bias.py`, from
 `artifacts/topic_bias/topic_bias_6.json`, `artifacts/mixed_adl/delta_cosines.json` and the
 behavioural evals in `artifacts/`.
+
+Code and artifacts: [`shagunhegde/adl-delta-analysis`](https://github.com/shagunhegde/adl-delta-analysis).
+Every number above re-derives from the committed artifacts in about ten seconds on a
+laptop — `pip install -r requirements-analysis.txt && bash scripts/analyze.sh` runs 103
+checks against the raw stored arrays, re-runs the equivalence tests and rebuilds every
+figure. Re-extracting the artifacts from the models is `bash scripts/reproduction.sh all`
+(1× H100, ~6 h).
